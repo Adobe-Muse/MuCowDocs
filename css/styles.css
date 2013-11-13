@@ -145,8 +145,9 @@ body {
   overflow: auto;
   padding: 0px 10px;
 }
-#navigation nav {
-  padding-bottom: 35px;
+#navigation footer {
+  padding-top: 25px;
+  padding-bottom: 10px;
 }
 #navigation h1 {
   padding: 10px 5px 0px;
