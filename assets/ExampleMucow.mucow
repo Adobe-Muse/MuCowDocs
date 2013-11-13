@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+`<HTMLWidget>` is the top level element which all other elements
+will be a child of. It contains the attributes for the widget as
+a whole.
+-->
+<HTMLWidget name="Example" formatNumber="1" 
+		localization="none" creator="Adobe Muse Team"
+		isResizable="false" defaultWidth="100" defaultHeight="35">
+	<parameters>
+		<bool name="toggleOption" label="Toggle Option" defaultValue="foo">
+			<trueVal value="foo"/>
+<!--
+`disableOptions` disables both `myTextBox` and `myURL` options when
+this option is unchecked.
+-->
+			<falseVal value="bar" disableOptions="myTextBox,myURL"/>
+		</bool>
+		<text name="myTextBox" defaultValue="Default Text Here" label="Text Box: " />
+		<text name="myURL" defaultValue="http://muse.adobe.com/" label="URL: " />
+<!--
+`itemUID` is the id for the page item the will contain the
+`<pageItemHTML>` content
+-->
+		<builtIn name="itemUID"/>
+	</parameters>
+	
+	<pageItemHTML>
+<!--
+Don't forget to wrap your content in a `<![CDATA[ ]]>` tag
+-->
+<![CDATA[
+		Hello, {param_itemUID}!
+]]>
+	</pageItemHTML>
+	
+</HTMLWidget>

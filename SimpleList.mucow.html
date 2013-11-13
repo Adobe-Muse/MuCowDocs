@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SimpleList.mucow</title>
+		<link href="css/basic.css" rel="stylesheet" >
+		<link href="css/vs.css" rel="stylesheet" >
+	</head>
+	<body>
+		<header>
+			<a href="./" id="back">Back to Docs</a>
+			<h1><a href="assets/SimpleList.mucow">SimpleList.mucow</a></h1>
+		</header>
+		<div id="content">
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p>HTML Widget for Simple HTML lists.
+A simple unordered list.
+Muse user can choose which list style they want.
+Text styling can be applied to this list within Muse.
+The max size of the list is fixed at 10. 
+Empty list elements are removed via JavaScript.</p>
+</div><pre class="Code"><code class="xml"><span class="tag">&lt;<span class="title">HTMLWidget</span> <span class="attribute">name</span>=<span class="value">"Simple List"</span> <span class="attribute">formatNumber</span>=<span class="value">"1"</span>  <span class="attribute">localization</span>=<span class="value">"none"</span> <span class="attribute">creator</span>=<span class="value">"Adobe Muse Team"</span> <span class="attribute">defaultWidth</span>=<span class="value">"250"</span> <span class="attribute">defaultHeight</span>=<span class="value">"250"</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">parameters</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>listStyle</code> sets what kind of list decoration to use. User can pick from the standard HTML list types.</p>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">list</span> <span class="attribute">name</span>=<span class="value">"listStyle"</span> <span class="attribute">label</span>=<span class="value">"List Style:"</span> <span class="attribute">defaultValue</span>=<span class="value">"disc"</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"disc"</span> <span class="attribute">label</span>=<span class="value">"Disc"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"circle"</span> <span class="attribute">label</span>=<span class="value">"Circle"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"square"</span> <span class="attribute">label</span>=<span class="value">"Square"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"decimal"</span> <span class="attribute">label</span>=<span class="value">"Decimal Number"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"decimal-leading-zero"</span> <span class="attribute">label</span>=<span class="value">"Decimal Number with Leading 0s"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"lower-alpha"</span> <span class="attribute">label</span>=<span class="value">"Lowercase Alphabet"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"upper-alpha"</span> <span class="attribute">label</span>=<span class="value">"Uppercase Alphabet"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"lower-roman"</span> <span class="attribute">label</span>=<span class="value">"Lowercase Roman Numerals"</span>/&gt;</span>
+			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"upper-roman"</span> <span class="attribute">label</span>=<span class="value">"Uppercase Roman Numerals"</span>/&gt;</span>
+		<span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>item1</code> through <code>item12</code> sets the value for each list element</p>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item1"</span> <span class="attribute">label</span>=<span class="value">"List Item #1:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 1"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item2"</span> <span class="attribute">label</span>=<span class="value">"List Item #2:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 2"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item3"</span> <span class="attribute">label</span>=<span class="value">"List Item #3:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 3"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item4"</span> <span class="attribute">label</span>=<span class="value">"List Item #4:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 4"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item5"</span> <span class="attribute">label</span>=<span class="value">"List Item #5:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 5"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item6"</span> <span class="attribute">label</span>=<span class="value">"List Item #6:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 6"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item7"</span> <span class="attribute">label</span>=<span class="value">"List Item #7:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 7"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item8"</span> <span class="attribute">label</span>=<span class="value">"List Item #8:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 8"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item9"</span> <span class="attribute">label</span>=<span class="value">"List Item #9:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 9"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item10"</span> <span class="attribute">label</span>=<span class="value">"List Item #10:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 10"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item11"</span> <span class="attribute">label</span>=<span class="value">"List Item #11:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 11"</span>/&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"item12"</span> <span class="attribute">label</span>=<span class="value">"List Item #12:"</span> <span class="attribute">defaultValue</span>=<span class="value">"item 12"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>width</code> is set to the width of this page item</p>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"width"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>height</code> is set to the height of this page item</p>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"height"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>itemUID</code> is set to the unique ID of this page item. Usually used for CSS styling and to provide an easy way 
+for javascript code to find this widget</p>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"itemUID"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;/<span class="title">parameters</span>&gt;</span>
+	
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>headHTML</code> is the HTML code to be inserted into the <head> tag.
+This widget includes some CSS styling in the <head>. Note the use of the item UID as a CSS selector.</p>
+</div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">headHTML</span>&gt;</span>
+<span class="cdata">&lt;![CDATA[
+&lt;style&gt;
+#{param_itemUID} ul { list-style-position:inside; list-style-type:{param_listStyle}; width:{param_width}px; height:{param_height}px;}
+#{param_itemUID} li { list-style-position:inside; list-style-type:{param_listStyle}; }
+&lt;/style&gt;
+]]&gt;</span>
+	<span class="tag">&lt;/<span class="title">headHTML</span>&gt;</span>
+
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>pageItemHTML</code> is the HTML code to be inserted wherever this page item is positioned on the page.
+This widget just includes a simple HTML list</p>
+</div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">pageItemHTML</span>&gt;</span>
+<span class="cdata">&lt;![CDATA[
+&lt;ul&gt;
+&lt;li&gt;{param_item1}&lt;/li&gt;
+&lt;li&gt;{param_item2}&lt;/li&gt;
+&lt;li&gt;{param_item3}&lt;/li&gt;
+&lt;li&gt;{param_item4}&lt;/li&gt;
+&lt;li&gt;{param_item5}&lt;/li&gt;
+&lt;li&gt;{param_item6}&lt;/li&gt;
+&lt;li&gt;{param_item7}&lt;/li&gt;
+&lt;li&gt;{param_item8}&lt;/li&gt;
+&lt;li&gt;{param_item9}&lt;/li&gt;
+&lt;li&gt;{param_item10}&lt;/li&gt;
+&lt;li&gt;{param_item11}&lt;/li&gt;
+&lt;li&gt;{param_item12}&lt;/li&gt;
+&lt;/ul&gt;
+]]&gt;</span>
+	<span class="tag">&lt;/<span class="title">pageItemHTML</span>&gt;</span>
+
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>bodyEndHTML</code> is the HTML code to be inserted just before the close of the <body> tag.
+This widget includes a bit of jquery javascript to remove any empty list elements. Note the use of the itemUID to target only 
+empty list elements within the HTML output of this widget.</p>
+</div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">bodyEndHTML</span>&gt;</span>
+<span class="cdata">&lt;![CDATA[
+
+&lt;script type="text/javascript"&gt;
+  $("#{param_itemUID}").find("li").remove( ":empty" );
+&lt;/script&gt;
+]]&gt;</span>
+	<span class="tag">&lt;/<span class="title">bodyEndHTML</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml"><span class="tag">&lt;/<span class="title">HTMLWidget</span>&gt;</span>
+</code></pre></section>
+			
+		</div>
+		<script type="text/javascript" src="js/simple.js"></script>
+	</body>
+</html>

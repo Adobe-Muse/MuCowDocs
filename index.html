@@ -1,0 +1,893 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MuCow Documentation</title>
+		<link rel="stylesheet" href="css/styles.css">
+		
+		<link rel="stylesheet" href="css/print.css">
+		<script src="//use.edgefonts.net/source-sans-pro:n3,n4,i4,n7,n9.js"></script>
+	</head>
+	<body>
+		<section id="navigation">
+			<h1><a href="./">MuCow Documentation</a></h1>
+			<nav>
+					<li><a href="#getting-started">Getting Started</a>
+						<ul>
+							<li><a href="#what-is-a-mucow-">What is a MuCow?</a>
+							<li><a href="#how-can-i-make-one-">How can I make one?</a>
+							<li><a href="#how-do-i-place-it-">How do I place it?</a>
+							<li><a href="#where-can-i-share-it-">Where can I share it?</a>
+							<li><a href="#can-i-use-jquery-">Can I use jQuery?</a>
+						</ul>
+					<li><a href="#htmlwidget">HTMLWidget</a>
+						<ul>
+							<li><a href="#example">Example</a>
+							<li><a href="#attributes">Attributes</a>
+							<li><a href="#child-tags">Child Tags</a>
+						</ul>
+					<li><a href="#parameter-tags">Parameter Tags</a>
+						<ul>
+							<li><a href="#id-text-"><code>&lt;text&gt;</code></a>
+								<ul>
+									<li><a href="#examples">Examples</a>
+									<li><a href="#required-attributes">Required Attributes</a>
+									<li><a href="#optional-attributes">Optional Attributes</a>
+								</ul>
+							<li><a href="#id-list-"><code>&lt;list&gt;</code></a>
+								<ul>
+									<li><a href="#examples1">Examples</a>
+									<li><a href="#required-attributes1">Required Attributes</a>
+									<li><a href="#optional-attributes1">Optional Attributes</a>
+									<li><a href="#child-tags">Child tags</a>
+										<ul>
+											<li><a href="#id-value-"><code>&lt;value&gt;</code></a>
+												<ul>
+													<li><a href="#attributes">Attributes</a>
+												</ul>
+										</ul>
+								</ul>
+							<li><a href="#id-url-"><code>&lt;url&gt;</code></a>
+								<ul>
+									<li><a href="#examples2">Examples</a>
+									<li><a href="#required-attributes2">Required Attributes</a>
+									<li><a href="#optional-attributes2">Optional Attributes</a>
+								</ul>
+							<li><a href="#id-bool-"><code>&lt;bool&gt;</code></a>
+								<ul>
+									<li><a href="#examples3">Examples</a>
+									<li><a href="#required-attributes3">Required Attributes</a>
+									<li><a href="#optional-attributes3">Optional Attributes</a>
+									<li><a href="#child-tags1">Child tags</a>
+										<ul>
+											<li><a href="#id-trueval-"><code>&lt;trueVal&gt;</code></a>
+												<ul>
+													<li><a href="#attributes1">Attributes</a>
+												</ul>
+											<li><a href="#id-falseval-"><code>&lt;falseVal&gt;</code></a>
+												<ul>
+													<li><a href="#attributes2">Attributes</a>
+												</ul>
+										</ul>
+								</ul>
+							<li><a href="#id-number-"><code>&lt;number&gt;</code></a>
+								<ul>
+									<li><a href="#examples4">Examples</a>
+									<li><a href="#required-attributes4">Required Attributes</a>
+									<li><a href="#optional-attributes4">Optional Attributes</a>
+								</ul>
+							<li><a href="#id-builtin-"><code>&lt;builtIn&gt;</code></a>
+								<ul>
+									<li><a href="#attributes3">Attributes</a>
+									<li><a href="#types">Types</a>
+								</ul>
+						</ul>
+					<li><a href="#content-tags">Content Tags</a>
+						<ul>
+							<li><a href="#html-content">HTML Content</a>
+							<li><a href="#parameters">Parameters</a>
+							<li><a href="#id-headhtml-"><code>&lt;headHTML&gt;</code></a>
+							<li><a href="#id-bodybeginhtml-"><code>&lt;bodyBeginHTML&gt;</code></a>
+							<li><a href="#id-pageitemhtml-"><code>&lt;pageItemHTML&gt;</code></a>
+							<li><a href="#id-bodyendhtml-"><code>&lt;bodyEndHTML&gt;</code></a>
+						</ul>
+					<li><a href="#localization">Localization</a>
+						<ul>
+							<li><a href="#id-stringtable-"><code>&lt;stringTable&gt;</code></a>
+								<ul>
+									<li><a href="#examples">Examples</a>
+								</ul>
+							<li><a href="#id-locale-"><code>&lt;locale&gt;</code></a>
+								<ul>
+									<li><a href="#required-attributes">Required Attributes</a>
+									<li><a href="#examples1">Examples</a>
+								</ul>
+							<li><a href="#id-string-"><code>&lt;string&gt;</code></a>
+								<ul>
+									<li><a href="#required-attributes1">Required Attributes</a>
+									<li><a href="#examples2">Examples</a>
+								</ul>
+						</ul>
+					<li><a href="#tutorials">Tutorials</a>
+						<ul>
+							<li><a href="#using-jquery">Using jQuery</a>
+						</ul>
+					<li>Examples
+						<ul>
+							<li><a href="/ExampleMucow.mucow.html">Basic</a>
+							<li><a href="/BuiltIn.mucow.html">Built-Ins</a>
+							<li><a href="/Calculator.mucow.html">Calculator</a>
+							<li><a href="/SimpleList.mucow.html">Simple List</a>
+						</ul>
+			</nav>
+		</section>
+		<article>
+			<h1 id="getting-started">Getting Started</h1>
+<p>Welcome to the Muse Configurable Options Widget (MuCow) documentation. Here you
+will learn more about making your own HTML embed widgets that can be placed in
+Muse and will include a set of user-facing configurable options. This format
+will allow you to create content not currently available in Muse, and easily
+share it with others in the community. Note that this feature allows you to
+create <strong>HTML embed widgets</strong> &mdash; not “standard” widgets like Slideshows
+and Accordion widgets for example.</p>
+<p>On this site, you’ll find documentation for the format itself, some examples
+that will help you get started, a simple playground where you can see what
+your MuCow options will look like in Muse, and resources for distributing your
+final MuCow and getting noticed. Hopefully this will be your one-stop-shop for
+writing widgets in Muse. We’ll also do our best to include recommendations for
+the best ways to create, debug, and optimize your widget, as well as some good
+ways to share it with the community.</p>
+<p>Here are some common questions people have. If you don’t see your question
+here, feel free to ask it in the <a href="http://forums.adobe.com/community/muse">forums</a> and others can help you out.</p>
+<h2 id="what-is-a-mucow-">What is a MuCow?</h2>
+<p>A MuCow is an Adobe Muse Configurable Options Widget. It is a extension format
+that allows you, the user, to write your very own widgets for Muse. With this
+widget, you can include a set of user configurable options that enable you to
+change your behavior based on parameters to your script. A MuCow itself is
+written in a simple XML format, and saved as a .mucow file format.</p>
+<h2 id="how-can-i-make-one-">How can I make one?</h2>
+<p>Simply open up your favorite text or XML editor, and follow the documentation
+here. Once you’re done, save it as a .mucow file, and place it into Muse.</p>
+<h2 id="how-do-i-place-it-">How do I place it?</h2>
+<p>Adding a MuCow into Muse is done in the same manner in which an image, Flash,
+or Edge Animate file are added. Simply use the “File &gt; Place” menu item, or
+the keyboard shortcut CTRL/CMD + D.</p>
+<h2 id="where-can-i-share-it-">Where can I share it?</h2>
+<p>The recommended way to share your MuCow with others is by adding it to a
+library, exporting the library, and submitting it to the <a href="http://muse.adobe.com/exchange">Adobe Muse
+Exchange</a>. You may also submit the .mucow file if you’d like it to be used
+as an example by others who want to create their own. If you do choose to
+include both, simply place the files into a .zip folder, and upload that
+instead. To learn more about creating user library items please refer to
+<a href="http://helpx.adobe.com/en/muse/tutorials/organizing-reusing-elements-using-library-panel.html">the help page for the library panel</a>.</p>
+<h2 id="can-i-use-jquery-">Can I use jQuery?</h2>
+<p><strong>Yes</strong>. You can use the version of jQuery we use by placing all script content
+in <a href="#id-bodyendhtml-"><code>&lt;bodyEndHTML&gt;</code></a> tag. You can also check out our <a href="#using-jquery">jQuery Tutorial</a>.</p>
+
+		</article>		<article>
+			<h1 id="htmlwidget">HTMLWidget</h1>
+<p>The <code>&lt;HTMLWidget&gt;</code> tag is the top level tag of all MuCow files.</p>
+<h2 id="example">Example</h2>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;HTMLWidget name=&quot;My Widget&quot; formatNumber=&quot;1&quot; 
+        localization=&quot;none&quot; creator=&quot;My Name&quot; 
+        defaultWidth=&quot;50&quot; defaultHeight=&quot;50&quot; 
+        isResizable=&quot;true&quot;&gt;
+    &lt;!--
+        ... Content Goes Here ...
+    --&gt;
+&lt;/HTMLWidget&gt;</code></pre>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td><strong>Required.</strong> The name of the widget. Will be displayed in the options dialog, and also in the control strip</td>
+</tr>
+<tr>
+<td>formatNum</td>
+<td>1</td>
+<td><strong>Required.</strong> The format number of this file. Must be 1 currently</td>
+</tr>
+<tr>
+<td>localization</td>
+<td><code>none</code> <br> <code>stringTable</code></td>
+<td><strong>Required.</strong> The type of <a href="#localization">localization</a> for this widget</td>
+</tr>
+<tr>
+<td>termsURL</td>
+<td>URL</td>
+<td>The URL to a ‘Terms of Use’ page. A link to this URL will appear in options dialog if non-empty. If you specify termsURL, do not specify termsText</td>
+</tr>
+<tr>
+<td>termsText</td>
+<td>String</td>
+<td>HTML text to appear in a ‘Terms of Use’ dialog. Text may include links to URLs. If you specify termsText, do not specify termsURL</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>String</td>
+<td>Indicates the name or email address of the person or company who created this HTML widget file</td>
+</tr>
+<tr>
+<td>defaultWidth</td>
+<td>Number</td>
+<td>Indicates the initial width for the HTML page item</td>
+</tr>
+<tr>
+<td>defaultHeight</td>
+<td>Number</td>
+<td>Indicates the initial height for the HTML page item</td>
+</tr>
+<tr>
+<td>isResizable</td>
+<td>Boolean</td>
+<td>Indicates if the page item should be user resizable. <em>Default value is true</em></td>
+</tr>
+<tr>
+<td>minWidth</td>
+<td>Number</td>
+<td>Indicates the minimum allowable width for the page item. <em>Default value is 0</em></td>
+</tr>
+<tr>
+<td>minHeight</td>
+<td>Number</td>
+<td>Indicates the minimum allowable height for the page item. <em>Default value is 0</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="child-tags">Child Tags</h2>
+<p>The <code>&lt;HTMLWidget&gt;</code> <strong>must contain at least 1 <a href="#content-tags">content tag</a></strong> and
+can optionally contain a <code>&lt;parameters&gt;</code> tag, which will specify the
+parameters for the widget and a <code>&lt;stringTable&gt;</code> tag for localization.
+The <code>&lt;parameters&gt;</code> tag can contain any number of the <a href="#parameter-tags">parameter
+tags</a>. Check the <a href="#localization">localization</a> section for more information
+about the <code>&lt;stringTable&gt;</code> tag.</p>
+
+		</article>		<article>
+			<h1 id="parameter-tags">Parameter Tags</h1>
+<p>There are several parameter tags available to create the MuCow widget’s On-Object UI (OOUI). This is the fly-out menu that allows the user to set certain settings about the widget.</p>
+<p>Parameters can then be included in your code, and replaced</p>
+<h2 id="id-text-"><code>&lt;text&gt;</code></h2>
+<p>Specifies a parameter that will be user entered text. This text can be displayed as either a single-line or multi-line entry box in the OOUI.</p>
+<h3 id="examples">Examples</h3>
+<pre><code>&lt;text name=&quot;myTextBox&quot; defaultValue=&quot;The default value&quot; /&gt;</code></pre>
+<p><img src="images/example_param_tag_text.png" alt="Example &lt;text&gt; parameter tag"></p>
+<pre><code>&lt;text name=&quot;myTextBox&quot; defaultValue=&quot;The default value&quot; 
+    label=&quot;A Label&quot; tooltip=&quot;This is the tooltip&quot;
+    multiline=&quot;true&quot; /&gt;</code></pre>
+<p><img src="images/example_param_tag_multiline_text.png" alt="Example &lt;text&gt; parameter tag with the multiline option set"></p>
+<h3 id="required-attributes">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td>The name of the value.</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>String</td>
+<td>The default value this item should have when first placed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-attributes">Optional Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Label to display in the OOUI</td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>String</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
+</tr>
+<tr>
+<td>paramEncoding</td>
+<td><code>URIComponent</code> <br/> <code>spaceToPlus</code></td>
+<td>The type of encoding to apply to the entered parameter</td>
+</tr>
+<tr>
+<td>multiline</td>
+<td>Boolean</td>
+<td>If set to true a multiline text control will be created in the UI instead of a single line text box.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="id-list-"><code>&lt;list&gt;</code></h2>
+<p>Specifies a parameter that a user can select from a set of given options. Options are given using <code>&lt;value&gt;</code> tags, which are children of the <code>&lt;list&gt;</code> tag. See Child Tags section.</p>
+<h3 id="examples1">Examples</h3>
+<pre><code>&lt;list name=&quot;myList&quot; defaultValue=&quot;Second Value&quot; label=&quot;My List&quot;&gt;
+    &lt;value name=&quot;first&quot; label=&quot;First Value&quot;/&gt;
+    &lt;value name=&quot;Second Value&quot;/&gt;
+    &lt;value name=&quot;third_value&quot; label=&quot;Last One&quot;/&gt;
+&lt;/list&gt;</code></pre>
+<p><img src="images/example_param_tag_list.png" alt="Example &lt;list&gt; parameter tag"></p>
+<h3 id="required-attributes1">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td>The name of the value.</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>String</td>
+<td>The default value this item should have when first placed. This must match one of the <code>name</code> attributes of a child <code>&lt;value&gt;</code> element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-attributes1">Optional Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Label to display in the OOUI</td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>String</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="child-tags">Child tags</h3>
+<h4 id="id-value-"><code>&lt;value&gt;</code></h4>
+<p>Specifies a user-selectable value. <strong>NOTE: <code>&lt;value&gt;</code> tags can contain <a href="#content-tags">Content Tags</a> which will modify the output.</strong></p>
+<h5 id="attributes">Attributes</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td><strong>REQUIRED</strong> Value that will be passed to the final code.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>A label to display to the user</td>
+</tr>
+</tbody>
+</table>
+<h2 id="id-url-"><code>&lt;url&gt;</code></h2>
+<p>Specifies the user should enter either a partial or full URL.</p>
+<h3 id="examples2">Examples</h3>
+<pre><code>&lt;url name=&quot;myURL&quot; label=&quot;My URL&quot; 
+    defaultValue=&quot;http://muse.adobe.com/&quot; /&gt;</code></pre>
+<p><img src="images/example_param_tag_url.png" alt="Example &lt;url&gt; parameter tag"></p>
+<pre><code>&lt;url name=&quot;myURL&quot; label=&quot;My URL&quot; 
+    defaultValue=&quot;http://muse.adobe.com/&quot; 
+    currentPageOrURL=&quot;true&quot; /&gt;</code></pre>
+<p><img src="images/example_param_tag_url_or_current.png" alt="Example &lt;url&gt; parameter tag"></p>
+<h3 id="required-attributes2">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td>The name of the value.</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>String</td>
+<td>The default value this item should have when first placed. This must match one of the <code>name</code> attributes of a child <code>&lt;value&gt;</code> element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-attributes2">Optional Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Label to display in the OOUI</td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>String</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
+</tr>
+<tr>
+<td>urlStart</td>
+<td>String</td>
+<td>A comma separated list of URL prefixes. all entered URLs must start with one of these, or be incomplete URLs.</td>
+</tr>
+<tr>
+<td>currentPageOrURL</td>
+<td>String</td>
+<td>If set to ‘true’, user will be able to enter an arbitrary URL, or choose the URL for the current Muse Page.</td>
+</tr>
+<tr>
+<td>dummyDomainPrefix</td>
+<td>String</td>
+<td>If the user hasn’t yet entered a domain name, when generating HTML for the current page, this dummy prefix will be used, along with a <abbr title="Globaly Unique Identifier">GUID</abbr>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="id-bool-"><code>&lt;bool&gt;</code></h2>
+<p>Specifies an option that the user will be able to toggle on/off. Must include the values to use for true &amp; false. One or both values may disable other options. Multiple bool UI elements will be arranged in columns</p>
+<h3 id="examples3">Examples</h3>
+<pre><code>&lt;bool name=&quot;toggleOption&quot; label=&quot;Toggle Option&quot; defaultValue=&quot;foo&quot;&gt;
+    &lt;trueVal value=&quot;foo&quot;/&gt;
+    &lt;falseVal value=&quot;bar&quot; disableOptions=&quot;myTextBox,myURL&quot;/&gt;
+&lt;/bool&gt;</code></pre>
+<p><img src="images/example_param_tag_bool_on.png" alt="Example &lt;bool&gt; parameter tag with option on">
+<img src="images/example_param_tag_bool_off.png" alt="Example &lt;bool&gt; parameter tag with option off"></p>
+<h3 id="required-attributes3">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td>The name of the value.</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>String</td>
+<td>The default value this item should have when first placed. This must match one of the <code>name</code> attributes of a child element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-attributes3">Optional Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Label to display in the OOUI</td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>String</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="child-tags1">Child tags</h3>
+<h4 id="id-trueval-"><code>&lt;trueVal&gt;</code></h4>
+<p>Specifies a value to pass when user turns on this option. <strong>NOTE: <code>&lt;trueVal&gt;</code> tags can contain <a href="#content-tags">Content Tags</a> which will modify the output.</strong></p>
+<h5 id="attributes1">Attributes</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>String</td>
+<td><strong>Required.</strong> Value that will be passed to the final code.</td>
+</tr>
+<tr>
+<td>disableOptions</td>
+<td>List</td>
+<td>A comma separated list of name values for options that are disabled when the item is in this state.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="id-falseval-"><code>&lt;falseVal&gt;</code></h4>
+<p>Specifies a value to pass when user turns off this option. <strong>NOTE: <code>&lt;falseVal&gt;</code> tags can contain <a href="#content-tags">Content Tags</a> which will modify the output.</strong></p>
+<h5 id="attributes2">Attributes</h5>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>String</td>
+<td><strong>Required.</strong> Value that will be passed to the final code.</td>
+</tr>
+<tr>
+<td>disableOptions</td>
+<td>List</td>
+<td>A comma separated list of name values for options that are disabled when the item is in this state.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="id-number-"><code>&lt;number&gt;</code></h2>
+<p>Specifies the user entered value should be a number</p>
+<h3 id="examples4">Examples</h3>
+<pre><code>&lt;number name=&quot;myNumber&quot; min=&quot;1&quot; max=&quot;100&quot; step=&quot;1&quot; 
+    snap=&quot;0.1&quot; defaultValue=&quot;1&quot; label=&quot;Number: &quot;/&gt;</code></pre>
+<p><img src="images/example_param_tag_number.png" alt="Example &lt;bool&gt; parameter tag with option on"></p>
+<h3 id="required-attributes4">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td>The name of the value.</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>String</td>
+<td>The default value this item should have when first placed</td>
+</tr>
+<tr>
+<td>min</td>
+<td>Number</td>
+<td>The minimum allowed value</td>
+</tr>
+<tr>
+<td>max</td>
+<td>Number</td>
+<td>The maximum allowed value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-attributes4">Optional Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Label to display in the OOUI</td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>String</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
+</tr>
+<tr>
+<td>step</td>
+<td>Number</td>
+<td>How large a step should be if the user clicks the up or down arrow. Defaults to 1</td>
+</tr>
+<tr>
+<td>snap</td>
+<td>Number</td>
+<td>What increment should values snap to. Defaults to 1</td>
+</tr>
+<tr>
+<td>digitsPrecision</td>
+<td>Number</td>
+<td>The number of digits to show after the decimal point</td>
+</tr>
+</tbody>
+</table>
+<h2 id="id-builtin-"><code>&lt;builtIn&gt;</code></h2>
+<p>A built in is a special type that allows you to get values that are specified directly in Adobe Muse. These values are passed in the same as any other parameters, and the name can be any one of the values listed below.</p>
+<h3 id="attributes3">Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Type</td>
+<td><strong>Required.</strong> One of the types listed below</td>
+</tr>
+<tr>
+<td>supportedLocales</td>
+<td>List</td>
+<td>Comma separated list of languages supported by this MuCow. If the document language is not one of these languages, the English equivalent will be used instead</td>
+</tr>
+</tbody>
+</table>
+<h3 id="types">Types</h3>
+<dl>
+    <dt>
+        <code>width</code>
+    </dt>
+    <dd>
+        Page item width in Muse
+    </dd>
+    <dt>
+        <code>height</code>
+    </dt>
+    <dd>
+        Page item height in Muse
+    </dd>
+    <dt>
+        <code>itemUID</code>
+    </dt>
+    <dd>
+        The unique ID that is designated to this page item
+    </dd>
+    <dt>
+        <code>siteUID</code>
+    </dt>
+    <dd>
+        The unique ID that identifies this Muse site
+    </dd>
+    <dt>
+        <code>country</code>
+    </dt>
+    <dd>
+        Country code for the current Muse document (e.g. US, FR, JP)
+    </dd>
+    <dt>
+        <code>language</code>
+    </dt>
+    <dd>
+        Character code for the language of the current Muse document (e.g. en, fr, es)
+    </dd>
+    <dt>
+        <code>locale</code>
+    </dt>
+    <dd>
+        Language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
+    </dd>
+</dl>
+
+
+
+		</article>		<article>
+			<h1 id="content-tags">Content Tags</h1>
+<p>Content tags are the meat and potatoes of your MuCow. They are what
+actually place things into Muse output. Each of these areas</p>
+<h2 id="html-content">HTML Content</h2>
+<p>Because MuCows are written in XML, you will need to use <code>&lt;![CDATA[]]&gt;</code>
+to wrap any HTML content you are inserting into the page. For example,
+if you want to place an image in the <code>&lt;pageItemHTML&gt;</code> tag, you’ll
+need to do the following:</p>
+<pre><code>&lt;pageItemHTML&gt;
+&lt;![CDATA[
+&lt;img src=&quot;http://example.com/logo.jpg&quot; alt=&quot;My Logo&quot;&gt;
+]]&gt;
+&lt;/pageItemHTML&gt;</code></pre>
+<p><em>Note that for any HTML elements, you can use the HTML class <code>actAsDiv</code>
+to indicate that you want that element to be a block level element.</em>
+This is especially useful with things like <code>&lt;img&gt;</code> or <code>&lt;iframe&gt;</code>
+content which is not block by default</p>
+<h2 id="parameters">Parameters</h2>
+<p>Parameters are indicated by using <code>{param_PARAMNAME}</code>. They will be
+replaced at runtime with the current value of that parameter option.</p>
+<h2 id="id-headhtml-"><code>&lt;headHTML&gt;</code></h2>
+<p>HTML in this field will be added to the page <code>&lt;head&gt;</code> at output time.
+Only one copy of the code will be output, even if there are multiple
+instances of this widget on a page.</p>
+<h2 id="id-bodybeginhtml-"><code>&lt;bodyBeginHTML&gt;</code></h2>
+<p>HTML in this field will be added right after the <code>&lt;body&gt;</code> open. Only one
+copy of the code will be output, even if there are multiple instances
+of this widget on a page.</p>
+<h2 id="id-pageitemhtml-"><code>&lt;pageItemHTML&gt;</code></h2>
+<p>HTML in this field will be added where the page item is positioned on the
+page.</p>
+<h2 id="id-bodyendhtml-"><code>&lt;bodyEndHTML&gt;</code></h2>
+<p>HTML in this field will be added right before the close of the <code>&lt;/body&gt;</code>
+element. Only one copy of the code will be output, even if there are
+multiple instances of this widget on a page. <strong>Note that jQuery is loaded
+prior to this code, so jQuery can be used by any scripts in this area.</strong></p>
+
+		</article>		<article>
+			<h1 id="localization">Localization</h1>
+<p>The localization tags enable you to localize your widget based on the
+language of Muse. You can use this to make it easier for others users
+who use Muse in different languages to customize the MuCow.</p>
+<h2 id="id-stringtable-"><code>&lt;stringTable&gt;</code></h2>
+<p>This is the primary method at the moment for enabling translation of
+your widget to other languages. For this element to have any effect,
+you’ll need to make sure to set the <code>localization</code> attribute to
+<code>stringTable</code>.</p>
+<p>A <code>&lt;stringTable&gt;</code> must contain at least 1 <code>&lt;locale&gt;</code> tag, but can
+contain as many as needed.</p>
+<h3 id="examples">Examples</h3>
+<pre><code>&lt;stringTable&gt;
+    &lt;locale name=&quot;en_US&quot;&gt;
+        &lt;string keyString=&quot;kBlinkWidget&quot; translation=&quot;Blinking Text&quot;/&gt;
+        &lt;string keyString=&quot;kUserText&quot; translation=&quot;Text:&quot;/&gt;
+    &lt;/locale&gt;
+    &lt;locale name=&quot;fr_FR&quot;&gt;
+        &lt;string keyString=&quot;kBlinkWidget&quot; translation=&quot;Texte Clignotant&quot;/&gt;
+        &lt;string keyString=&quot;kUserText&quot; translation=&quot;Texte :&quot;/&gt;
+    &lt;/locale&gt;
+&lt;/stringTable&gt;</code></pre>
+<h2 id="id-locale-"><code>&lt;locale&gt;</code></h2>
+<p>This is a locale that you have translated your properties to. These
+should match one of the language codes available in Muse.</p>
+<p>A <code>&lt;locale&gt;</code> tag should contain a <code>&lt;string&gt;</code> tag as a child for each
+translated string value to be used in the widget.</p>
+<h3 id="required-attributes">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Any Muse Locale</td>
+<td>The locale that these <code>&lt;string&gt;</code> tags are for</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples1">Examples</h3>
+<p>English (US)</p>
+<pre><code>&lt;locale name=&quot;en_US&quot;&gt;</code></pre>
+<p>French</p>
+<pre><code>&lt;locale name=&quot;fr_FR&quot;&gt;</code></pre>
+<p>Japanese</p>
+<pre><code>&lt;local name=&quot;jp_JP&quot;&gt;</code></pre>
+<h2 id="id-string-"><code>&lt;string&gt;</code></h2>
+<p>A string is the actual translated content that Muse will show in to
+the end user. It will contain a <code>keyString</code> and a <code>translation</code>
+attribute. The <code>keyString</code> attribute will be the same across the
+locales, and is what you will put in the place of the real string.
+See the examples section for more information.</p>
+<h3 id="required-attributes1">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keyString</td>
+<td>String</td>
+<td>The key that will be swapped out when translating the strings</td>
+</tr>
+<tr>
+<td>translation</td>
+<td>String</td>
+<td>The translated string for this locale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples2">Examples</h3>
+<pre><code>&lt;parameters&gt;
+    &lt;text name=&quot;userText&quot; label=&quot;kUserText&quot; defaultValue=&quot;Hello World!&quot;/&gt;
+&lt;/parameters&gt;
+
+&lt;stringTable&gt;
+    &lt;locale name=&quot;en_US&quot;&gt;
+        &lt;string keyString=&quot;kUserText&quot; translation=&quot;Text:&quot;/&gt;
+    &lt;/locale&gt;
+    &lt;locale name=&quot;fr_FR&quot;&gt;
+        &lt;string keyString=&quot;kUserText&quot; translation=&quot;Texte:&quot;/&gt;
+    &lt;/locale&gt;
+&lt;/stringTable&gt;</code></pre>
+
+		</article>		<article>
+			<h1 id="tutorials">Tutorials</h1>
+<p>In this section, you’ll find tutorials related to accomplishing common
+tasks you’re likely to do with a MuCow. These will hopefully give you
+an idea of how to accomplish what you need, and, as always, feel free
+to ask any questions in the <a href="http://forums.adobe.com/community/muse">forums</a>.</p>
+<h2 id="using-jquery">Using jQuery</h2>
+<p><a href="http://jquery.com">jQuery</a> is a very common thing for people to want to use, and we
+will automatically load in jQuery when a Muse page loads. <strong>You should
+not load your own version of jQuery</strong>. This will increase load times,
+and cause issues with Muse exported code. Instead, if you include your
+JavaScript in the <a href="#id-bodyendhtml-"><code>&lt;bodyEndHTML&gt;</code></a> you will be able to use the
+version of jQuery we load.</p>
+<p>Combining this with things like the <a href="#id-builtin-">built-in ID parameter</a> allows
+you to directly manipulate the page item you’d like using standard
+jQuery functionality. For example, if I wanted to increment a counter
+every time the user clicked on the page item, it might look something
+like this.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;HTMLWidget name=&quot;Example&quot; formatNumber=&quot;1&quot; localization=&quot;none&quot; creator=&quot;Adobe Muse Team&quot;&gt;
+    &lt;parameters&gt;
+        &lt;builtIn name=&quot;itemUID&quot;/&gt;
+    &lt;/parameters&gt;
+    &lt;pageItemHTML&gt;
+&lt;![CDATA[
+        You&#39;ve clicked on this item &lt;span class=&quot;count&quot;&gt;0&lt;/span&gt; times.
+]]&gt;
+    &lt;/pageItemHTML&gt;
+    &lt;bodyEndHTML&gt;
+&lt;![CDATA[
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            $(&quot;#{param_itemUID}&quot;).data(&#39;clickCount&#39;, 0).on(&#39;click&#39;, function () {
+                    $(this).data(&#39;clickCount&#39;, $(this).data(&#39;clickCount&#39;) + 1);
+                    $(this).find(&#39;.count&#39;).text($(this).data(&#39;clickCount&#39;));
+                });
+        &lt;/script&gt;
+]]&gt;
+    &lt;/bodyEndHTML&gt;
+&lt;/HTMLWidget&gt;</code></pre>
+
+		</article>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

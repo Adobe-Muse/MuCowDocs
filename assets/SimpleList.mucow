@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+HTML Widget for Simple HTML lists.
+A simple unordered list.
+Muse user can choose which list style they want.
+Text styling can be applied to this list within Muse.
+The max size of the list is fixed at 10. 
+Empty list elements are removed via JavaScript.
+-->
+<HTMLWidget name="Simple List" formatNumber="1"  localization="none" creator="Adobe Muse Team" defaultWidth="250" defaultHeight="250">
+	<parameters>
+<!--
+`listStyle` sets what kind of list decoration to use. User can pick from the standard HTML list types.
+-->
+		<list name="listStyle" label="List Style:" defaultValue="disc">
+			<value name="disc" label="Disc"/>
+			<value name="circle" label="Circle"/>
+			<value name="square" label="Square"/>
+			<value name="decimal" label="Decimal Number"/>
+			<value name="decimal-leading-zero" label="Decimal Number with Leading 0s"/>
+			<value name="lower-alpha" label="Lowercase Alphabet"/>
+			<value name="upper-alpha" label="Uppercase Alphabet"/>
+			<value name="lower-roman" label="Lowercase Roman Numerals"/>
+			<value name="upper-roman" label="Uppercase Roman Numerals"/>
+		</list>
+<!--
+`item1` through `item12` sets the value for each list element
+-->
+		<text name="item1" label="List Item #1:" defaultValue="item 1"/>
+		<text name="item2" label="List Item #2:" defaultValue="item 2"/>
+		<text name="item3" label="List Item #3:" defaultValue="item 3"/>
+		<text name="item4" label="List Item #4:" defaultValue="item 4"/>
+		<text name="item5" label="List Item #5:" defaultValue="item 5"/>
+		<text name="item6" label="List Item #6:" defaultValue="item 6"/>
+		<text name="item7" label="List Item #7:" defaultValue="item 7"/>
+		<text name="item8" label="List Item #8:" defaultValue="item 8"/>
+		<text name="item9" label="List Item #9:" defaultValue="item 9"/>
+		<text name="item10" label="List Item #10:" defaultValue="item 10"/>
+		<text name="item11" label="List Item #11:" defaultValue="item 11"/>
+		<text name="item12" label="List Item #12:" defaultValue="item 12"/>
+<!--
+`width` is set to the width of this page item
+-->
+		<builtIn name="width"/>
+<!--
+`height` is set to the height of this page item
+-->
+		<builtIn name="height"/>
+<!--
+`itemUID` is set to the unique ID of this page item. Usually used for CSS styling and to provide an easy way 
+for javascript code to find this widget
+-->
+		<builtIn name="itemUID"/>
+	</parameters>
+	
+<!--
+`headHTML` is the HTML code to be inserted into the <head> tag.
+This widget includes some CSS styling in the <head>. Note the use of the item UID as a CSS selector.
+-->
+	<headHTML>
+<![CDATA[
+<style>
+#{param_itemUID} ul { list-style-position:inside; list-style-type:{param_listStyle}; width:{param_width}px; height:{param_height}px;}
+#{param_itemUID} li { list-style-position:inside; list-style-type:{param_listStyle}; }
+</style>
+]]>
+	</headHTML>
+
+<!--
+`pageItemHTML` is the HTML code to be inserted wherever this page item is positioned on the page.
+This widget just includes a simple HTML list
+-->
+	<pageItemHTML>
+<![CDATA[
+<ul>
+<li>{param_item1}</li>
+<li>{param_item2}</li>
+<li>{param_item3}</li>
+<li>{param_item4}</li>
+<li>{param_item5}</li>
+<li>{param_item6}</li>
+<li>{param_item7}</li>
+<li>{param_item8}</li>
+<li>{param_item9}</li>
+<li>{param_item10}</li>
+<li>{param_item11}</li>
+<li>{param_item12}</li>
+</ul>
+]]>
+	</pageItemHTML>
+
+<!--
+`bodyEndHTML` is the HTML code to be inserted just before the close of the <body> tag.
+This widget includes a bit of jquery javascript to remove any empty list elements. Note the use of the itemUID to target only 
+empty list elements within the HTML output of this widget.
+-->
+	<bodyEndHTML>
+<![CDATA[
+
+<script type="text/javascript">
+  $("#{param_itemUID}").find("li").remove( ":empty" );
+</script>
+]]>
+	</bodyEndHTML>
+
+</HTMLWidget>

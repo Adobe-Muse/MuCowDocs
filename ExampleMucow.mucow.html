@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ExampleMucow.mucow</title>
+		<link href="css/basic.css" rel="stylesheet" >
+		<link href="css/vs.css" rel="stylesheet" >
+	</head>
+	<body>
+		<header>
+			<a href="./" id="back">Back to Docs</a>
+			<h1><a href="assets/ExampleMucow.mucow">ExampleMucow.mucow</a></h1>
+		</header>
+		<div id="content">
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>&lt;HTMLWidget&gt;</code> is the top level element which all other elements
+will be a child of. It contains the attributes for the widget as
+a whole.</p>
+</div><pre class="Code"><code class="xml"><span class="tag">&lt;<span class="title">HTMLWidget</span> <span class="attribute">name</span>=<span class="value">"Example"</span> <span class="attribute">formatNumber</span>=<span class="value">"1"</span> 
+		<span class="attribute">localization</span>=<span class="value">"none"</span> <span class="attribute">creator</span>=<span class="value">"Adobe Muse Team"</span>
+		<span class="attribute">isResizable</span>=<span class="value">"false"</span> <span class="attribute">defaultWidth</span>=<span class="value">"100"</span> <span class="attribute">defaultHeight</span>=<span class="value">"35"</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">parameters</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">bool</span> <span class="attribute">name</span>=<span class="value">"toggleOption"</span> <span class="attribute">label</span>=<span class="value">"Toggle Option"</span> <span class="attribute">defaultValue</span>=<span class="value">"foo"</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">trueVal</span> <span class="attribute">value</span>=<span class="value">"foo"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>disableOptions</code> disables both <code>myTextBox</code> and <code>myURL</code> options when
+this option is unchecked.</p>
+</div><pre class="Code"><code class="xml">			<span class="tag">&lt;<span class="title">falseVal</span> <span class="attribute">value</span>=<span class="value">"bar"</span> <span class="attribute">disableOptions</span>=<span class="value">"myTextBox,myURL"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">		<span class="tag">&lt;/<span class="title">bool</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"myTextBox"</span> <span class="attribute">defaultValue</span>=<span class="value">"Default Text Here"</span> <span class="attribute">label</span>=<span class="value">"Text Box: "</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"myURL"</span> <span class="attribute">defaultValue</span>=<span class="value">"http://muse.adobe.com/"</span> <span class="attribute">label</span>=<span class="value">"URL: "</span> /&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>itemUID</code> is the id for the page item the will contain the
+<code>&lt;pageItemHTML&gt;</code> content</p>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"itemUID"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;/<span class="title">parameters</span>&gt;</span>
+	
+	<span class="tag">&lt;<span class="title">pageItemHTML</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p>Don&#39;t forget to wrap your content in a <code>&lt;![CDATA[ ]]&gt;</code> tag</p>
+</div><pre class="Code"><code class="xml"><span class="cdata">&lt;![CDATA[
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">		Hello, {param_itemUID}!
+]]&gt;
+	<span class="tag">&lt;/<span class="title">pageItemHTML</span>&gt;</span>
+	
+<span class="tag">&lt;/<span class="title">HTMLWidget</span>&gt;</span></code></pre></section>
+			
+		</div>
+		<script type="text/javascript" src="js/simple.js"></script>
+	</body>
+</html>
