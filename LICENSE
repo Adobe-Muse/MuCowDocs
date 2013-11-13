@@ -1,21 +1,11 @@
-(MIT License)
+© 2013 Adobe Systems Incorporated. 
 
-Copyright (c) 2013 Adobe Systems Incorporated. All rights reserved.
- 
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"), 
-to deal in the Software without restriction, including without limitation 
-the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-and/or sell copies of the Software, and to permit persons to whom the 
-Software is furnished to do so, subject to the following conditions:
- 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
- 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-DEALINGS IN THE SOFTWARE.
+This MuCow documentation (the “Work”) is made available under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License (CC BY-NC-SA 3.0) http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+Example code included in the Work is available under the Creative Commons Plus License for Adobe example code http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html:  
+
+ • The attribution (BY) and share alike (SA) requirement of the license remain unchanged, however
+ • You may re-use any of the examples of code from the Work in your products, commercial, or non-commercial (NC).
+ • You can only re-use the description of the code (title, metadata and text describing the code, etc.) based on the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License. You may not take and use the description of the code commercially without the author’s permission. 
+ • THE EXAMPLES OF CODE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
