@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+`<HTMLWidget>` is the top level element which all other elements
+will be a child of. It contains the attributes for the widget as
+a whole.
+
+This widget lists the values for all the current builtIn mucow parameters.
+-->
+<HTMLWidget name="kBuiltIn" formatNumber="1" localization="stringTable" 
+	creator="Adobe Muse Team" defaultWidth="250" defaultHeight="200" 
+	minWidth="40" minHeight="25" maxWidth="900" maxHeight="500">
+<!-- ! -->
+	<parameters>
+<!--
+`someURL` is the url entered by the user, or the URL for the page this item is on. The UI provides a checkbox for the user to pick which one.
+-->
+		<url name="someURL" currentPageOrURL="true"
+			label="kURLLabel" defaultValue="www.adobe.com"/>
+<!--
+`width` is the width of this page item within Muse
+-->
+		<builtIn name="width"/>
+<!--
+`height` is the height of this page item within Muse
+-->
+		<builtIn name="height"/>
+<!--
+`itemUID` is the id for the page item the will contain the
+`<pageItemHTML>` content
+-->
+		<builtIn name="itemUID"/>
+<!--
+`siteUID` is an ID unique to the Muse site
+-->
+		<builtIn name="siteUID"/>
+<!--
+`language` is the character code for the language of the current Muse document (e.g. en, fr, es)
+-->
+		<builtIn name="language" supportedLanguages="en,fr,ja,es,de,it,pt,ko,tr,ru,nl,no,sv,fi,da,cs"/>
+<!--
+`country` is the country code for the current Muse document (e.g. US, FR, JP)
+-->
+		<builtIn name="country"/>
+<!--
+`locale` is the language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
+-->
+		<builtIn name="locale" supportedLocales="cs_CZ,da_DK,de_DE,en_GB,en_US,es_ES,fi_FI,fr_FR,it_IT,ja_JP,nb_NO,ru_RU,tr_TR"/>
+<!-- ! -->
+	</parameters>
+
+	<headHTML>
+<![CDATA[
+<!--
+The div for this page item will have an id assigned which is something like u345. 
+This CSS selector targets all the ul and li elements inside the root div for this page item. 
+If the page item is assigned id u345 by Muse, this CSS will target #u345 ul and #u345 li elements.
+We have to add the list-style-type because Muse has some default CSS styling for ul and li elements which removes the list-style-type.
+We also set the list-style-position to inside so that the preview in Muse includes the list bullets.
+-->
+<style>
+#{param_itemUID} ul { list-style-position:inside; list-style-type:disc; }
+#{param_itemUID} li { list-style-position:inside; list-style-type:disc; }
+</style>
+<!-- ! -->
+
+]]>
+	</headHTML>
+<!--
+`pageItemHTML` is the HTML code which will be output by Muse wherever this page item is positioned by the Muse user.
+-->
+	<pageItemHTML>
+<![CDATA[
+<p><b>Built In Parameters</b></p>
+<br/>
+<ul>
+	<li> <b>URL:</b> {param_someURL}
+	<li> <b>Page item Width:</b> {param_width}
+	<li> <b>Page item Height:</b> {param_height}
+	<li> <b>Item UID:</b> {param_itemUID}
+	<li> <b>Site UID:</b> {param_siteUID}
+	<li> <b>Language Code:</b> {param_language}
+	<li> <b>Locale Code:</b> {param_locale}
+	<li> <b>Country Code:</b> {param_country}
+</ul>
+]]>
+	</pageItemHTML>
+<!-- ! -->
+	
+<!--
+`stringTable` is used for localization when the localization parameter on the HTMLWidget element is set to stringtable
+-->
+	<stringTable>
+		<locale name="en_US">
+			<string keyString="kBuiltIn" translation="Built In Parameter"/>
+			<string keyString="kURLLabel" translation="Some URL:"/>
+		</locale>
+		<locale name="fr_FR">
+			<string keyString="kBuiltIn" translation="Le Built In Paraméter"/>
+			<string keyString="kURLLabel" translation="Quelque URL: "/>
+		</locale>
+	</stringTable>
+<!-- ! -->
+
+</HTMLWidget>

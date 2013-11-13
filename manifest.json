@@ -1,0 +1,41 @@
+{
+	"pages":[
+		"01-Getting Started.md",
+		"02-HTMLWidget.md",
+		"03-Parameter Tags.md",
+		"04-Content Tags.md",
+		"05-Localization.md",
+		"06-Tutorials.md"
+	],
+	"name": "MuCow Documentation",
+	"singlePage": true,
+	"images": [
+		"images/"
+	],
+	"assets": [
+		"examples/"
+	],
+	"postMenu": [
+		{
+			"Name": "Examples",
+			"SubMenu" : [
+				{
+					"Name" : "Basic",
+					"URL": "/ExampleMucow.mucow.html"
+				},
+				{
+					"Name" : "Built-Ins",
+					"URL": "/BuiltIn.mucow.html"
+				},
+				{
+					"Name" : "Calculator",
+					"URL": "/Calculator.mucow.html"
+				},
+				{
+					"Name" : "Simple List",
+					"URL": "/SimpleList.mucow.html"
+				}
+			]
+		}
+	]
+}

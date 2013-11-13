@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+`<HTMLWidget>` is the top level element which all other elements
+will be a child of. It contains the attributes for the widget as
+a whole.
+
+A very simple calculator. 
+Defaults and some styling can be configured within Muse.
+Text styling can be applied within Muse.
+Website visitors can add, subtract, multiply or divide 2 numbers.
+
+-->
+<HTMLWidget name="Calculator" formatNumber="1"  localization="none" creator="Adobe Muse Team" minWidth="80" defaultWidth="400" defaultHeight="50">
+<!-- ! -->
+	<parameters>
+<!--
+`borderSize` is the thickness of the border applied to the editboxes
+-->
+		<number name="borderSize" label="Edit field Border:" min="0" max="9999" snap="1" step="1" defaultValue="2"/>
+<!--
+`editWidth` is the width of the editboxes
+-->
+		<number name="editWidth" label="Edit field Width:" min="10" max="9999" snap="1" step="1" defaultValue="80"/>
+<!--
+`margin` controls the space between the editboxes
+-->
+		<number name="margin" label="Space between:" min="1" max="9999" defaultValue="10"/>
+<!--
+`input1default` sets the default value for the first edit field
+-->
+		<number name="input1default" label="First default value:" min="-9999999" max="99999999" snap="0.0001" defaultValue="5"/>
+<!--
+`input2default` sets the default value for the second edit field
+-->
+		<number name="input2default" label="Second default value:" min="-9999999" max="99999999" snap="0.0001" defaultValue="10"/>
+<!--
+`borderColor` sets the color of the border of the edit fields. Note the use of 'inherit' as one option, which inherits the stroke
+color set by the user on the page item in Muse.
+-->
+		<list name="borderColor" label="Edit Field Border Color:" defaultValue="#000">
+			<value name="inherit" label="Use Muse Stroke Color"/>
+			<value name="#FFF" label="White"/>
+			<value name="#000" label="Black"/>
+			<value name="#444" label="Dark Grey"/>
+			<value name="#999" label="Light Grey"/>
+			<value name="#F00" label="Red"/>
+			<value name="#0F0" label="Green"/>
+			<value name="#00F" label="Blue"/>
+			<value name="#FF0" label="Yellow"/>
+			<value name="#0FF" label="Cyan"/>
+			<value name="#FA0" label="Orange"/>
+			<value name="#F0F" label="Purple"/>
+		</list>
+<!--
+`width` is the width of the pageitem within Muse
+-->
+		<builtIn name="width"/>
+<!--
+`height` is the height of the pageitem within Muse
+-->
+		<builtIn name="height"/>
+<!--
+`itemUID` is the unique ID for this page item. It can be used as a CSS selector to limit CSS styling to just this widget.
+-->
+		<builtIn name="itemUID"/>
+<!-- ! -->
+	</parameters>
+	
+<!--
+`headHTML` is HTML which will be injected into the <head> tag by Muse during output.
+This widget includes some CSS styling in the <head>, targetted to just the elements inside this widget.
+-->
+	<headHTML>
+<![CDATA[
+<style>
+#{param_itemUID} form { display:block; width:{param_width}px; height:{param_height}px; border-color:inherit;}
+#{param_itemUID} .addRightMargin {  margin-right:{param_margin}px}
+#{param_itemUID} .calcInput { border-width:{param_borderSize}px; width:{param_editWidth}px; border-color:{param_borderColor};}
+#{param_itemUID} .calcButton { border-width:2px; width:40px;}
+</style>
+]]>
+	</headHTML>
+
+<!--
+`pageItemHTML` is HTML which will be output by Muse wherever the page item is positioned by the user.
+In this case, the HTML contains a simple form with 2 edit fields, a dropdown to choose the operator, and a button to do the calculation.
+-->
+	<pageItemHTML>
+<![CDATA[
+<form name="calcForm{param_itemUID}">
+	<input class ="calcInput addRightMargin" type="text" name="input1" value="{param_input1default}">
+	<select class="addRightMargin" name="operatorMenu">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="/">/</option>
+		<option value="*">*</option>
+	</select>
+	<input class ="calcInput addRightMargin" type="text" name="input2" value="{param_input2default}">
+	<input class ="calcButton addRightMargin" type="button" name="doEquals"  value="  =  " onClick="calcForm{param_itemUID}.resultField.value = eval(calcForm{param_itemUID}.input1.value + calcForm{param_itemUID}.operatorMenu.value + calcForm{param_itemUID}.input2.value)">
+	<input class ="calcInput" type="text" name="resultField">
+</form>
+]]>
+	</pageItemHTML>
+<!-- ! -->
+
+</HTMLWidget>
