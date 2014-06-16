@@ -35,12 +35,13 @@ the keyboard shortcut CTRL/CMD + D.
 
 ## Where can I share it?
 The recommended way to share your MuCow with others is by adding it to a
-library, exporting the library, and submitting it to the [Adobe Muse
-Exchange][2]. You may also submit the .mucow file if you'd like it to be used
-as an example by others who want to create their own. If you do choose to
+library, exporting the library, and submitting it to the [Adobe Add-on
+marketplace][2]. You may also submit the .mucow file if you'd like it to be
+used as an example by others who want to create their own. If you do choose to
 include both, simply place the files into a .zip folder, and upload that
 instead. To learn more about creating user library items please refer to
-[the help page for the library panel][3].
+[the help page for the library panel][3]. To learn more about submitting
+content to the Adobe Add-on marketplace refer to [the Add-on help page][6].
 
 ## Can I use jQuery?
 
@@ -48,8 +49,9 @@ instead. To learn more about creating user library items please refer to
 in [`<bodyEndHTML>`][4] tag. You can also check out our [jQuery Tutorial][5].
 
  [1]: http://forums.adobe.com/community/muse
- [2]: http://muse.adobe.com/exchange
+ [2]: http://www.adobe.com/go/muse_add-ons
  [3]: http://helpx.adobe.com/en/muse/tutorials/organizing-reusing-elements-using-library-panel.html
  [4]: ./04-Content%20Tags.md
  [5]: ./06-Tutorials.md
+ [6]: https://www.adobeexchange.com/resources
  
