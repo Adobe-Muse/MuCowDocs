@@ -4,7 +4,7 @@ There are several parameter tags available to create the MuCow widget's On-Objec
 Parameters can then be included in your code, and replaced
 
 ## `<text>`
-Specifies a parameter that will be user entered text. This text can be displayed as either a single-line or multi-line entry box in the OOUI.
+Specifies a parameter that will be user entered text. This text can be displayed as either a single-line or multi-line entry box in the OOUI. The maximum number of characters allowed in this field is 2048 starting with Muse 2014.0. Prior to this, the maximum was 1024.
 
 ### Examples
 	<text name="myTextBox" defaultValue="The default value" />
@@ -24,12 +24,13 @@ Specifies a parameter that will be user entered text. This text can be displayed
 | defaultValue | String | The default value this item should have when first placed |
 
 ### Optional Attributes
-| Name | Values | Description |
-|---|---|---|
-| label | String | Label to display in the OOUI |
-| tooltip | String | Tooltip to display in the OOUI when hovering over this option |
-| paramEncoding | `URIComponent` <br/> `spaceToPlus` | The type of encoding to apply to the entered parameter |
-| multiline | Boolean | If set to true a multiline text control will be created in the UI instead of a single line text box. |
+| Name | Values | Minimum Format | Description |
+|---|---|---|---|
+| label | String | | Label to display in the OOUI |
+| tooltip | String | | Tooltip to display in the OOUI when hovering over this option |
+| paramEncoding | `URIComponent` <br/> `spaceToPlus` | | The type of encoding to apply to the entered parameter |
+| multiline | Boolean | | If set to true a multiline text control will be created in the UI instead of a single line text box. |
+| defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
 
 ## `<list>`
 Specifies a parameter that a user can select from a set of given options. Options are given using `<value>` tags, which are children of the `<list>` tag. See Child Tags section.
@@ -88,13 +89,14 @@ Specifies the user should enter either a partial or full URL.
 | defaultValue | String | The default value this item should have when first placed. This must match one of the `name` attributes of a child `<value>` element. |
 
 ### Optional Attributes
-| Name | Values | Description |
-|---|---|---|
-| label | String | Label to display in the OOUI |
-| tooltip | String | Tooltip to display in the OOUI when hovering over this option |
-| urlStart | String | A comma separated list of URL prefixes. all entered URLs must start with one of these, or be incomplete URLs. |
-| currentPageOrURL | String | If set to 'true', user will be able to enter an arbitrary URL, or choose the URL for the current Muse Page. |
-| dummyDomainPrefix | String | If the user hasn't yet entered a domain name, when generating HTML for the current page, this dummy prefix will be used, along with a <abbr title="Globaly Unique Identifier">GUID</abbr>. |
+| Name | Values | Minimum Format | Description |
+|---|---|---|---|
+| label | String | | Label to display in the OOUI |
+| tooltip | String | | Tooltip to display in the OOUI when hovering over this option |
+| urlStart | String | | A comma separated list of URL prefixes. all entered URLs must start with one of these, or be incomplete URLs. |
+| currentPageOrURL | Boolean | | If set to 'true', user will be able to enter an arbitrary URL, or choose the URL for the current Muse Page. |
+| dummyDomainPrefix | String | | If the user hasn't yet entered a domain name, when generating HTML for the current page, this dummy prefix will be used, along with a <abbr title="Globaly Unique Identifier">GUID</abbr>. |
+| defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
 
 ## `<bool>`
 Specifies an option that the user will be able to toggle on/off. Must include the values to use for true & false. One or both values may disable other options. Multiple bool UI elements will be arranged in columns
@@ -147,7 +149,7 @@ Specifies the user entered value should be a number
 	<number name="myNumber" min="1" max="100" step="1" 
 		snap="0.1" defaultValue="1" label="Number: "/>
 
-![Example <bool> parameter tag with option on](images/example_param_tag_number.png)
+![Example <number> parameter tag](images/example_param_tag_number.png)
 
 ### Required Attributes
 | Name | Values | Description |
@@ -220,6 +222,43 @@ A built in is a special type that allows you to get values that are specified di
 		Language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
 	</dd>
 </dl>
+
+## `<info>`
+Informative text to show in the On-Object UI, which can optionally link to a URL. **Only supported by widgets format 2 or above.**
+
+### Examples
+
+	<info label="You can place informative text here."/>
+
+![Example <info> parameter tag](images/example_param_tag_info.png)
+
+	<info label="Click Here!" linkURL="http://muse.adobe.com"/>
+
+![Example <info> parameter tag with a link](images/example_param_tag_info_link.png)
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| value | String | The text to display to the user |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| linkURL | URL | The URL to take the user to if the text is clicked |
+
+## `<separator>`
+A line used to separate parameters in the On-Object UI. **Only supported by widgets format 2 or above.**
+
+### Examples
+
+	<text name="name" label="Name:" defaultValue="You" />
+	<separator/>
+	<info label="Here's some more content"/>
+
+![Example <separator> parameter tag](images/example_param_tag_separator.png)
+
+### Attributes
+None
 
 
  [1]: ./04-Content%20Tags.md
