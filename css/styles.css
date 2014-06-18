@@ -134,6 +134,7 @@ html,
 body {
   min-height: 100%;
   font-family: source-sans-pro, sans-serif;
+  background-color: #ffffff;
 }
 #navigation {
   background-color: #202020;
@@ -182,6 +183,7 @@ article {
   padding: 10px 50px;
   font-size: 18px;
   line-height: 22px;
+  color: #000000;
 }
 article p,
 article h1,
@@ -242,7 +244,7 @@ article ul {
   list-style-type: disc;
 }
 article ol {
-  list-style-type: numeric;
+  list-style-type: decimal;
   margin: 5px 5px 10px 35px;
 }
 article ol ol,
