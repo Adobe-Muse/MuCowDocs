@@ -138,7 +138,7 @@ body {
 }
 #navigation {
   background-color: #202020;
-  color: #FFFFFF;
+  color: #ffffff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 310px;
@@ -146,9 +146,8 @@ body {
   overflow: auto;
   padding: 0px 10px;
 }
-#navigation footer {
-  padding-top: 25px;
-  padding-bottom: 10px;
+#navigation nav {
+  padding-bottom: 35px;
 }
 #navigation h1 {
   padding: 10px 5px 0px;
@@ -202,7 +201,6 @@ article h4 code,
 article h5 code,
 article h6 code {
   background-color: transparent;
-  font-family: inherit;
 }
 article h1 {
   font-size: 42px;
@@ -223,7 +221,7 @@ article h3 {
   padding: 20px 25px 5px;
 }
 article h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding: 15px 45px 5px;
 }
@@ -244,7 +242,7 @@ article ul {
   list-style-type: disc;
 }
 article ol {
-  list-style-type: decimal;
+  list-style-type: numeric;
   margin: 5px 5px 10px 35px;
 }
 article ol ol,
