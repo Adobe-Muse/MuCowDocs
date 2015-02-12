@@ -257,8 +257,50 @@ A line used to separate parameters in the On-Object UI. **Only supported by widg
 
 ![Example <separator> parameter tag](images/example_param_tag_separator.png)
 
-### Attributes
-None
+## `<file>`
+Specifies a parameter that will be a user chosen file. This file will be added as a file for upload. **Only supported by widgets format 3 or above.**
 
+### Examples
+
+	<file name="img1" label="Choose an Image:" filterLabel="Images" fileTypes="*.jpg;*.jpeg;*.png;*.gif" fileRequiredForOutput="true"/>
+
+![Example <file> parameter tag](images/example_param_tag_file.png)
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| name | String | The name of the value |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| label | String | Label to display in the OOUI |
+| filterLabel | String | Label for filter in the file browse dialog |
+| fileTypes | String | File types allowed in the file browse dialog. Should be a semicolon-separated list in format "\*.ext;\*.ext2" |
+| fileRequiredForOutput | Boolean | Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false. |
+
+## `<color>`
+Specifies a parameter that will be user chosen color. Presented to the user as a color picker in the UI. **Only supported by widgets format 3 or above.**
+
+### Examples
+
+	<color name="textColor" label="Text Color" defaultValue="#C74040"/>
+	<color name="backgroundColor" label="Background Color" rgbColor="true" defaultValue="0, 0, 255"/>
+
+![Example <color> parameter tag](images/example_param_tag_color.png)
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| name | String | The name of the value |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| label | String | Label to display in the OOUI |
+| defaultValue | String | Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value. |
+| rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
+| formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
+| supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
 
  [1]: ./04-Content%20Tags.md
