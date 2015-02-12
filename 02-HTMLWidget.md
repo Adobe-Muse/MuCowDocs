@@ -5,7 +5,7 @@ The `<HTMLWidget>` tag is the top level tag of all MuCow files.
 ## Example
 
 	<?xml version="1.0" encoding="UTF-8"?>
-	<HTMLWidget name="My Widget" formatNumber="2"
+	<HTMLWidget name="My Widget" formatNumber="3"
 			localization="none" creator="My Name" 
 			defaultWidth="50" defaultHeight="50" 
 			isResizable="true">
