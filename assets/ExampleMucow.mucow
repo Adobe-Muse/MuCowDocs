@@ -7,6 +7,7 @@ a whole.
 <HTMLWidget name="Example" formatNumber="1" 
 		localization="none" creator="Adobe Muse Team"
 		isResizable="false" defaultWidth="100" defaultHeight="35">
+<!-- ! -->
 	<parameters>
 		<bool name="toggleOption" label="Toggle Option" defaultValue="foo">
 			<trueVal value="foo"/>
@@ -15,6 +16,7 @@ a whole.
 this option is unchecked.
 -->
 			<falseVal value="bar" disableOptions="myTextBox,myURL"/>
+<!-- ! -->
 		</bool>
 		<text name="myTextBox" defaultValue="Default Text Here" label="Text Box: " />
 		<text name="myURL" defaultValue="http://muse.adobe.com/" label="URL: " />
@@ -23,6 +25,7 @@ this option is unchecked.
 `<pageItemHTML>` content
 -->
 		<builtIn name="itemUID"/>
+<!-- ! -->
 	</parameters>
 	
 	<pageItemHTML>
@@ -30,6 +33,7 @@ this option is unchecked.
 Don't forget to wrap your content in a `<![CDATA[ ]]>` tag
 -->
 <![CDATA[
+<!-- ! -->
 		Hello, {param_itemUID}!
 ]]>
 	</pageItemHTML>

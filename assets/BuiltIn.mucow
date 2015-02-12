@@ -6,12 +6,16 @@ a whole.
 
 This widget lists the values for all the current builtIn mucow parameters.
 -->
-<HTMLWidget name="kBuiltIn" formatNumber="1" localization="stringTable" creator="Adobe Muse Team" defaultWidth="250" defaultHeight="200" minWidth="40" minHeight="25" maxWidth="900" maxHeight="500">
+<HTMLWidget name="kBuiltIn" formatNumber="1" localization="stringTable" 
+	creator="Adobe Muse Team" defaultWidth="250" defaultHeight="200" 
+	minWidth="40" minHeight="25" maxWidth="900" maxHeight="500">
+<!-- ! -->
 	<parameters>
 <!--
 `someURL` is the url entered by the user, or the URL for the page this item is on. The UI provides a checkbox for the user to pick which one.
 -->
-		<url name="someURL" currentPageOrURL="true" label="kURLLabel" defaultValue="www.adobe.com"/>
+		<url name="someURL" currentPageOrURL="true"
+			label="kURLLabel" defaultValue="www.adobe.com"/>
 <!--
 `width` is the width of this page item within Muse
 -->
@@ -41,6 +45,7 @@ This widget lists the values for all the current builtIn mucow parameters.
 `locale` is the language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
 -->
 		<builtIn name="locale" supportedLocales="cs_CZ,da_DK,de_DE,en_GB,en_US,es_ES,fi_FI,fr_FR,it_IT,ja_JP,nb_NO,ru_RU,tr_TR"/>
+<!-- ! -->
 	</parameters>
 
 	<headHTML>
@@ -56,6 +61,8 @@ We also set the list-style-position to inside so that the preview in Muse includ
 #{param_itemUID} ul { list-style-position:inside; list-style-type:disc; }
 #{param_itemUID} li { list-style-position:inside; list-style-type:disc; }
 </style>
+<!-- ! -->
+
 ]]>
 	</headHTML>
 <!--
@@ -77,6 +84,7 @@ We also set the list-style-position to inside so that the preview in Muse includ
 </ul>
 ]]>
 	</pageItemHTML>
+<!-- ! -->
 	
 <!--
 `stringTable` is used for localization when the localization parameter on the HTMLWidget element is set to stringtable
@@ -91,4 +99,6 @@ We also set the list-style-position to inside so that the preview in Muse includ
 			<string keyString="kURLLabel" translation="Quelque URL: "/>
 		</locale>
 	</stringTable>
+<!-- ! -->
+
 </HTMLWidget>

@@ -8,6 +8,7 @@ The max size of the list is fixed at 10.
 Empty list elements are removed via JavaScript.
 -->
 <HTMLWidget name="Simple List" formatNumber="1"  localization="none" creator="Adobe Muse Team" defaultWidth="250" defaultHeight="250">
+<!-- ! -->
 	<parameters>
 <!--
 `listStyle` sets what kind of list decoration to use. User can pick from the standard HTML list types.
@@ -51,6 +52,7 @@ Empty list elements are removed via JavaScript.
 for javascript code to find this widget
 -->
 		<builtIn name="itemUID"/>
+<!-- ! -->
 	</parameters>
 	
 <!--
@@ -102,5 +104,7 @@ empty list elements within the HTML output of this widget.
 </script>
 ]]>
 	</bodyEndHTML>
+<!-- ! -->
+
 
 </HTMLWidget>

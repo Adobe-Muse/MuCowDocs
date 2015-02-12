@@ -11,6 +11,7 @@ Website visitors can add, subtract, multiply or divide 2 numbers.
 
 -->
 <HTMLWidget name="Calculator" formatNumber="1"  localization="none" creator="Adobe Muse Team" minWidth="80" defaultWidth="400" defaultHeight="50">
+<!-- ! -->
 	<parameters>
 <!--
 `borderSize` is the thickness of the border applied to the editboxes
@@ -62,6 +63,7 @@ color set by the user on the page item in Muse.
 `itemUID` is the unique ID for this page item. It can be used as a CSS selector to limit CSS styling to just this widget.
 -->
 		<builtIn name="itemUID"/>
+<!-- ! -->
 	</parameters>
 	
 <!--
@@ -99,4 +101,6 @@ In this case, the HTML contains a simple form with 2 edit fields, a dropdown to 
 </form>
 ]]>
 	</pageItemHTML>
+<!-- ! -->
+
 </HTMLWidget>

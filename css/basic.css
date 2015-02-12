@@ -74,7 +74,6 @@ header #back:before {
 .Code {
 	background-color: #EFEFFF;
 	font-family: "Courier New", monospace;
-	white-space: pre-wrap;
 }
 .Highlight:hover .CodeComment {
 	background-color: #F0F0F0;
