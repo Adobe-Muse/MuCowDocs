@@ -12,7 +12,7 @@ Specifies a parameter that will be user entered text. This text can be displayed
 ![Example <text> parameter tag](images/example_param_tag_text.png)
 
 	<text name="myTextBox" defaultValue="The default value" 
-		label="A Label" tooltip="This is the tooltip"
+		label="A Label" toolTip="This is the toolTip"
 		multiline="true" />
 
 ![Example <text> parameter tag with the multiline option set](images/example_param_tag_multiline_text.png)
@@ -27,7 +27,7 @@ Specifies a parameter that will be user entered text. This text can be displayed
 | Name | Values | Minimum Format | Description |
 |---|---|---|---|
 | label | String | | Label to display in the OOUI |
-| tooltip | String | | Tooltip to display in the OOUI when hovering over this option |
+| toolTip | String | | Tooltip to display in the OOUI when hovering over this option |
 | paramEncoding | `URIComponent` <br/> `spaceToPlus` | | The type of encoding to apply to the entered parameter |
 | multiline | Boolean | | If set to true a multiline text control will be created in the UI instead of a single line text box. |
 | defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
@@ -54,7 +54,7 @@ Specifies a parameter that a user can select from a set of given options. Option
 | Name | Values | Description |
 |---|---|---|
 | label | String | Label to display in the OOUI |
-| tooltip | String | Tooltip to display in the OOUI when hovering over this option |
+| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
 
 ### Child tags
 #### `<value>`
@@ -92,7 +92,7 @@ Specifies the user should enter either a partial or full URL.
 | Name | Values | Minimum Format | Description |
 |---|---|---|---|
 | label | String | | Label to display in the OOUI |
-| tooltip | String | | Tooltip to display in the OOUI when hovering over this option |
+| toolTip | String | | Tooltip to display in the OOUI when hovering over this option |
 | urlStart | String | | A comma separated list of URL prefixes. all entered URLs must start with one of these, or be incomplete URLs. |
 | currentPageOrURL | Boolean | | If set to 'true', user will be able to enter an arbitrary URL, or choose the URL for the current Muse Page. |
 | dummyDomainPrefix | String | | If the user hasn't yet entered a domain name, when generating HTML for the current page, this dummy prefix will be used, along with a <abbr title="Globaly Unique Identifier">GUID</abbr>. |
@@ -120,7 +120,7 @@ Specifies an option that the user will be able to toggle on/off. Must include th
 | Name | Values | Description |
 |---|---|---|
 | label | String | Label to display in the OOUI |
-| tooltip | String | Tooltip to display in the OOUI when hovering over this option |
+| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
 
 ### Child tags
 #### `<trueVal>`
@@ -163,7 +163,7 @@ Specifies the user entered value should be a number
 | Name | Values | Description |
 |---|---|---|
 | label | String | Label to display in the OOUI |
-| tooltip | String | Tooltip to display in the OOUI when hovering over this option |
+| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
 | step | Number | How large a step should be if the user clicks the up or down arrow. Defaults to 1 |
 | snap | Number | What increment should values snap to. Defaults to 1 |
 | digitsPrecision | Number | The number of digits to show after the decimal point |
@@ -257,8 +257,50 @@ A line used to separate parameters in the On-Object UI. **Only supported by widg
 
 ![Example <separator> parameter tag](images/example_param_tag_separator.png)
 
-### Attributes
-None
+## `<file>`
+Specifies a parameter that will be a user chosen file. This file will be added as a file for upload. **Only supported by widgets format 3 or above.**
 
+### Examples
+
+	<file name="img1" label="Choose an Image:" filterLabel="Images" fileTypes="*.jpg;*.jpeg;*.png;*.gif" fileRequiredForOutput="true"/>
+
+![Example <file> parameter tag](images/example_param_tag_file.png)
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| name | String | The name of the value |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| label | String | Label to display in the OOUI |
+| filterLabel | String | Label for filter in the file browse dialog |
+| fileTypes | String | File types allowed in the file browse dialog. Should be a semicolon-separated list in format "\*.ext;\*.ext2" |
+| fileRequiredForOutput | Boolean | Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false. |
+
+## `<color>`
+Specifies a parameter that will be user chosen color. Presented to the user as a color picker in the UI. **Only supported by widgets format 3 or above.**
+
+### Examples
+
+	<color name="textColor" label="Text Color" defaultValue="#C74040"/>
+	<color name="backgroundColor" label="Background Color" rgbColor="true" defaultValue="0, 0, 255"/>
+
+![Example <color> parameter tag](images/example_param_tag_color.png)
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| name | String | The name of the value |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| label | String | Label to display in the OOUI |
+| defaultValue | String | Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value. |
+| rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
+| formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
+| supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
 
  [1]: ./04-Content%20Tags.md

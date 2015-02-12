@@ -32,6 +32,7 @@ support which MuCow formats
 | --- | --- |
 | 1 | 7.0 (Released Nov. 2013) |
 | 2 | 2014.0 (Released June 2014) |
+| 3 | 2014.3 (Released February 2015) |
 
 ## Where can I share it?
 The recommended way to share your MuCow with others is by adding it to a
@@ -48,4 +49,5 @@ content to the Adobe Add-on marketplace refer to [the Add-on help page][6].
  [3]: http://helpx.adobe.com/en/muse/tutorials/organizing-reusing-elements-using-library-panel.html
  [4]: ./04-Content%20Tags.md
  [5]: ./06-Tutorials.md
+
  [6]: https://www.adobeexchange.com/resources
