@@ -55,6 +55,7 @@ Specifies a parameter that a user can select from a set of given options. Option
 |---|---|---|
 | label | String | Label to display in the OOUI |
 | toolTip | String | Tooltip to display in the OOUI when hovering over this option |
+| disableOptions | List | A comma separated list of name values for options that are disabled when the item is in this state. |
 
 ### Child tags
 #### `<value>`
