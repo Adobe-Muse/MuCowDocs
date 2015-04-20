@@ -10,7 +10,7 @@ la etiqueta `<HTMLWidget>` es la etiqueta de nivel superior de todos los archivo
 			defaultWidth="50" defaultHeight="50" 
 			isResizable="true">
 		<!--
-			... Su contenido va aquí ...
+			... El contenido va aquí ...
 		-->
 	</HTMLWidget>
 
@@ -18,27 +18,22 @@ la etiqueta `<HTMLWidget>` es la etiqueta de nivel superior de todos los archivo
 | Nombre | Valores | Descripción |
 |---|---|---|
 | name | String | **Obligatorio**. El nombre del widget. Se mostrará en el cuadro Opciones de diálogo y también en la tira de control |
-| formatNum | 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Obligatorio**. El número de formato del archivo. Las versiones actuales de Muse apoyan formato 3 y abajo. |
-| localization | `none` <br> `stringTable` | **Required.** The type of [localization][1] for this widget |
-| termsURL | URL | The URL to a 'Terms of Use' page. A link to this URL will appear in options dialog if non-empty. If you specify termsURL, do not specify termsText |
-| termsText | String | HTML text to appear in a 'Terms of Use' dialog. Text may include links to URLs. If you specify termsText, do not specify termsURL |
-| creator | String | Indicates the name or email address of the person or company who created this HTML widget file |
-| defaultWidth | Number | Indicates the initial width for the HTML page item |
-| defaultHeight | Number | Indicates the initial height for the HTML page item |
-| isResizable | Boolean | Indicates if the page item should be user resizable. *Default value is true* |
-| minWidth | Number | Indicates the minimum allowable width for the page item. |
-| maxWidth | Number | Indicates the maximum allowable width for the page item. Setting this value means the widget can no longer be a 100% width page item. |
-| minHeight | Number | Indicates the minimum allowable height for the page item. |
-| maxHeight | Number | Indicates the maximum allowable height for the page item. |
+| formatNum | 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Obligatorio**. El número de formato del archivo. Las versiones actuales de Muse apoyan los tres valores de formato 3, 2, 1. |
+| localization | `none` <br> `stringTable` | **Obligatorio**. El tipo de [localización][1] para este widget |
+| termsURL | URL | La URL a una página de 'Términos de Uso'. Si no está vacío, un enlace a esta URL aparecerá en las opciones de diálogo . Si especifica términos URL, no especifique los términos del texto |
+| termsText | String | Texto HTML que aparesera en 'Términos de uso' del cuadro de diálogo. El texto puede incluir enlaces a direcciones URL. Si especifica los términos del texto, no especifique términos URL |
+| creator | String | Indica el nombre o dirección de email de la persona o empresa que creó el widget |
+| defaultWidth | Number | Indica la anchura inicial para el elemento de página HTML |
+| defaultHeight | Number | Indica la altura inicial para el elemento de página HTML |
+| isResizable | Boolean | Indica si el elemento de la página puede ser cambiado de tamaño por el usuario. *El valor por defecto es verdadero* (true) |
+| minWidth | Number | Indica la anchura mínima permitida para el elemento de la página. |
+| maxWidth | Number | Indica la anchura máxima permitida para el elemento de la página. Al establecer este valor significa que el widget ya no puede ser un elemento de página 100% de ancho (full width). |
+| minHeight | Number | Indica la altura mínima permitida para el elemento de la página. |
+| maxHeight | Number | Indica la altura máxima permitida para el elemento de página. |
 
-## Child Tags
+## Etiquetas hijos
 
-The `<HTMLWidget>` **must contain at least 1 [content tag][2]** and
-can optionally contain a `<parameters>` tag, which will specify the
-parameters for the widget and a `<stringTable>` tag for localization.
-The `<parameters>` tag can contain any number of the [parameter
-tags][3]. Check the [localization][1] section for more information
-about the `<stringTable>` tag.
+El `<HTMLWidget>` **debe contener al menos una [etiqueta de contenido][2]** y puede contener opcionalmente un `<parameters>` que especificará los parámetros para el widget y una etiqueta de `<stringTable>` para la localización. La etiqueta `<parameters>` puede contener cualquier número de las [etiquetas de parámetro][3]. Consulte la sección [localización][1] para obtener más información acerca de la etiqueta `<stringTable>`.
 
  [1]: ./05-Localization.md
  [2]: ./04-Content%20Tags.md
