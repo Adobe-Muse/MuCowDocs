@@ -9,7 +9,7 @@ Para empezar ha entender un poco más sobre el tema, mire el primer capítulo
 
 ## Aprende Más
 
-El formato MuCow se añadió en la séptima versión de Adobe Muse CC, MuCow es un formato XML diseñado para permitirle al usuario, crear widgets HTML configurables, que luego puedes utilizar y compartir como mejor le parezca. En la biblioteca widgets de Muse, tenemos un conjunto de widgets sociales, que incluyen cosas como vídeos de YouTube, mapas de Google, comentarios de Facebook y más, estos están construidos utilizando este formato MuCow. Cada widget contiene código HTML que se inserta perfectamente en el sitio construido con Muse, así como un conjunto de opciones que pueden ser configurados por el usuario para modificar el comportamiento final del widget.
+El formato MuCow se añadió en la séptima versión de Adobe Muse CC, MuCow es un formato XML diseñado para permitirle al usuario, crear Widgets HTML configurables, que luego puedes utilizar y compartir como mejor le parezca. En la biblioteca Widgets de Muse, tenemos un conjunto de Widgets sociales, que incluyen cosas como vídeos de YouTube, mapas de Google, comentarios de Facebook y más, estos están construidos utilizando este formato MuCow. Cada Widget contiene código HTML que se inserta perfectamente en el sitio construido con Muse, así como un conjunto de opciones que pueden ser configurados por el usuario para modificar el comportamiento final del Widget.
 
 ## ¿Quieres Ayudar?
 
@@ -19,7 +19,7 @@ Nos aseguramos de dar los créditos correspondientes a todas las personas que no
 
 ## ¿A donde ir?
 
-¿Ya leyó toda la documentación, y quieren saber dónde compartir? ¿O necesita más ayuda, y quiere hacernos una pregunta? He aquí una lista de algunos lugares útiles en la web que le puede resultar útil.
+¿Ya leyó toda la documentación, y quieres saber dónde compartir? ¿O necesita más ayuda, y quiere hacernos una pregunta? He aquí una lista de algunos lugares útiles en la web que le puede resultar útil.
 
  * [Más información sobre Adobe Muse CC][2]
  * [Sitio con la documentación MuCow][1]
