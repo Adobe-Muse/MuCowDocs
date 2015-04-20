@@ -1,15 +1,4 @@
-# Getting Started
-Welcome to the Muse Configurable Options Widget (MuCow) documentation. Here you
-will learn more about making your own HTML embed widgets that can be placed in
-Muse and will include a set of user-facing configurable options. This format
-will allow you to create content not currently available in Muse, and easily
-share it with others in the community. Note that this feature allows you to
-create **HTML embed widgets** &mdash; not "standard" widgets like Slideshows
-and Accordion widgets for example.
+# Empecemos
+Bienvenido a la documentación Muse Widget (MuCow). Aquí aprenderás más sobre cómo hacer tus propios widgets HTML para Muse, estos incluirán un conjunto de opciones configurables de cara al usuario. Este formato le permitirá crear contenido que no están disponible actualmente en Muse, y fácilmente lo podrá compartir con otros en la comunidad. Tenga en cuenta que esta característica le permite crear **Widgets HTML** &mdash; no Widgets "estándar" como vídeos y Widgets de Acordeón por ejemplo..
 
-On this site, you'll find documentation for the format itself, some examples
-that will help you get started, and resources for distributing your
-final MuCow and getting noticed. Hopefully this will be your one-stop-shop for
-writing widgets in Muse. We'll also do our best to include recommendations for
-the best ways to create, debug, and optimize your widget, as well as some good
-ways to share it with the community.
+En este sitio, usted encontrará la documentación para el formato en sí, algunos ejemplos que le ayudarán a empezar, y recursos para la distribución de su MuCow (Widget) final y hacerse notar. Ojalá esta sea su única ventana para escribir los Widgets en Muse. También vamos a hacer nuestro mejor esfuerzo para incluir recomendaciones para las mejores practicas de crear, depurar y optimizar tu Widget, así como algunas buenas maneras de compartirlos con la comunidad.
