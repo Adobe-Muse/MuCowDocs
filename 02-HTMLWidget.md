@@ -1,24 +1,24 @@
 # HTMLWidget
 
-The `<HTMLWidget>` tag is the top level tag of all MuCow files.
+la etiqueta `<HTMLWidget>` es la etiqueta de nivel superior de todos los archivos MuCow.
 
-## Example
+## Ejemplo
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<HTMLWidget name="My Widget" formatNumber="2"
-			localization="none" creator="My Name" 
+			localization="none" creator="Mi nombre" 
 			defaultWidth="50" defaultHeight="50" 
 			isResizable="true">
 		<!--
-			... Content Goes Here ...
+			... Su contenido va aquí ...
 		-->
 	</HTMLWidget>
 
-## Attributes
-| Name | Values | Description |
+## Atributos
+| Nombre | Valores | Descripción |
 |---|---|---|
-| name | String | **Required.** The name of the widget. Will be displayed in the options dialog, and also in the control strip |
-| formatNum | 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Required.** The format number of this file. Current Muse versions support format 3 and below. |
+| name | String | **Obligatorio**. El nombre del widget. Se mostrará en el cuadro Opciones de diálogo y también en la tira de control |
+| formatNum | 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Obligatorio**. El número de formato del archivo. Las versiones actuales de Muse apoyan formato 3 y abajo. |
 | localization | `none` <br> `stringTable` | **Required.** The type of [localization][1] for this widget |
 | termsURL | URL | The URL to a 'Terms of Use' page. A link to this URL will appear in options dialog if non-empty. If you specify termsURL, do not specify termsText |
 | termsText | String | HTML text to appear in a 'Terms of Use' dialog. Text may include links to URLs. If you specify termsText, do not specify termsURL |
