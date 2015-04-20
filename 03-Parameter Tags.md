@@ -1,4 +1,4 @@
-# Parameter Tags
+# Etiqueta Parameter
 There are several parameter tags available to create the MuCow widget's On-Object UI (OOUI). This is the fly-out menu that allows the user to set certain settings about the widget.
 
 Parameters can then be included in your code, and replaced
