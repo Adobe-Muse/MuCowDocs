@@ -1,14 +1,11 @@
-MuCow Documentation
+MuCow Documentación
 =====
 
-Welcome to the documentation for Adobe Muse CC's MuCow Format.
-MuCows, or Muse Configurable Options Widgets, are an extensibility format
-for Adobe Muse CC, created to allow you to make HTML embed widgets of your
-very own for Muse.
+Bienvenido a la documentación del formato MuCow de Adobe Muse CC. MuCows, o Widgets Muse de opciones configurables, son un formato de extensibilidad para Adobe Muse CC, que le permite crear widgets HTML con funcionalidades extras que luego puede usar dentro de Muse
 
-To get started in learning more about it, check out the 
-[first chapter "Getting Started With MuCows"](./01-Getting Started.md), or view our 
-[full documentation site][1] for a nicer to read format.
+Para empezar ha aprender más sobre el tema 
+[mire el primer capítulo "primeros pasos con MuCows"](./01-Getting Started.md), o puede ver 
+[nuestro sitio con la documentación completa][1] para una mejor y agradable lectura.
 
 ## Learn More
 
