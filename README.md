@@ -11,27 +11,20 @@ Para empezar ha entender un poco más sobre el tema, mire el primer capítulo
 
 El formato MuCow se añadió en la séptima versión de Adobe Muse CC, MuCow es un formato XML diseñado para permitirle al usuario, crear widgets HTML configurables, que luego puedes utilizar y compartir como mejor le parezca. En la biblioteca widgets de Muse, tenemos un conjunto de widgets sociales, que incluyen cosas como vídeos de YouTube, mapas de Google, comentarios de Facebook y más, estos están construidos utilizando este formato MuCow. Cada widget contiene código HTML que se inserta perfectamente en el sitio construido con Muse, así como un conjunto de opciones que pueden ser configurados por el usuario para modificar el comportamiento final del widget.
 
-## Want To Help?
+## ¿Quieres Ayudar?
 
-Find something in our documentation you think could use some clarification? Great!
-That's why we've got it on GitHub. Feel free to fork us, fix things up and send
-us a pull request. Got examples you think others could benefit from? Wonderful.
-We've got a whole folder of examples, and we'd love to see yours added to the list.
+¿Encuentras algún error en nuestra documentación? ¿Crees tener la solución para ello? !Genial¡ Es por ello que lo tenemos alojado en Github. Siéntase libre en realizar un Fork, para arreglar las cosas y envíenos un Pull requests. ¿Tienes algunos ejemplos y crees que otros podrían beneficiarse de ellos? Maravilloso. Tenemos un portafolio completo con muchos ejemplos y nos encantaría que el tuyo estuviese en esa lista.
 
-As we get more people helping us out, we'll be sure to give you credit for your work
-too. Just be sure to let us know the name and (optionally) website you'd like us to
-give credit to.
+Nos aseguramos de dar los créditos correspondientes a todas las personas que nos ayudan, solo háganos saber su nombre y opcionalmente su sitio web.
 
-## Where To Go?
+## ¿A donde ir?
 
-Read through the documentation, and want to know where to share? Or need some help,
-and want to ask us a question? Here's a list of some helpful places around the web
-that you might find useful.
+¿Ya leyó toda la documentación, y quieren saber dónde compartir? ¿O necesita más ayuda, y quiere hacernos una pregunta? He aquí una lista de algunos lugares útiles en la web que le puede resultar útil.
 
- * [More Information About Adobe Muse CC][2]
- * [MuCow Documentation Site][1]
- * [MuCow Help Forums][3]
- * [Adobe Add-ons Site][4] (For sharing your MuCows)
+ * [Más información sobre Adobe Muse CC][2]
+ * [Sitio con la documentación MuCow][1]
+ * [Foros de ayuda MuCow][3]
+ * [Sitio de Add-ons Adobe][4] (Para compartir tu MuCows)
 
 
 [1]: http://adobe-muse.github.io/MuCowDocs/
