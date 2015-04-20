@@ -1,22 +1,15 @@
 MuCow Documentación
 =====
 
-Bienvenido a la documentación del formato MuCow de Adobe Muse CC. MuCows, o Widgets Muse de opciones configurables, es un formato de extensibilidad para Adobe Muse CC, que le permite crear widgets HTML con funcionalidades extras que luego puede usar dentro de Muse
+Bienvenido a la documentación del formato MuCow de Adobe Muse CC. MuCows, o Widgets Muse de opciones configurables, es un formato de extensibilidad para Adobe Muse CC, que le permite crear Widgets HTML con funcionalidades extras que luego puede usar dentro de Muse
 
-Para empezar ha aprender más sobre el tema, mire el primer capítulo 
+Para empezar entender un poco más sobre el tema, mire el primer capítulo 
 ["primeros pasos con MuCows"](./01-Getting Started.md), o puede ver nuestro sitio con la
 [documentación completa][1] para una mejor y agradable lectura.
 
-## Learn More
+## Aprende Más
 
-The MuCow format was added in the 7th release for Adobe Muse CC, and is an XML
-format designed to allow you, the user, to create configurable HTML embed widgets
-that you can use and share as you see fit. In the widget library for Muse, we
-have a set of Social widgets, which include things like YouTube videos, Google
-maps, Facebook Comments, and more, which are all built using this MuCow format.
-Each widget can contain HTML that should be inserted into the Muse site, as 
-well as a set of options that can be configured by the user to modify the final
-behavior of the widget.
+El formato MuCow se añadió en la séptima versión de Adobe Muse CC, y es un formato XML diseñado para permitirle al usuario, crear widgets HTML configurables, que luego puedes utilizar y compartir como mejor le parezca. En la biblioteca widgets de Muse, tenemos un conjunto de widgets sociales, que incluyen cosas como vídeos de YouTube, mapas de Google, comentarios de Facebook y más, estos están construidos utilizando este formato MuCow. Cada widget contiene código HTML que se inserta perfectamente en el sitio construido con Muse, así como un conjunto de opciones que pueden ser configurados por el usuario para modificar el comportamiento final del widget.
 
 ## Want To Help?
 
