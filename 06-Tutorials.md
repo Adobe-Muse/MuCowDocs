@@ -1,23 +1,11 @@
-# Tutorials
-In this section, you'll find tutorials related to accomplishing common
-tasks you're likely to do with a MuCow. These will hopefully give you
-an idea of how to accomplish what you need, and, as always, feel free
-to ask any questions in the [forums][1].
+# Tutoriales
+En esta sección encontrarás tutoriales relacionados con el cumplimiento de las tareas comunes que puedes hacer con un MuCow. Estas te darán una idea de cómo lograr lo que usted necesita y, como siempre, no dude preguntar sobre cualquier duda que tenga en los [forums][1].
 
-## Using jQuery
+## Usando jQuery
 
-[jQuery][2] is a very common thing for people to want to use, and we
-will automatically load in jQuery when a Muse page loads. **You should
-not load your own version of jQuery**. This will increase load times,
-and cause issues with Muse exported code. Instead, if you include your
-JavaScript in the [`<bodyEndHTML>`][3] you will be able to use the
-version of jQuery we load.
+[jQuery][2]  es algo muy común y tenemos muy buenas noticias al respecto para usted, Muse cargara automáticamente una versión de la librería jQuery, así que usted no tendrá necesidad de hacerlo ya que esto aumentaría los tiempos de carga y le causara problemas con muse. Así que solo debe centrarse a escribir código Javascript dentro de [`<bodyEndHTML>`][3] mientras nosotros cargamos jQuery por usted.
 
-Combining this with things like the [built-in ID parameter][4] allows
-you to directly manipulate the page item you'd like using standard
-jQuery functionality. For example, if I wanted to increment a counter
-every time the user clicked on the page item, it might look something
-like this.
+Combinando esto con cosas como el [built-in ID parameter][4] que le permite manipular directamente el elemento de página en donde desea utilizar la funcionalidad estándar de jQuery. Por ejemplo, si quiere incrementar un contador cada vez que el usuario hace clic en el elemento de página, podría ser algo como esto.
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<HTMLWidget name="Example" formatNumber="1" localization="none" creator="Adobe Muse Team">
