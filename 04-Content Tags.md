@@ -1,12 +1,8 @@
-# Content Tags
-Content tags are the meat and potatoes of your MuCow. They are what
-actually place things into Muse output. Each of these areas
+# Etiquetas de contenido
+Etiquetas de contenido son la carne y las patatas de su MuCow. Ellas son lo que realmente pone las cosas en cada una de estas áreas en la salida de Muse. 
 
-## HTML Content
-Because MuCows are written in XML, you will need to use `<![CDATA[]]>`
-to wrap any HTML content you are inserting into the page. For example,
-if you want to place an image in the `<pageItemHTML>` tag, you'll
-need to do the following:
+## Contenido HTML
+Debido a que el archivo MuCows esta escritos en XML, tendrá que envolver o escribir cualquier contenido HTML dentro de `<![CDATA[]]>`. Por ejemplo, si usted quiere poner una imagen en la etiqueta `<pageItemHTML>` tendrá que hacer lo siguiente:
 
 	<pageItemHTML>
 	<![CDATA[
@@ -14,24 +10,16 @@ need to do the following:
 	]]>
 	</pageItemHTML>
 
-*Note that for any HTML elements, you can use the HTML class `actAsDiv`
-to indicate that you want that element to be a block level element.*
-This is especially useful with things like `<img>` or `<iframe>`
-content which is not block by default
+*Tenga en cuenta que para cualquier elemento HTML, puede utilizar la clase HTML actAsDiv para indicar que desea que el elemento sea un elemento de bloque*. Esto es especialmente útil con cosas como `<img>` o `<iframe>`. Ya que este tipo de contenido no se bloquean por defecto
 
 ## Parameters
-Parameters are indicated by using `{param_PARAMNAME}`. They will be
-replaced at runtime with the current value of that parameter option.
+Los parámetros se indican mediante el uso de `{param_NOMBREDELPARAMETRO}`.  Estos serán reemplazados en tiempo de ejecución con el valor actual de las opciónes establecidas del parámetro.
 
 ## `<headHTML>`
-HTML in this field will be added to the page `<head>` at output time.
-Only one copy of the code will be output, even if there are multiple
-instances of this widget on a page.
+El código HTML de este campo se agregará en la etiqueta `<head>` de Muse en el momento de la salida. Sólo una copia del código se dará igual, incluso si hay varias instancias de este widget en una página.
 
 ## `<bodyBeginHTML>`
-HTML in this field will be added right after the `<body>` open. Only one
-copy of the code will be output, even if there are multiple instances
-of this widget on a page.
+El código HTML de este campo se agregará en la etiqueta `<body>` de Muse en el momento de la salida. Sólo una copia del código se dará igual, incluso si hay varias instancias de este widget en una página.
 
 ## `<pageItemHTML>`
 HTML in this field will be added where the page item is positioned on the
