@@ -1,12 +1,12 @@
-# Etiqueta Parameter
-There are several parameter tags available to create the MuCow widget's On-Object UI (OOUI). This is the fly-out menu that allows the user to set certain settings about the widget.
+# Etiqueta Parámetros
+Hay varias etiquetas de parámetros disponibles para crear los widgets MuCow En-Objeto OUI. (OUI) Es el menú desplegable, que permite al usuario configurar ciertos ajustes sobre el widget.
 
-Parameters can then be included in your code, and replaced
+Estos parámetros pueden ser incluidos en su código, y reemplazados
 
 ## `<text>`
-Specifies a parameter that will be user entered text. This text can be displayed as either a single-line or multi-line entry box in the OOUI. The maximum number of characters allowed in this field is 2048 starting with Muse 2014.0. Prior to this, the maximum was 1024.
+Especifica un parámetro que será el texto introducido por el usuario. Este texto se puede mostrar como una sola línea o como cuadro de entrada de varias líneas en el OOUI. El número máximo de caracteres permitidos en este campo es 2048 comenzando con Muse 2014.0. Antes de esto, el máximo fue de 1.024.
 
-### Examples
+### Ejemplos
 	<text name="myTextBox" defaultValue="The default value" />
 
 ![Example <text> parameter tag](images/example_param_tag_text.png)
@@ -17,25 +17,25 @@ Specifies a parameter that will be user entered text. This text can be displayed
 
 ![Example <text> parameter tag with the multiline option set](images/example_param_tag_multiline_text.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Unique String | The name of the value. |
-| defaultValue | String | The default value this item should have when first placed |
+| name | Unique String | El nombre del valor. |
+| defaultValue | String | Este elemento debe contener un valor predeterminado |
 
-### Optional Attributes
-| Name | Values | Minimum Format | Description |
+### Atributos opcionales
+| Nombre | Valores | Formato mínimo | Descripción |
 |---|---|---|---|
-| label | String | | Label to display in the OOUI |
-| toolTip | String | | Tooltip to display in the OOUI when hovering over this option |
-| paramEncoding | `URIComponent` <br/> `spaceToPlus` | | The type of encoding to apply to the entered parameter |
-| multiline | Boolean | | If set to true a multiline text control will be created in the UI instead of a single line text box. |
-| defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
+| label | String | | Etiqueta que se mostrará en la OOUI |
+| toolTip | String | | Tooltip a mostrar en el OOUI cuando se cierne sobre esta opción |
+| paramEncoding | `URIComponent` <br/> `spaceToPlus` | | El tipo de codificación que se aplica al parámetro introducido |
+| multiline | Boolean | | Si se establece como verdadero, se creará un cuadro de texto multi línea en la interfaz de usuario en lugar de un cuadro de texto de una sola línea. |
+| defaultIllegalForOutput | Boolean | 2 | Avisará al usuario si el valor predeterminado se utiliza al exportar y publicar el sitio |
 
 ## `<list>`
-Specifies a parameter that a user can select from a set of given options. Options are given using `<value>` tags, which are children of the `<list>` tag. See Child Tags section.
+Especifica un parámetro donde el usuario puede elegir entre una serie de opciones que se ofrecen dentro del widget. Las opciones se colocan usando la etiqueta `<value>` que son hijos de las etiquetas `<list>`. Para saber más vea la sección Etiquetas hijos.
 
-### Examples
+### Ejemplos
 	<list name="myList" defaultValue="Second Value" label="My List">
 		<value name="first" label="First Value"/>
 		<value name="Second Value"/>
@@ -44,11 +44,11 @@ Specifies a parameter that a user can select from a set of given options. Option
 
 ![Example <list> parameter tag](images/example_param_tag_list.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Unique String | The name of the value. |
-| defaultValue | String | The default value this item should have when first placed. This must match one of the `name` attributes of a child `<value>` element. |
+| name | Unique String | El nombre del valor. |
+| defaultValue | String | Este elemento debe contener un valor predeterminado. Y debe coincidir con uno de los atributos `name` de la etiqueta hijo `<value>`. |
 
 ### Optional Attributes
 | Name | Values | Description |
