@@ -5,7 +5,7 @@ Bienvenido a la documentación del formato MuCow de Adobe Muse CC. MuCows, o Wid
 
 Para empezar ha entender un poco más sobre el tema, mire el primer capítulo 
 ["primeros pasos con MuCows"](./01-Getting Started.md), o puede ver nuestro sitio con la
-[documentación completa][1] para una mejor y agradable lectura.
+[documentación completa][1] (En proceso de traducción) para una mejor y agradable lectura.
 
 ## Aprende Más
 
