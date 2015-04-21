@@ -1,5 +1,5 @@
-# Etiqueta Parámetros
-Hay varias etiquetas de parámetros disponibles para crear los widgets MuCow En-Objeto OUI. (OUI) Es el menú desplegable, que permite al usuario configurar ciertos ajustes sobre el widget.
+# Etiqueta parameters
+Hay varias etiquetas hijos disponibles para usar dentro de la etiqueta `<parameters>` para crear la interfaz OOUI de los widgets MuCow. (OOUI) Es el menú desplegable, que permite al usuario configurar ciertos ajustes sobre el widget.
 
 Estos parámetros pueden ser incluidos en su código, y reemplazados
 
@@ -26,8 +26,8 @@ Especifica un parámetro que será el texto introducido por el usuario. Este tex
 ### Atributos opcionales
 | Nombre | Valores | Formato mínimo | Descripción |
 |---|---|---|---|
-| label | String | | Etiqueta que se mostrará en la OOUI |
-| toolTip | String | | Tooltip a mostrar en el OOUI cuando se cierne sobre esta opción |
+| label | String | | Etiqueta que se mostrará en la interfaz OOUI |
+| toolTip | String | | Tooltip a mostrar en la interfaz OOUI cuando se cierne sobre esta opción |
 | paramEncoding | `URIComponent` <br/> `spaceToPlus` | | El tipo de codificación que se aplica al parámetro introducido |
 | multiline | Boolean | | Si se establece como verdadero, se creará un cuadro de texto multi línea en la interfaz de usuario en lugar de un cuadro de texto de una sola línea. |
 | defaultIllegalForOutput | Boolean | 2 | Avisará al usuario si el valor predeterminado se utiliza al exportar y publicar el sitio |
@@ -50,26 +50,26 @@ Especifica un parámetro donde el usuario puede elegir entre una serie de opcion
 | name | Unique String | El nombre del valor. |
 | defaultValue | String | Este elemento debe contener un valor predeterminado. Y debe coincidir con uno de los atributos `name` de la etiqueta hijo `<value>`. |
 
-### Optional Attributes
-| Name | Values | Description |
+### Atributos opcionales
+| Nombre | Valores | Descripción |
 |---|---|---|
-| label | String | Label to display in the OOUI |
-| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
+| label | String | Etiqueta para mostrar en la interfaz OOUI |
+| toolTip | String | ToolTip para mostrar en la interfaz OOUI cuando se cierne sobre esta opción |
 
-### Child tags
+### Etiquetas hijos
 #### `<value>`
-Specifies a user-selectable value. **NOTE: `<value>` tags can contain [Content Tags][1] which will modify the output.**
+Especifica un valor seleccionable por el usuario. **Nota: las etiquetas `<value>` pueden contener [Etiquetas de Contenido][1] que modificará la salida.**
 
-##### Attributes
-| Name | Values | Description |
+##### Atributos
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Unique String | **REQUIRED** Value that will be passed to the final code. |
-| label | String | A label to display to the user |
+| name | Unique String | **Valor Requerido** que será pasado al código final. |
+| label | String | Una etiqueta para mostrar al usuario |
 
 ## `<url>`
-Specifies the user should enter either a partial or full URL.
+Especifica que el usuario debe introducir una dirección URL completa o parcial.
 
-### Examples
+### Ejemplos
 
 	<url name="myURL" label="My URL" 
 		defaultValue="http://muse.adobe.com/" />
@@ -82,26 +82,26 @@ Specifies the user should enter either a partial or full URL.
 
 ![Example <url> parameter tag](images/example_param_tag_url_or_current.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Unique String | The name of the value. |
-| defaultValue | String | The default value this item should have when first placed. This must match one of the `name` attributes of a child `<value>` element. |
+| name | Unique String | El nombre del valor. |
+| defaultValue | String | Este elemento debe contener un valor predeterminado. Y debe coincidir con uno de los atributos `name` de la etiqueta hijo `<value>`. |
 
-### Optional Attributes
-| Name | Values | Minimum Format | Description |
+### Atributos opcionales
+| Nombre | Valores | Formato mínimo | Descripción |
 |---|---|---|---|
-| label | String | | Label to display in the OOUI |
-| toolTip | String | | Tooltip to display in the OOUI when hovering over this option |
-| urlStart | String | | A comma separated list of URL prefixes. all entered URLs must start with one of these, or be incomplete URLs. |
-| currentPageOrURL | Boolean | | If set to 'true', user will be able to enter an arbitrary URL, or choose the URL for the current Muse Page. |
-| dummyDomainPrefix | String | | If the user hasn't yet entered a domain name, when generating HTML for the current page, this dummy prefix will be used, along with a <abbr title="Globaly Unique Identifier">GUID</abbr>. |
-| defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
+| label | String | | Etiqueta que se mostrará en la interfaz OOUI |
+| toolTip | String | | ToolTip para mostrar en la interfaz OOUI cuando se cierne sobre esta opción |
+| urlStart | String | | Lista de los prefijos URL separados por una coma. todas las URLs introducidas deben empezar con uno de estos, o ser URLs incompletas. |
+| currentPageOrURL | Boolean | | Si se establece en 'true', el usuario será capaz de introducir una URL arbitraria, o elegir la dirección actual de la página Muse. |
+| dummyDomainPrefix | String | |Si el usuario aún no ha ingresado un nombre de dominio, al generar HTML para la página actual, este prefijo simulado se utilizará, junto con un <abbr title="Globaly Unique Identifier">GUID</abbr>. |
+| defaultIllegalForOutput | Boolean | 2 | Avisa al usuario si se utiliza el valor predeterminado cuando exportar o publica el sitio |
 
 ## `<bool>`
-Specifies an option that the user will be able to toggle on/off. Must include the values to use for true & false. One or both values may disable other options. Multiple bool UI elements will be arranged in columns
+Especifica una opción que el usuario será capaz de activar o desactivar. Debe incluir los valores a utilizar para la true y false. Uno o ambos valores pueden desactivar otras opciones. Elementos múltiples de la IU bool serán dispuestos en columnas
 
-### Examples
+### Ejemplos
 	<bool name="toggleOption" label="Toggle Option" defaultValue="foo">
 		<trueVal value="foo"/>
 		<falseVal value="bar" disableOptions="myTextBox,myURL"/>
@@ -110,72 +110,72 @@ Specifies an option that the user will be able to toggle on/off. Must include th
 ![Example <bool> parameter tag with option on](images/example_param_tag_bool_on.png)
 ![Example <bool> parameter tag with option off](images/example_param_tag_bool_off.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Unique String | The name of the value. |
-| defaultValue | String | The default value this item should have when first placed. This must match one of the `name` attributes of a child element. |
+| name | Unique String | El nombre del valor. |
+| defaultValue | String |Este elemento debe contener un valor predeterminado. Y debe coincidir con uno de los atributos `name` de la etiqueta hijo `<value>`. |
 
-### Optional Attributes
-| Name | Values | Description |
+### Atributos opcionales
+| Nombre | Valores | Descripción |
 |---|---|---|
-| label | String | Label to display in the OOUI |
-| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
+| label | String | Etiqueta que se mostrará en la interfaz OOUI |
+| toolTip | String | ToolTip para mostrar en la interfaz OOUI cuando se cierne sobre esta opción |
 
-### Child tags
+### Etiquetas hijos
 #### `<trueVal>`
-Specifies a value to pass when user turns on this option. **NOTE: `<trueVal>` tags can contain [Content Tags][1] which will modify the output.**
+Especifica un valor a pasar cuando el usuario activa esta opción. **Nota: las etiquetas `<value>` pueden contener [Etiquetas de Contenido][1] que modificará la salida.**
 
 ##### Attributes
-| Name | Values | Description |
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| value | String | **Required.** Value that will be passed to the final code. |
-| disableOptions | List | A comma separated list of name values for options that are disabled when the item is in this state. |
+| value | String | **Obligatorio**. Valor que se pasa al final del código. |
+| disableOptions | List | Una lista de valores separadas por comas para las opciones que están desactivados cuando el producto está en este estado. |
 
 #### `<falseVal>`
-Specifies a value to pass when user turns off this option. **NOTE: `<falseVal>` tags can contain [Content Tags][1] which will modify the output.**
+Especifica un valor a pasar cuando el usuario desactiva esta opción. **Nota: las etiquetas `<value>` pueden contener [Etiquetas de Contenido][1] que modificará la salida.**
 
-##### Attributes
-| Name | Values | Description |
+##### Atributos
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| value | String | **Required.** Value that will be passed to the final code. |
-| disableOptions | List | A comma separated list of name values for options that are disabled when the item is in this state. |
+| value | String | **Obligatorio**. Valor que se pasa al final del código. |
+| disableOptions | List |Una lista de valores separadas por comas para las opciones que están desactivados cuando el producto está en este estado. |
 
 ## `<number>`
-Specifies the user entered value should be a number
+Especifica que el valor a introducir por el usuario debe ser un número
 
-### Examples
+### Ejemplos
 
 	<number name="myNumber" min="1" max="100" step="1" 
 		snap="0.1" defaultValue="1" label="Number: "/>
 
 ![Example <number> parameter tag](images/example_param_tag_number.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Unique String | The name of the value. |
-| defaultValue | String | The default value this item should have when first placed |
-| min | Number | The minimum allowed value |
-| max | Number | The maximum allowed value |
+| name | Unique String | El nombre del valor. |
+| defaultValue | String | Este elemento debe contener un valor predeterminado |
+| min | Number | El valor mínimo permitido |
+| max | Number | El valor máximo permitido |
 
-### Optional Attributes
-| Name | Values | Description |
+### Atributos opcionales
+| Nombre | Valores | Descripción |
 |---|---|---|
-| label | String | Label to display in the OOUI |
-| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
-| step | Number | How large a step should be if the user clicks the up or down arrow. Defaults to 1 |
-| snap | Number | What increment should values snap to. Defaults to 1 |
-| digitsPrecision | Number | The number of digits to show after the decimal point |
+| label | String | Etiqueta que se mostrará en la interfaz OOUI |
+| toolTip | String | Tooltip a mostrar en la interfaz OOUI cuando se cierne sobre esta opción |
+| step | Number | Qué tan grande debe ser el paso si el usuario hace clic en la flecha hacia arriba o hacia abajo. El valor predeterminado es 1 |
+| snap | Number | Qué incremento debería ajustar el valor. El valor predeterminado es 1 |
+| digitsPrecision | Number | El número de dígitos a mostrar después del punto decimal |
 
 ## `<builtIn>`
-A built in is a special type that allows you to get values that are specified directly in Adobe Muse. These values are passed in the same as any other parameters, and the name can be any one of the values listed below.
+Un built es un tipo especial que le permite obtener los valores que se especifican directamente en Adobe Muse. Estos valores se transmiten a cualquier otro parámetro, el nombre puede ser cualquiera de los valores indicados a continuación.
 
-### Attributes
-| Name | Values | Description |
+### Atributos
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | Type | **Required.** One of the types listed below |
-| supportedLocales | List | Comma separated list of languages supported by this MuCow. If the document language is not one of these languages, the English equivalent will be used instead |
+| name | Type | **Obligatorio.** Uno de los tipos enumerados a continuación |
+| supportedLocales | List | Lista de idiomas soportados por este MuCow separados por comas. Si el idioma del documento no es uno de estos idiomas, se utilizará en su lugar el equivalente inglés |
 
 ### Types
 <dl>
@@ -183,50 +183,50 @@ A built in is a special type that allows you to get values that are specified di
 		<code>width</code>
 	</dt>
 	<dd>
-		Page item width in Muse
+		Ancho del elemento de página en Muse
 	</dd>
 	<dt>
 		<code>height</code>
 	</dt>
 	<dd>
-		Page item height in Muse
+		Altura del elemento de página en Muse
 	</dd>
 	<dt>
 		<code>itemUID</code>
 	</dt>
 	<dd>
-		The unique ID that is designated to this page item
+		El identificador único que se designa a este elemento en la página
 	</dd>
 	<dt>
 		<code>siteUID</code>
 	</dt>
 	<dd>
-		The unique ID that identifies this Muse site
+		El identificador único que identifica a este sitio de Muse
 	</dd>
 	<dt>
 		<code>country</code>
 	</dt>
 	<dd>
-		Country code for the current Muse document (e.g. US, FR, JP)
+		Código de país para el documento actual Muse (ejemplo. US, FR, JP)
 	</dd>
 	<dt>
 		<code>language</code>
 	</dt>
 	<dd>
-		Character code for the language of the current Muse document (e.g. en, fr, es)
+		Código de caracteres para el idioma del documento actual Muse (ejemplo. en, fr, es)
 	</dd>
 	<dt>
 		<code>locale</code>
 	</dt>
 	<dd>
-		Language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
+		Código de idioma y país del documento actual de Muse (ejemplo. en_US, fr_FR, es_ES)
 	</dd>
 </dl>
 
 ## `<info>`
-Informative text to show in the On-Object UI, which can optionally link to a URL. **Only supported by widgets format 2 or above.**
+Texto informativo para mostrar en la interfaz OOUI de usuario, que opcionalmente puede enlazar a una dirección URL. **Sólo esta soportado en el formato de widgets 2 o superior**.
 
-### Examples
+### Ejemplos
 
 	<info label="You can place informative text here."/>
 
@@ -236,20 +236,20 @@ Informative text to show in the On-Object UI, which can optionally link to a URL
 
 ![Example <info> parameter tag with a link](images/example_param_tag_info_link.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| value | String | The text to display to the user |
+| value | String | El texto que se mostrará al usuario |
 
-### Optional Attributes
-| Name | Values | Description |
+### Atributos opcionales
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| linkURL | URL | The URL to take the user to if the text is clicked |
+| linkURL | URL | La URL para permitir al usuario acceder si se hace clic en el texto |
 
 ## `<separator>`
-A line used to separate parameters in the On-Object UI. **Only supported by widgets format 2 or above.**
+Una línea que se utiliza para separar los parámetros en la interfaz OOUI de usuario. **Sólo esta soportado en el formato de widgets 2 o superior**.
 
-### Examples
+### Ejemplo
 
 	<text name="name" label="Name:" defaultValue="You" />
 	<separator/>
@@ -258,49 +258,49 @@ A line used to separate parameters in the On-Object UI. **Only supported by widg
 ![Example <separator> parameter tag](images/example_param_tag_separator.png)
 
 ## `<file>`
-Specifies a parameter that will be a user chosen file. This file will be added as a file for upload. **Only supported by widgets format 3 or above.**
+Especifica un parámetro que permite al usuario cargar un archivo local. Este archivo se añade como un archivo para carga. **Sólo esta soportado en el formato de widgets 3 o superior**.
 
-### Examples
+### Ejemplo
 
 	<file name="img1" label="Choose an Image:" filterLabel="Images" fileTypes="*.jpg;*.jpeg;*.png;*.gif" fileRequiredForOutput="true"/>
 
 ![Example <file> parameter tag](images/example_param_tag_file.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | String | The name of the value |
+| name | String | El nombre del valor |
 
-### Optional Attributes
-| Name | Values | Description |
+### Atributos opcionales
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| label | String | Label to display in the OOUI |
-| filterLabel | String | Label for filter in the file browse dialog |
-| fileTypes | String | File types allowed in the file browse dialog. Should be a semicolon-separated list in format "\*.ext;\*.ext2" |
-| fileRequiredForOutput | Boolean | Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false. |
+| label | String | Etiqueta que se mostrará en la interfaz OOUI |
+| filterLabel | String | Etiqueta para el filtro en el cuadro de diálogo de exploración de archivos |
+| fileTypes | String | Tipos de archivos permitidos en el cuadro de diálogo de exploración de archivos. Debe ser una lista separada por  comas y el formato del archivo debe contener un punto antes del nombre de la extensión  "\*.ext;\*.ext2" |
+| fileRequiredForOutput | Boolean | Le avisará al usuario si no hay ningún archivo elegido cuando exporta o publica el sitio . El valor predeterminado es false. |
 
 ## `<color>`
-Specifies a parameter that will be user chosen color. Presented to the user as a color picker in the UI. **Only supported by widgets format 3 or above.**
+Especifica un parámetro para que el usuario pueda elegir un color. Se presentara al usuario un selector de colores en la interfaz de usuario. **Sólo esta soportado en el formato de widgets 3 o superior**.
 
-### Examples
+### Ejemplos
 
 	<color name="textColor" label="Text Color" defaultValue="#C74040"/>
 	<color name="backgroundColor" label="Background Color" rgbColor="true" defaultValue="0, 0, 255"/>
 
 ![Example <color> parameter tag](images/example_param_tag_color.png)
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| name | String | The name of the value |
+| name | String | El nombre del valor |
 
-### Optional Attributes
-| Name | Values | Description |
+### Atributos opcionales
+| Nombre | Valores | Descripción |
 |---|---|---|---|
-| label | String | Label to display in the OOUI |
-| defaultValue | String | Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value. |
-| rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
-| formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
-| supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
+| label | String | Etiqueta que se mostrará en la interfaz OOUI |
+| defaultValue | String | Puede ser cualquier color hexadecimal o valor RGB separados por comas. Esto no afectara el formato de salida. Usar rgbColor para generar valores RGB separados por comas. |
+| rgbColor | Boolean | Valor buleano para establecer colores RGB que se separan por comas. El valor predeterminado es false |
+| formatHexColor | Boolean | Valor buleano para establecer colores exadecimales, al igual que en css debe anteponer el signo #. El valor predeterminado es false |
+| supportsNoneColor | Boolean | Permite al usuario elegir ninguna muestra de color. La elección de este valor dará como salida un valor "color" transparente. El valor predeterminado es false. |
 
  [1]: ./04-Content%20Tags.md
