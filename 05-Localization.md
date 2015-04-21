@@ -1,4 +1,4 @@
-# Localization
+# Localización
 
 Las etiquetas de localización le permiten mostrar el idioma del widget basado en el idioma en que se este utilizando Muse en ese momento. Usted puede utilizar esto para hacer más fácil la personalización del Widget para los usuarios que utilizan Muse en otros idiomas.
 
