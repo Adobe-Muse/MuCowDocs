@@ -43,8 +43,15 @@ that you might find useful.
  * [MuCow Help Forums][3]
  * [Adobe Add-ons Site][4] (For sharing your MuCows)
 
+## Translations
+
+The following translations have been made possible thanks to these users:
+
+ * [Lenin Peña][5] ([Spanish][6])
 
 [1]: http://adobe-muse.github.io/MuCowDocs/
 [2]: http://muse.adobe.com/
 [3]: http://forums.adobe.com/community/muse
 [4]: http://www.adobe.com/go/muse_add-ons
+[5]: http://www.leninalbertop.com.ve/
+[6]: ./translations/es/

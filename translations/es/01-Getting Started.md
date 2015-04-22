@@ -1,0 +1,5 @@
+# Empecemos
+
+Bienvenido a la documentación Muse Widget (MuCow). Aquí aprenderás más sobre cómo hacer tus propios widgets HTML para Muse, estos incluirán un conjunto de opciones configurables de cara al usuario. Este formato le permitirá crear contenido que no están disponible actualmente en Muse, y fácilmente lo podrá compartir con otros en la comunidad. Tenga en cuenta que esta característica le permite crear **Widgets HTML** &mdash; no Widgets "estándar" como vídeos y Widgets de Acordeón por ejemplo..
+
+En este sitio, usted encontrará la documentación para el formato en sí, algunos ejemplos que le ayudarán a empezar, y recursos para la distribución de su MuCow (Widget) final y hacerse notar. Ojalá esta sea su única ventana para escribir los Widgets en Muse. También vamos a hacer nuestro mejor esfuerzo para incluir recomendaciones para las mejores practicas de crear, depurar y optimizar tu Widget, así como algunas buenas maneras de compartirlos con la comunidad.
