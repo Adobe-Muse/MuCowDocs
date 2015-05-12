@@ -239,7 +239,7 @@ Informative text to show in the On-Object UI, which can optionally link to a URL
 ### Required Attributes
 | Name | Values | Description |
 |---|---|---|---|
-| value | String | The text to display to the user |
+| label | String | The text to display to the user |
 
 ### Optional Attributes
 | Name | Values | Description |
