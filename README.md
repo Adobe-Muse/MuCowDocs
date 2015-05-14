@@ -24,7 +24,7 @@ Nos aseguramos de dar los créditos correspondientes a todas las personas que no
  * [Más información sobre Adobe Muse CC][2]
  * [Sitio con la documentación MuCow][1]
  * [Foros de ayuda MuCow][3]
- * [Sitio de Add-ons Adobe][4] (Para compartir tu MuCows)
+ * [Sitio de Add-ons Adobe][4] (Para compartir tus MuCows)
 
 
 [1]: http://adobe-muse.github.io/MuCowDocs/
