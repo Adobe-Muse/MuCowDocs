@@ -1,20 +1,14 @@
-# Localization
+# Localización
 
-The localization tags enable you to localize your widget based on the
-language of Muse. You can use this to make it easier for others users
-who use Muse in different languages to customize the MuCow.
+Las etiquetas de localización le permiten mostrar el idioma del widget basado en el idioma en que se este utilizando Muse en ese momento. Usted puede utilizar esto para hacer más fácil la personalización del Widget para los usuarios que utilizan Muse en otros idiomas.
 
 ## `<stringTable>`
 
-This is the primary method at the moment for enabling translation of
-your widget to other languages. For this element to have any effect,
-you'll need to make sure to set the `localization` attribute to
-`stringTable`.
+Esta es la etiqueta principal para permitir la traducción de su widget a otros idiomas. Para que este elemento pueda tener algún efecto, necesitará establecer el atributo de `localization` dentro de `stringTable`.
 
-A `<stringTable>` must contain at least 1 `<locale>` tag, but can
-contain as many as needed.
+Un `<stringTable>` debe contener al menos una etiqueta `<locale>` pero puede contener tantas como sean necesarias.
 
-### Examples
+### Ejemplos
 
 	<stringTable>
 		<locale name="en_US">
@@ -29,46 +23,40 @@ contain as many as needed.
 
 ## `<locale>`
 
-This is a locale that you have translated your properties to. These
-should match one of the language codes available in Muse.
+Este es un escenario que ha traducido sus propiedades. Esto deben coincidir con uno de los códigos de idioma disponibles en Muse.
 
-A `<locale>` tag should contain a `<string>` tag as a child for each
-translated string value to be used in the widget.
+Una etiqueta `<locale>` debe contener una etiqueta hijo `<string>` para cada valor de cadena traducida a utilizar en el widget.
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|
-| name | Any Muse Locale | The locale that these `<string>` tags are for |
+| name | Any Muse Locale | Se utiliza para darle el valor al atributo name dentro de locale |
 
-### Examples
+### Ejemplos
 
-English (US)
+Ingles (US)
 
 	<locale name="en_US">
 
-French
+Francés
 
 	<locale name="fr_FR">
 
-Japanese
+Japones
 
 	<local name="jp_JP">
 
 ## `<string>`
 
-A string is the actual translated content that Muse will show in to
-the end user. It will contain a `keyString` and a `translation`
-attribute. The `keyString` attribute will be the same across the
-locales, and is what you will put in the place of the real string.
-See the examples section for more information.
+Un String es el contenido real traducido que Muse mostrara al usuario final. Estas contendrán un atributo `keystring` y un atributo de `translation`. El atributo `keystring` sera el mismo en todos los lugares y es lo que coloca en el lugar de la cadena real. Vea la sección de ejemplos para obtener más información.
 
-### Required Attributes
-| Name | Values | Description |
+### Atributos necesarios
+| Nombre | Valores | Descripción |
 |---|---|---|
-| keyString | String | The key that will be swapped out when translating the strings |
-| translation | String | The translated string for this locale |
+| keyString | String | La clave que se intercambia al traducir las cadenas |
+| translation | String | La cadena traducida para este idioma |
 
-### Examples
+### Ejemplos
 
 
 	<parameters>

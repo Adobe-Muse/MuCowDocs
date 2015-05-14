@@ -1,48 +1,31 @@
 # FAQ
-Here are some common questions people have. If you don't see your question
-here, feel free to ask it in the [forums][1] and others can help you out.
+Estas son algunas de las preguntas más comunes que las personas suelen tener. Si usted no ve respuesta a su pregunta aquí, no dude en preguntar en los [foros][1] estamos seguros que otros pueden ayudarte.
 
-## What is a MuCow?
-A MuCow is an Adobe Muse Configurable Options Widget. It is a extension format
-that allows you, the user, to write your very own widgets for Muse. With this
-widget, you can include a set of user configurable options that enable you to
-change your behavior based on parameters to your script. A MuCow itself is
-written in a simple XML format, and saved as a .mucow file format.
+## ¿Que es un MuCow?
+Un MuCow es un Widget de opciones configurables de Adobe Muse. Es un formato de extensión que le permite, al usuario, escribir sus propios widgets para Muse. Con estos widgets, puede incluir un conjunto de opciones configurables que le permiten cambiar su comportamiento en función de parámetros al script. Un MuCow esta escrito en un formato XML simple y guardado como un formato de archivo .mucow.
 
-## Can I use jQuery?
+## ¿Puedo usar jQuery?
 
-**Yes**. You can use the version of jQuery we use by placing all script content
-in [`<bodyEndHTML>`][4] tag. You can also check out our [jQuery Tutorial][5].
+**Si**. Puede perfectamente hacer uso de jQuery en su widget o archivo .mucow, solo debe poner su código dentro de la etiqueta  [`<bodyEndHTML>`][4] Puede consultar nuestro [Tutorial jQuery][5] para saber un poco más del asunto.
 
-## How can I make one?
-Simply open up your favorite text or XML editor, and follow the documentation
-here. Once you're done, save it as a .mucow file, and place it into Muse.
+## ¿Cómo puedo hacer uno?
+Crear un widget es muy fácil, basta con abrir tu editor de texto favorito y seguir la documentación que te ofrecemos. Una vez hayas terminado solo tendrás que guardar tu archivo con la extensión .mucow y ya estarías listo para colocarlo en Muse.
 
-## How do I place it?
-Adding a MuCow into Muse is done in the same manner in which an image, Flash,
-or Edge Animate file are added. Simply use the "File > Place" menu item, or
-the keyboard shortcut CTRL/CMD + D.
+## ¿Como coloco el archivo MuCow en Muse?
+Para añadir su archivo MuCow en Muse se hace de la misma manera en que agregaría una imagen o un archivo de Edge Animate. Solo debe utilizar la opción "Archivo>Colocar" del menú, o usar la combinación de teclas CTRL/CMD + D.
 
-## What versions support it?
-Different Muse versions support different MuCow formats starting with the 7.0
-Muse release. See the following table for more information about which releases
-support which MuCow formats
+## ¿Qué versiones se apoyan?
+A partir de la versión 7.0 de Muse, se apoyan diferentes formatos MuCow. Consulte la siguiente tabla de ejemplos para obtener más información sobre las diferentes versiones de Muse y que formato apoya cada una de ellas.
 
-| MuCow Format | Minimum Muse Version Required |
+| Formato MuCow | Versión de Muse mínima requerida |
 | --- | --- |
-| 1 | 7.0 (Released Nov. 2013) |
-| 2 | 2014.0 (Released June 2014) |
-| 3 | 2014.3 (Released February 2015) |
+| 1 | 7.0 (Liberado en Nov. 2013) |
+| 2 | 2014.0 (Liberado en Jun. 2014) |
+| 3 | 2014.3 (Liberado en Feb. 2015) |
 
-## Where can I share it?
-The recommended way to share your MuCow with others is by adding it to a
-library, exporting the library, and submitting it to the [Adobe Add-on
-marketplace][2]. You may also submit the .mucow file if you'd like it to be
-used as an example by others who want to create their own. If you do choose to
-include both, simply place the files into a .zip folder, and upload that
-instead. To learn more about creating user library items please refer to
-[the help page for the library panel][3]. To learn more about submitting
-content to the Adobe Add-on marketplace refer to [the Add-on help page][6].
+## ¿Dónde puedo compartirlo?
+La forma recomendada para compartir su MuCow con otros, es añadiéndolo a su biblioteca, para ello consulte la sección 
+[Página de ayuda para el panel biblioteca][3]. También puede enviar el archivo .mucow si desea que sea utilizado como ejemplo por otros que están empezando y quieren crear sus propios Widgets. Para aprender más sobre la presentación de contenido para el mercado de complementos de Adobe refiérase a la [Página de ayuda de Add-on][6].
 
  [1]: http://forums.adobe.com/community/muse
  [2]: http://www.adobe.com/go/muse_add-ons
