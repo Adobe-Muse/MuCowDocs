@@ -9,4 +9,4 @@ The following examples are available in annotated-source format:
 * [Simple List](SimpleList.mucow.html)
 
 ## All Examples
-The Muse team has created various .mucow examples, which can be downloaded in .zip format here: [All Mucow Examples](assets/mucow-examples.zip).
+The Muse team has created various .mucow examples, which can be downloaded in .zip format here: [All Mucow Examples](examples/mucow-examples.zip).
