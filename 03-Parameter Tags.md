@@ -39,7 +39,7 @@ Specifies a parameter that a user can select from a set of given options. Option
 	<list name="myList" defaultValue="Second Value" label="My List">
 		<value name="first" label="First Value"/>
 		<value name="Second Value"/>
-		<value name="third_value" label="Last One"/>
+		<value name="third_value" label="Last One" disableOptions="myTextBox,myURL"/>
 	</list>
 
 ![Example <list> parameter tag](images/example_param_tag_list.png)
@@ -65,6 +65,7 @@ Specifies a user-selectable value. **NOTE: `<value>` tags can contain [Content T
 |---|---|---|---|
 | name | Unique String | **REQUIRED** Value that will be passed to the final code. |
 | label | String | A label to display to the user |
+| disableOptions | List | A comma separated list of name values for options that are disabled when the selected item is this 
 
 ## `<url>`
 Specifies the user should enter either a partial or full URL.
@@ -175,7 +176,10 @@ A built in is a special type that allows you to get values that are specified di
 | Name | Values | Description |
 |---|---|---|---|
 | name | Type | **Required.** One of the types listed below |
-| supportedLocales | List | Comma separated list of languages supported by this MuCow. If the document language is not one of these languages, the English equivalent will be used instead |
+| supportedLocales | List | When the `name` attribute is "locale", this attribute is a comma separated list of locales supported by this MuCow. If the document locale is not one of these, the en_US will be used |
+| supportedLanguages | List |  When the `name` attribute is "language", this attribute is a comma separated list of languages supported by this MuCow. If the document language is not one of these languages, the English equivalent will be used instead |
+
+**NOTE:**  The `supportedLocale` and `supportedLangauge` attributes are ignored if the `name` attribute is not `locale` or `language` respectively.
 
 ### Types
 <dl>
@@ -239,7 +243,7 @@ Informative text to show in the On-Object UI, which can optionally link to a URL
 ### Required Attributes
 | Name | Values | Description |
 |---|---|---|---|
-| value | String | The text to display to the user |
+| label | String | The text to display to the user |
 
 ### Optional Attributes
 | Name | Values | Description |
@@ -275,6 +279,7 @@ Specifies a parameter that will be a user chosen file. This file will be added a
 | Name | Values | Description |
 |---|---|---|---|
 | label | String | Label to display in the OOUI |
+| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
 | filterLabel | String | Label for filter in the file browse dialog |
 | fileTypes | String | File types allowed in the file browse dialog. Should be a semicolon-separated list in format "\*.ext;\*.ext2" |
 | fileRequiredForOutput | Boolean | Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false. |
@@ -298,6 +303,7 @@ Specifies a parameter that will be user chosen color. Presented to the user as a
 | Name | Values | Description |
 |---|---|---|---|
 | label | String | Label to display in the OOUI |
+| toolTip | String | Tooltip to display in the OOUI when hovering over this option |
 | defaultValue | String | Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value. |
 | rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
 | formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
