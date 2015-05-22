@@ -1,0 +1,22 @@
+{
+	"pages":[
+		"01-Getting Started.md",
+		"02-HTMLWidget.md",
+		"03-Parameter Tags.md",
+		"04-Content Tags.md",
+		"05-Localization.md",
+		"06-Tutorials.md",
+		"07-FAQ.md",
+		"08-Examples.md"
+	],
+	"name": "MuCow Documentation",
+	"singlePage": true,
+	"tocLevel": 2,
+	"images": [
+		"images/example_param_tag_bool_off.png","images/example_param_tag_list.png","images/example_param_tag_text.png","images/example_param_tag_bool_on.png","images/example_param_tag_multiline_text.png","images/example_param_tag_url.png","images/example_param_tag_info.png","images/example_param_tag_number.png","images/example_param_tag_url_or_current.png","images/example_param_tag_info_link.png","images/example_param_tag_separator.png",
+		"images/example_param_tag_file.png", "images/example_param_tag_color.png"
+	],
+	"assets": [
+		"examples/"
+	]
+}
