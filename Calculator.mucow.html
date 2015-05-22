@@ -4,89 +4,117 @@
 		<meta charset="utf-8">
 		<title>Calculator.mucow</title>
 		<link href="css/basic.css" rel="stylesheet" >
-		<link href="css/vs.css" rel="stylesheet" >
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css" rel="stylesheet" >
 	</head>
 	<body>
-		<header>
+		<div class="header">
 			<a href="./" id="back">Back to Docs</a>
 			<h1><a href="assets/Calculator.mucow">Calculator.mucow</a></h1>
-		</header>
+		</div>
 		<div id="content">
-			
-				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>&lt;HTMLWidget&gt;</code> is the top level element which all other elements
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>&lt;HTMLWidget&gt;</code> is the top level element which all other elements
 will be a child of. It contains the attributes for the widget as
 a whole.</p>
 <p>A very simple calculator. 
 Defaults and some styling can be configured within Muse.
 Text styling can be applied within Muse.
 Website visitors can add, subtract, multiply or divide 2 numbers.</p>
-</div><pre class="Code"><code class="xml"><span class="tag">&lt;<span class="title">HTMLWidget</span> <span class="attribute">name</span>=<span class="value">"Calculator"</span> <span class="attribute">formatNumber</span>=<span class="value">"1"</span>  <span class="attribute">localization</span>=<span class="value">"none"</span> <span class="attribute">creator</span>=<span class="value">"Adobe Muse Team"</span> <span class="attribute">minWidth</span>=<span class="value">"80"</span> <span class="attribute">defaultWidth</span>=<span class="value">"400"</span> <span class="attribute">defaultHeight</span>=<span class="value">"50"</span>&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">parameters</span>&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>borderSize</code> is the thickness of the border applied to the editboxes</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">number</span> <span class="attribute">name</span>=<span class="value">"borderSize"</span> <span class="attribute">label</span>=<span class="value">"Edit field Border:"</span> <span class="attribute">min</span>=<span class="value">"0"</span> <span class="attribute">max</span>=<span class="value">"9999"</span> <span class="attribute">snap</span>=<span class="value">"1"</span> <span class="attribute">step</span>=<span class="value">"1"</span> <span class="attribute">defaultValue</span>=<span class="value">"2"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>editWidth</code> is the width of the editboxes</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">number</span> <span class="attribute">name</span>=<span class="value">"editWidth"</span> <span class="attribute">label</span>=<span class="value">"Edit field Width:"</span> <span class="attribute">min</span>=<span class="value">"10"</span> <span class="attribute">max</span>=<span class="value">"9999"</span> <span class="attribute">snap</span>=<span class="value">"1"</span> <span class="attribute">step</span>=<span class="value">"1"</span> <span class="attribute">defaultValue</span>=<span class="value">"80"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>margin</code> controls the space between the editboxes</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">number</span> <span class="attribute">name</span>=<span class="value">"margin"</span> <span class="attribute">label</span>=<span class="value">"Space between:"</span> <span class="attribute">min</span>=<span class="value">"1"</span> <span class="attribute">max</span>=<span class="value">"9999"</span> <span class="attribute">defaultValue</span>=<span class="value">"10"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>input1default</code> sets the default value for the first edit field</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">number</span> <span class="attribute">name</span>=<span class="value">"input1default"</span> <span class="attribute">label</span>=<span class="value">"First default value:"</span> <span class="attribute">min</span>=<span class="value">"-9999999"</span> <span class="attribute">max</span>=<span class="value">"99999999"</span> <span class="attribute">snap</span>=<span class="value">"0.0001"</span> <span class="attribute">defaultValue</span>=<span class="value">"5"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>input2default</code> sets the default value for the second edit field</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">number</span> <span class="attribute">name</span>=<span class="value">"input2default"</span> <span class="attribute">label</span>=<span class="value">"Second default value:"</span> <span class="attribute">min</span>=<span class="value">"-9999999"</span> <span class="attribute">max</span>=<span class="value">"99999999"</span> <span class="attribute">snap</span>=<span class="value">"0.0001"</span> <span class="attribute">defaultValue</span>=<span class="value">"10"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>borderColor</code> sets the color of the border of the edit fields. Note the use of &#39;inherit&#39; as one option, which inherits the stroke
+				</div>
+				<pre class="Code"><code><span class="hljs-tag">&lt;<span class="hljs-title">HTMLWidget</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Calculator"</span> <span class="hljs-attribute">formatNumber</span>=<span class="hljs-value">"1"</span>  <span class="hljs-attribute">localization</span>=<span class="hljs-value">"none"</span> <span class="hljs-attribute">creator</span>=<span class="hljs-value">"Adobe Muse Team"</span> <span class="hljs-attribute">minWidth</span>=<span class="hljs-value">"80"</span> <span class="hljs-attribute">defaultWidth</span>=<span class="hljs-value">"400"</span> <span class="hljs-attribute">defaultHeight</span>=<span class="hljs-value">"50"</span>&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code>	<span class="hljs-tag">&lt;<span class="hljs-title">parameters</span>&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>borderSize</code> is the thickness of the border applied to the editboxes</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">number</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"borderSize"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Edit field Border:"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"9999"</span> <span class="hljs-attribute">snap</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">step</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"2"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>editWidth</code> is the width of the editboxes</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">number</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"editWidth"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Edit field Width:"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"10"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"9999"</span> <span class="hljs-attribute">snap</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">step</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"80"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>margin</code> controls the space between the editboxes</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">number</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"margin"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Space between:"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"9999"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"10"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>input1default</code> sets the default value for the first edit field</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">number</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"input1default"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"First default value:"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"-9999999"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"99999999"</span> <span class="hljs-attribute">snap</span>=<span class="hljs-value">"0.0001"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"5"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>input2default</code> sets the default value for the second edit field</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">number</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"input2default"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Second default value:"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"-9999999"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"99999999"</span> <span class="hljs-attribute">snap</span>=<span class="hljs-value">"0.0001"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"10"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>borderColor</code> sets the color of the border of the edit fields. Note the use of ‘inherit’ as one option, which inherits the stroke
 color set by the user on the page item in Muse.</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">list</span> <span class="attribute">name</span>=<span class="value">"borderColor"</span> <span class="attribute">label</span>=<span class="value">"Edit Field Border Color:"</span> <span class="attribute">defaultValue</span>=<span class="value">"#000"</span>&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"inherit"</span> <span class="attribute">label</span>=<span class="value">"Use Muse Stroke Color"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#FFF"</span> <span class="attribute">label</span>=<span class="value">"White"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#000"</span> <span class="attribute">label</span>=<span class="value">"Black"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#444"</span> <span class="attribute">label</span>=<span class="value">"Dark Grey"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#999"</span> <span class="attribute">label</span>=<span class="value">"Light Grey"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#F00"</span> <span class="attribute">label</span>=<span class="value">"Red"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#0F0"</span> <span class="attribute">label</span>=<span class="value">"Green"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#00F"</span> <span class="attribute">label</span>=<span class="value">"Blue"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#FF0"</span> <span class="attribute">label</span>=<span class="value">"Yellow"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#0FF"</span> <span class="attribute">label</span>=<span class="value">"Cyan"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#FA0"</span> <span class="attribute">label</span>=<span class="value">"Orange"</span>/&gt;</span>
-			<span class="tag">&lt;<span class="title">value</span> <span class="attribute">name</span>=<span class="value">"#F0F"</span> <span class="attribute">label</span>=<span class="value">"Purple"</span>/&gt;</span>
-		<span class="tag">&lt;/<span class="title">list</span>&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>width</code> is the width of the pageitem within Muse</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"width"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>height</code> is the height of the pageitem within Muse</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"height"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>itemUID</code> is the unique ID for this page item. It can be used as a CSS selector to limit CSS styling to just this widget.</p>
-</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"itemUID"</span>/&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;/<span class="title">parameters</span>&gt;</span>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">list</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"borderColor"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Edit Field Border Color:"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"#000"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"inherit"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Use Muse Stroke Color"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#FFF"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"White"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#000"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Black"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#444"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Dark Grey"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#999"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Light Grey"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#F00"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Red"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#0F0"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Green"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#00F"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Blue"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#FF0"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Yellow"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#0FF"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Cyan"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#FA0"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Orange"</span>/&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">value</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"#F0F"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Purple"</span>/&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>width</code> is the width of the pageitem within Muse</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">builtIn</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"width"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>height</code> is the height of the pageitem within Muse</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">builtIn</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"height"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>itemUID</code> is the unique ID for this page item. It can be used as a CSS selector to limit CSS styling to just this widget.</p>
+				</div>
+				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">builtIn</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"itemUID"</span>/&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code>	<span class="hljs-tag">&lt;/<span class="hljs-title">parameters</span>&gt;</span>
 	
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>headHTML</code> is HTML which will be injected into the <head> tag by Muse during output.
-This widget includes some CSS styling in the <head>, targetted to just the elements inside this widget.</p>
-</div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">headHTML</span>&gt;</span>
-<span class="cdata">&lt;![CDATA[
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>headHTML</code> is HTML which will be injected into the &lt;head&gt; tag by Muse during output.
+This widget includes some CSS styling in the &lt;head&gt;, targetted to just the elements inside this widget.</p>
+				</div>
+				<pre class="Code"><code>	<span class="hljs-tag">&lt;<span class="hljs-title">headHTML</span>&gt;</span>
+<span class="hljs-cdata">&lt;![CDATA[
 &lt;style&gt;
 #{param_itemUID} form { display:block; width:{param_width}px; height:{param_height}px; border-color:inherit;}
 #{param_itemUID} .addRightMargin {  margin-right:{param_margin}px}
@@ -94,14 +122,16 @@ This widget includes some CSS styling in the <head>, targetted to just the eleme
 #{param_itemUID} .calcButton { border-width:2px; width:40px;}
 &lt;/style&gt;
 ]]&gt;</span>
-	<span class="tag">&lt;/<span class="title">headHTML</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">headHTML</span>&gt;</span>
 
-</code></pre></section>
-			
-				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>pageItemHTML</code> is HTML which will be output by Muse wherever the page item is positioned by the user.
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p><code>pageItemHTML</code> is HTML which will be output by Muse wherever the page item is positioned by the user.
 In this case, the HTML contains a simple form with 2 edit fields, a dropdown to choose the operator, and a button to do the calculation.</p>
-</div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">pageItemHTML</span>&gt;</span>
-<span class="cdata">&lt;![CDATA[
+				</div>
+				<pre class="Code"><code>	<span class="hljs-tag">&lt;<span class="hljs-title">pageItemHTML</span>&gt;</span>
+<span class="hljs-cdata">&lt;![CDATA[
 &lt;form name="calcForm{param_itemUID}"&gt;
 	&lt;input class ="calcInput addRightMargin" type="text" name="input1" value="{param_input1default}"&gt;
 	&lt;select class="addRightMargin" name="operatorMenu"&gt;
@@ -115,12 +145,14 @@ In this case, the HTML contains a simple form with 2 edit fields, a dropdown to 
 	&lt;input class ="calcInput" type="text" name="resultField"&gt;
 &lt;/form&gt;
 ]]&gt;</span>
-	<span class="tag">&lt;/<span class="title">pageItemHTML</span>&gt;</span>
-</code></pre></section>
-			
-				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml"><span class="tag">&lt;/<span class="title">HTMLWidget</span>&gt;</span>
-</code></pre></section>
-			
+	<span class="hljs-tag">&lt;/<span class="hljs-title">pageItemHTML</span>&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code>
+<span class="hljs-tag">&lt;/<span class="hljs-title">HTMLWidget</span>&gt;</span>
+</code></pre>			</div>
 		</div>
 		<script type="text/javascript" src="js/simple.js"></script>
 	</body>
