@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ContentTagInsideParam.mucow</title>
+		<link href="css/basic.css" rel="stylesheet" >
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css" rel="stylesheet" >
+	</head>
+	<body>
+		<div class="header">
+			<a href="./" id="back">Back to Docs</a>
+			<h1><a href="assets/ContentTagInsideParam.mucow">ContentTagInsideParam.mucow</a></h1>
+		</div>
+		<div id="content">
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p>Content Tag Inside Parameter Example</p>
+<p>This is an example showing how to place content tags inside
+parameter values. This example has a simple true/false toggle
+that changes the <code>&lt;pageItemHTML&gt;</code> contents based on its
+toggled state. This can also be done for <code>&lt;list&gt;</code> in the same
+manner.</p>
+<p><strong>NOTE:</strong> Only the <code>&lt;pageItemHTML&gt;</code> tag can be changed in this
+way at the moment.</p>
+				</div>
+				<pre class="Code"><code><span class="hljs-tag">&lt;<span class="hljs-title">HTMLWidget</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Content Tag Inside Parameter Example"</span> <span class="hljs-attribute">formatNumber</span>=<span class="hljs-value">"1"</span> 
+		<span class="hljs-attribute">localization</span>=<span class="hljs-value">"none"</span> <span class="hljs-attribute">creator</span>=<span class="hljs-value">"Widgets.Mu"</span>
+		<span class="hljs-attribute">isResizable</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">defaultWidth</span>=<span class="hljs-value">"180"</span> <span class="hljs-attribute">defaultHeight</span>=<span class="hljs-value">"35"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">parameters</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">bool</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"toggleOption"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Toggle Option"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"foo"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">trueVal</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"foo"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">pageItemHTML</span>&gt;</span>
+					</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p> This content will be inserted when this value is true </p>
+				</div>
+				<pre class="Code"><code>					<span class="hljs-cdata">&lt;![CDATA[
+							You set the option to true.
+					]]&gt;</span>
+					</code></pre>			</div>
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code>				<span class="hljs-tag">&lt;/<span class="hljs-title">pageItemHTML</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">trueVal</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">falseVal</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bar"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-title">pageItemHTML</span>&gt;</span>
+					</code></pre>			</div>
+			<div class="FuncBlock Highlight">
+				<div class="CodeComment">
+					<p> This content will be inserted when this value is false </p>
+				</div>
+				<pre class="Code"><code>					<span class="hljs-cdata">&lt;![CDATA[
+							Your option was false.
+					]]&gt;</span>
+					</code></pre>			</div>
+			<div class="FuncBlock NoHighlight">
+				<div class="CodeComment">
+									</div>
+				<pre class="Code"><code>				<span class="hljs-tag">&lt;/<span class="hljs-title">pageItemHTML</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-title">falseVal</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">bool</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-title">parameters</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">HTMLWidget</span>&gt;</span></code></pre>			</div>
+		</div>
+		<script type="text/javascript" src="js/simple.js"></script>
+	</body>
+</html>
