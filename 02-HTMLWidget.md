@@ -18,7 +18,7 @@ la etiqueta `<HTMLWidget>` es la etiqueta de nivel superior de todos los archivo
 | Nombre | Valores | Descripción |
 |---|---|---|
 | name | String | **Obligatorio**. El nombre del widget. Se mostrará en el cuadro Opciones de diálogo y también en la tira de control |
-| formatNum | 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Obligatorio**. El número de formato del archivo. Las versiones actuales de Muse apoyan los tres valores de formato 3, 2, 1. |
+| formatNumber | 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Obligatorio**. El número de formato del archivo. Las versiones actuales de Muse apoyan los tres valores de formato 3, 2, 1. |
 | localization | `none` <br> `stringTable` | **Obligatorio**. El tipo de [localización][1] para este widget |
 | termsURL | URL | La URL a una página de 'Términos de Uso'. Si no está vacío, un enlace a esta URL aparecerá en las opciones de diálogo . Si especifica términos URL, no especifique los términos del texto |
 | termsText | String | Texto HTML que aparesera en 'Términos de uso' del cuadro de diálogo. El texto puede incluir enlaces a direcciones URL. Si especifica los términos del texto, no especifique términos URL |
