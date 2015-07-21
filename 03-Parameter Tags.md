@@ -225,6 +225,31 @@ A built in is a special type that allows you to get values that are specified di
 	<dd>
 		Language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
 	</dd>
+	<dt>
+		<code>siteDomain</code>
+	</dt>
+	<dd>
+		v4 and later, the domain in which the site is published to (e.g. muse.adobe.com)
+	</dd>
+	<dt>
+		<code>siteURL</code>
+	</dt>
+	<dd>
+		v4 and later, the url to the site (e.g. http://muse.adobe.com)
+	</dd>
+	<dt>
+		<code>pageTitle</code>
+	</dt>
+	<dd>
+		v4 and later, the title of the page (e.g. "home")
+	</dd>
+	<dt>
+		<code>pageURL</code>
+	</dt>
+	<dd>
+		v4 and later, the url to the page (e.g. http://muse.adobe.com/index.html) similar to the `currentPageOrURL` attribute for the `<URL>` parameter
+	</dd>
+    
 </dl>
 
 ## `<info>`
@@ -283,6 +308,11 @@ Specifies a parameter that will be a user chosen file. This file will be added a
 | filterLabel | String | Label for filter in the file browse dialog |
 | fileTypes | String | File types allowed in the file browse dialog. Should be a semicolon-separated list in format "\*.ext;\*.ext2" |
 | fileRequiredForOutput | Boolean | Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false. |
+| asAbsoluteURL | Boolean | v4 The result is computed as an absolute (http) URL based on publish settings. |
+
+Starting in v4 of the MuCow format, the `<file>` parameter can resolve with an absolute url to the file if the `asAbsoluteURL` attribute is true.
+Special care must be taken when the user chooses their publication settings when Muse is not publishing the site on their behalf (i.e. when generating
+the site to disk.) Muse uses the values entered in these options to build a canonical URL to the file specified.  
 
 ## `<color>`
 Specifies a parameter that will be user chosen color. Presented to the user as a color picker in the UI. **Only supported by widgets format 3 or above.**
@@ -308,5 +338,26 @@ Specifies a parameter that will be user chosen color. Presented to the user as a
 | rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
 | formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
 | supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
+
+## `<section>`
+Section is a special parameter tag which allows for related parameters to be grouped together.  The user experience for section tags is a collapsable group with a disclosure arrow.
+
+`<section>` tags should have at least 1 of the child parameter tags listed above but it may not contain any other `<section>` tags.
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| label | String | Label to display in the OOUI |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| expanded | Boolean | Specifies if the section is initially expanded when the OOUI is displayed for the widget. Defaults to false.  |
+
+	<section label="image" expanded="true" >
+        <file fileTypes="*.png;*.jpg;*.jpeg;*.gif" filterLabel="Image Files" label="Image" name="Image" fileRequiedForOutput="true" tooltip="Image"/>
+    </section>
+
+![Example <section>](images/example_expandable_section.png)
 
  [1]: ./04-Content%20Tags.md
