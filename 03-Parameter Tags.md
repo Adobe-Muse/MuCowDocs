@@ -328,13 +328,12 @@ Specifies a parameter that will be user chosen color. Presented to the user as a
 | Name | Values | Description |
 |---|---|---|---|
 | name | String | The name of the value |
-
+| defaultValue | String | Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value. |
 ### Optional Attributes
 | Name | Values | Description |
 |---|---|---|---|
 | label | String | Label to display in the OOUI |
 | toolTip | String | Tooltip to display in the OOUI when hovering over this option |
-| defaultValue | String | Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value. |
 | rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
 | formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
 | supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
