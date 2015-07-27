@@ -31,8 +31,9 @@ The `<HTMLWidget>` tag is the top level tag of all MuCow files.
 | minHeight | Number | Indicates the minimum allowable height for the page item. |
 | maxHeight | Number | Indicates the maximum allowable height for the page item. |
 
-## Attributes
+## New
 | Name | Values | Description |
+|---|---|---|
 | supportsGlobalAndOptionContentTags | Boolean | Indicates if the widget supports both global and conditional Option content tags (4+) |
 
 ## Child Tags
