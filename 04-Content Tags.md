@@ -27,7 +27,7 @@ content which is not block by default.
 Parameters are indicated by using `{param_PARAMNAME}`. They will be
 replaced at runtime with the current value of that parameter option.
 
-## `<docReadyJS>`
+## `<documentReadyJS>`
 Javascript in this field will be added to the page's document ready 
 handler. Any content added to this field is wrapped in its own function
 to avoid co-mingling with other script content.
