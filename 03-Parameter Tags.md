@@ -29,7 +29,7 @@ Specifies a parameter that will be user entered text. This text can be displayed
 | label | String | | Label to display in the OOUI |
 | toolTip | String | | Tooltip to display in the OOUI when hovering over this option |
 | paramEncoding | `URIComponent` <br/> `spaceToPlus` | | The type of encoding to apply to the entered parameter |
-| multiline | Boolean | | If set to true a multiline text control will be created in the UI instead of a single line text box. |
+| multiline | Boolean | | If set to 'true', a multiline text control will be created in the UI instead of a single line text box. |
 | defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
 
 ## `<list>`
@@ -94,8 +94,8 @@ Specifies the user should enter either a partial or full URL.
 |---|---|---|---|
 | label | String | | Label to display in the OOUI |
 | toolTip | String | | Tooltip to display in the OOUI when hovering over this option |
-| urlStart | String | | A comma separated list of URL prefixes. all entered URLs must start with one of these, or be incomplete URLs. |
-| currentPageOrURL | Boolean | | If set to 'true', user will be able to enter an arbitrary URL, or choose the URL for the current Muse Page. |
+| urlStart | String | | A comma separated list of URL prefixes. All entered URLs must start with one of these, or be incomplete URLs. |
+| currentPageOrURL | Boolean | | If set to 'true', user will be able to enter a custom URL. If set to 'false', the widget will output the URL of the page that it is on. |
 | dummyDomainPrefix | String | | If the user hasn't yet entered a domain name, when generating HTML for the current page, this dummy prefix will be used, along with a <abbr title="Globaly Unique Identifier">GUID</abbr>. |
 | defaultIllegalForOutput | Boolean | 2 | Will warn the user if the default value is used when exporting or publishing the site |
 
@@ -247,7 +247,7 @@ A built in is a special type that allows you to get values that are specified di
 		<code>pageURL</code>
 	</dt>
 	<dd>
-		v4 and later, the url to the page (e.g. http://muse.adobe.com/index.html) similar to the `currentPageOrURL` attribute for the `<URL>` parameter
+		v4 and later, the absolute (http) URL to the page (e.g. http://muse.adobe.com/index.html)
 	</dd>
     
 </dl>
@@ -308,11 +308,10 @@ Specifies a parameter that will be a user chosen file. This file will be added a
 | filterLabel | String | Label for filter in the file browse dialog |
 | fileTypes | String | File types allowed in the file browse dialog. Should be a semicolon-separated list in format "\*.ext;\*.ext2" |
 | fileRequiredForOutput | Boolean | Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false. |
-| asAbsoluteURL | Boolean | v4 The result is computed as an absolute (http) URL based on publish settings. |
+| asAbsoluteURL | Boolean | v4 and later, the result is computed as an absolute (http) URL based on publish settings. |
 
 Starting in v4 of the MuCow format, the `<file>` parameter can resolve with an absolute url to the file if the `asAbsoluteURL` attribute is true.
-Special care must be taken when the user chooses their publication settings when Muse is not publishing the site on their behalf (i.e. when generating
-the site to disk.) Muse uses the values entered in these options to build a canonical URL to the file specified.  
+Special care must be taken when the user chooses their publication settings when Muse is not publishing the site on their behalf (i.e. when generating the site to disk.) Muse uses the values entered in these options to build a canonical URL to the file specified for fixed width (adaptive) sites.
 
 ## `<color>`
 Specifies a parameter that will be user chosen color. Presented to the user as a color picker in the UI. **Only supported by widgets format 3 or above.**
@@ -336,7 +335,7 @@ Specifies a parameter that will be user chosen color. Presented to the user as a
 | toolTip | String | Tooltip to display in the OOUI when hovering over this option |
 | rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
 | formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
-| supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
+| supportsNoneColor | Boolean | Allows user to pick the none color swatch. If the user selects the none color swatch, the widget will output the word transparent. Defaults to false. To select transparency by default, set the `defaultValue` to `33554431` |
 
 ## `<section>`
 Section is a special parameter tag which allows for related parameters to be grouped together.  The user experience for section tags is a collapsable group with a disclosure arrow.
@@ -351,9 +350,9 @@ Section is a special parameter tag which allows for related parameters to be gro
 ### Optional Attributes
 | Name | Values | Description |
 |---|---|---|---|
+| name | Unique String | The name of the value.
 | expanded | Boolean | Specifies if the section is initially expanded when the OOUI is displayed for the widget. Defaults to false.  |
-
-	<section label="image" expanded="true" >
+	<section name="sectionName" label="image" expanded="true" >
         <file fileTypes="*.png;*.jpg;*.jpeg;*.gif" filterLabel="Image Files" label="Image" name="Image" fileRequiedForOutput="true" tooltip="Image"/>
     </section>
 
