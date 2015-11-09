@@ -337,6 +337,33 @@ Specifies a parameter that will be user chosen color. Presented to the user as a
 | rgbColor | Boolean | Color value to be returned as comma separated RGB value. Defaults to false. |
 | formatHexColor | Boolean | Adds the # character before the hex value. Use when color is used in CSS. Defaults to false. |
 | supportsNoneColor | Boolean | Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false. |
+| transparentOption | String | The name of a `<number>` input parameter to use to control transparency.  This Allows the color picker to include a slider to adjust the alpha channel of the color. The named input can later be referenced by the generated code as content to pass as the alpha parameter to rgba(). When specifying a transparentOption, supportsNoneColor must also be set to `true` . |
+
+## `<section>`
+Section is a special parameter tag which allows for related parameters to be grouped together.  The user experience for section tags is a collapsable group with a disclosure arrow.
+
+`<section>` tags should have at least 1 of the child parameter tags listed above but it may not contain any other `<section>` tags.
+
+### Required Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| label | String | Label to display in the OOUI |
+
+### Optional Attributes
+| Name | Values | Description |
+|---|---|---|---|
+| expanded | Boolean | Specifies if the section is initially expanded when the OOUI is displayed for the widget. Defaults to false. | 
+| name | Unique String | The name of the section.  This name can be used to reference the section from a "disableOptions" attribute of another parameter |
+
+	<bool name="toggleOption" label="Use Background Image" defaultValue="noImage">
+		<trueVal value="yesImage"/>
+		<falseVal value="noImage" disableOptions="imageSection" />
+	</bool>
+    <section label="image" expanded="true" name="imageSection" >
+        <file fileTypes="*.png;*.jpg;*.jpeg;*.gif" filterLabel="Image Files" label="Image" name="Image" fileRequiedForOutput="true" tooltip="Image"/>
+    </section>
+
+![Example <section>](images/example_expandable_section.png)
 
 ## `<section>`
 Section is a special parameter tag which allows for related parameters to be grouped together.  The user experience for section tags is a collapsable group with a disclosure arrow.
