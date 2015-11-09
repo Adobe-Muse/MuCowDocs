@@ -365,25 +365,4 @@ Section is a special parameter tag which allows for related parameters to be gro
 
 ![Example <section>](images/example_expandable_section.png)
 
-## `<section>`
-Section is a special parameter tag which allows for related parameters to be grouped together.  The user experience for section tags is a collapsable group with a disclosure arrow.
-
-`<section>` tags should have at least 1 of the child parameter tags listed above but it may not contain any other `<section>` tags.
-
-### Required Attributes
-| Name | Values | Description |
-|---|---|---|---|
-| label | String | Label to display in the OOUI |
-
-### Optional Attributes
-| Name | Values | Description |
-|---|---|---|---|
-| expanded | Boolean | Specifies if the section is initially expanded when the OOUI is displayed for the widget. Defaults to false.  |
-
-	<section label="image" expanded="true" >
-        <file fileTypes="*.png;*.jpg;*.jpeg;*.gif" filterLabel="Image Files" label="Image" name="Image" fileRequiedForOutput="true" tooltip="Image"/>
-    </section>
-
-![Example <section>](images/example_expandable_section.png)
-
  [1]: ./04-Content%20Tags.md
