@@ -353,7 +353,7 @@ Section is a special parameter tag which allows for related parameters to be gro
 | Name | Values | Description |
 |---|---|---|---|
 | expanded | Boolean | Specifies if the section is initially expanded when the OOUI is displayed for the widget. Defaults to false. | 
-| name | String | The name of the section.  This name can be used to reference the section from a "disableOptions" attribute of another parameter |
+| name | Unique String | The name of the section.  This name can be used to reference the section from a "disableOptions" attribute of another parameter |
 
 	<bool name="toggleOption" label="Use Background Image" defaultValue="noImage">
 		<trueVal value="yesImage"/>
