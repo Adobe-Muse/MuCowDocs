@@ -107,7 +107,7 @@ which will enable you to write code that resembles the following:
     </bool>
 </parameters>
 <pageItemHTML>
-    <!CDATA[<p>Contact Us:<br/>1-800-866-8006</p>]>
+    <!CDATA[<p>Contact Us:<br/>1-800-866-8006</p>]]>
 </pageItemHTML>
 ```
 
