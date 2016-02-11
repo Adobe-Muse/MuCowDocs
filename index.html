@@ -31,16 +31,19 @@
 							<li><a href="#h-separator-"><code>&lt;separator&gt;</code></a>
 							<li><a href="#h-file-"><code>&lt;file&gt;</code></a>
 							<li><a href="#h-color-"><code>&lt;color&gt;</code></a>
+							<li><a href="#h-section-"><code>&lt;section&gt;</code></a>
 						</ul>
 					<li><a href="#hcontent-tags">Content Tags</a>
 						<ul>
 							<li><a href="#hhtml-content">HTML Content</a>
 							<li><a href="#hparameters">Parameters</a>
+							<li><a href="#h-documentreadyjs-"><code>&lt;documentReadyJS&gt;</code></a>
 							<li><a href="#h-headhtml-"><code>&lt;headHTML&gt;</code></a>
 							<li><a href="#h-bodybeginhtml-"><code>&lt;bodyBeginHTML&gt;</code></a>
 							<li><a href="#h-pageitemhtml-"><code>&lt;pageItemHTML&gt;</code></a>
 							<li><a href="#h-bodyendhtml-"><code>&lt;bodyEndHTML&gt;</code></a>
 							<li><a href="#h-pageitemposterhtml-"><code>&lt;pageItemPosterHTML&gt;</code></a>
+							<li><a href="#hglobal-vs-conditional-content">Global vs. Conditional content</a>
 						</ul>
 					<li><a href="#hlocalization">Localization</a>
 						<ul>
@@ -89,7 +92,7 @@ ways to share it with the community.</p>
 <p>The <code>&lt;HTMLWidget&gt;</code> tag is the top level tag of all MuCow files.</p>
 <h2 id="hexample">Example</h2>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;HTMLWidget name=&quot;My Widget&quot; formatNumber=&quot;2&quot;
+&lt;HTMLWidget name=&quot;My Widget&quot; formatNumber=&quot;3&quot;
         localization=&quot;none&quot; creator=&quot;My Name&quot; 
         defaultWidth=&quot;50&quot; defaultHeight=&quot;50&quot; 
         isResizable=&quot;true&quot;&gt;
@@ -113,8 +116,8 @@ ways to share it with the community.</p>
 <td><strong>Required.</strong> The name of the widget. Will be displayed in the options dialog, and also in the control strip</td>
 </tr>
 <tr>
-<td>formatNum</td>
-<td>3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+)</td>
+<td>formatNumber</td>
+<td>4&nbsp;(Muse&nbsp;2015.1+) <br> 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+)</td>
 <td><strong>Required.</strong> The format number of this file. Current Muse versions support format 3 and below.</td>
 </tr>
 <tr>
@@ -171,6 +174,16 @@ ways to share it with the community.</p>
 <td>maxHeight</td>
 <td>Number</td>
 <td>Indicates the maximum allowable height for the page item.</td>
+</tr>
+<tr>
+<td>supportsGlobalAndOptionContentTags</td>
+<td>Boolean</td>
+<td>Indicates if the widget supports both global and conditional Option content tags (format 4+)</td>
+</tr>
+<tr>
+<td>isResponsive</td>
+<td>Boolean</td>
+<td>Indicates if the page item should can be responsive to support fluid sizing. (format 4+)</td>
 </tr>
 </tbody>
 </table>
@@ -266,7 +279,7 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <pre><code>&lt;list name=&quot;myList&quot; defaultValue=&quot;Second Value&quot; label=&quot;My List&quot;&gt;
     &lt;value name=&quot;first&quot; label=&quot;First Value&quot;/&gt;
     &lt;value name=&quot;Second Value&quot;/&gt;
-    &lt;value name=&quot;third_value&quot; label=&quot;Last One&quot;/&gt;
+    &lt;value name=&quot;third_value&quot; label=&quot;Last One&quot; disableOptions=&quot;myTextBox,myURL&quot;/&gt;
 &lt;/list&gt;
 </code></pre><p><img src="images/example_param_tag_list.png" alt="Example &lt;list&gt; parameter tag"></p>
 <h3 id="hrequired-attributes1">Required Attributes</h3>
@@ -335,6 +348,11 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <td>label</td>
 <td>String</td>
 <td>A label to display to the user</td>
+</tr>
+<tr>
+<td>disableOptions</td>
+<td>List</td>
+<td>A comma separated list of name values for options that are disabled when the selected item is this </td>
 </tr>
 </tbody>
 </table>
@@ -616,10 +634,16 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <tr>
 <td>supportedLocales</td>
 <td>List</td>
-<td>Comma separated list of languages supported by this MuCow. If the document language is not one of these languages, the English equivalent will be used instead</td>
+<td>When the <code>name</code> attribute is &quot;locale&quot;, this attribute is a comma separated list of locales supported by this MuCow. If the document locale is not one of these, the en_US will be used</td>
+</tr>
+<tr>
+<td>supportedLanguages</td>
+<td>List</td>
+<td>When the <code>name</code> attribute is &quot;language&quot;, this attribute is a comma separated list of languages supported by this MuCow. If the document language is not one of these languages, the English equivalent will be used instead</td>
 </tr>
 </tbody>
 </table>
+<p><strong>NOTE:</strong>  The <code>supportedLocale</code> and <code>supportedLangauge</code> attributes are ignored if the <code>name</code> attribute is not <code>locale</code> or <code>language</code> respectively.</p>
 <h3 id="htypes">Types</h3>
 <dl>
     <dt>
@@ -664,6 +688,31 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
     <dd>
         Language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
     </dd>
+    <dt>
+        <code>siteDomain</code>
+    </dt>
+    <dd>
+        v4 and later, the domain in which the site is published to (e.g. muse.adobe.com)
+    </dd>
+    <dt>
+        <code>siteURL</code>
+    </dt>
+    <dd>
+        v4 and later, the url to the site (e.g. <a href="http://muse.adobe.com">http://muse.adobe.com</a>)
+    </dd>
+    <dt>
+        <code>pageTitle</code>
+    </dt>
+    <dd>
+        v4 and later, the title of the page (e.g. &quot;home&quot;)
+    </dd>
+    <dt>
+        <code>pageURL</code>
+    </dt>
+    <dd>
+        v4 and later, the url to the page (e.g. <a href="http://muse.adobe.com/index.html">http://muse.adobe.com/index.html</a>) similar to the <code>currentPageOrURL</code> attribute for the <code>&lt;URL&gt;</code> parameter
+    </dd>
+
 </dl>
 
 <h2 id="h-info-"><code>&lt;info&gt;</code></h2>
@@ -684,7 +733,7 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 </thead>
 <tbody>
 <tr>
-<td>value</td>
+<td>label</td>
 <td>String</td>
 <td>The text to display to the user</td>
 </tr>
@@ -752,6 +801,11 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <td>Label to display in the OOUI</td>
 </tr>
 <tr>
+<td>toolTip</td>
+<td>String</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
+</tr>
+<tr>
 <td>filterLabel</td>
 <td>String</td>
 <td>Label for filter in the file browse dialog</td>
@@ -766,8 +820,16 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <td>Boolean</td>
 <td>Will warn the user when exporting or publishing the site if no file was chosen. Defaults to false.</td>
 </tr>
+<tr>
+<td>asAbsoluteURL</td>
+<td>Boolean</td>
+<td>v4 The result is computed as an absolute (http) URL based on publish settings.</td>
+</tr>
 </tbody>
 </table>
+<p>Starting in v4 of the MuCow format, the <code>&lt;file&gt;</code> parameter can resolve with an absolute url to the file if the <code>asAbsoluteURL</code> attribute is true.
+Special care must be taken when the user chooses their publication settings when Muse is not publishing the site on their behalf (i.e. when generating
+the site to disk.) Muse uses the values entered in these options to build a canonical URL to the file specified.  </p>
 <h2 id="h-color-"><code>&lt;color&gt;</code></h2>
 <p>Specifies a parameter that will be user chosen color. Presented to the user as a color picker in the UI. <strong>Only supported by widgets format 3 or above.</strong></p>
 <h3 id="hexamples8">Examples</h3>
@@ -789,6 +851,11 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <td>String</td>
 <td>The name of the value</td>
 </tr>
+<tr>
+<td>defaultValue</td>
+<td>String</td>
+<td>Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="hoptional-attributes7">Optional Attributes</h3>
@@ -807,9 +874,9 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <td>Label to display in the OOUI</td>
 </tr>
 <tr>
-<td>defaultValue</td>
+<td>toolTip</td>
 <td>String</td>
-<td>Can be either hex color or comma separated RGB value. Does not affect output format. Use rgbColor to output comma separated RGB value.</td>
+<td>Tooltip to display in the OOUI when hovering over this option</td>
 </tr>
 <tr>
 <td>rgbColor</td>
@@ -826,13 +893,71 @@ about the <code>&lt;stringTable&gt;</code> tag.</p>
 <td>Boolean</td>
 <td>Allow user to pick the none color swatch. Choosing none will output the word transparent. Defaults to false.</td>
 </tr>
+<tr>
+<td>transparentOption</td>
+<td>String</td>
+<td>The name of a <code>&lt;number&gt;</code> input parameter to use to control transparency.  This Allows the color picker to include a slider to adjust the alpha channel of the color. The named input can later be referenced by the generated code as content to pass as the alpha parameter to rgba(). When specifying a transparentOption, supportsNoneColor must also be set to <code>true</code> .</td>
+</tr>
 </tbody>
 </table>
+<h2 id="h-section-"><code>&lt;section&gt;</code></h2>
+<p>Section is a special parameter tag which allows for related parameters to be grouped together.  The user experience for section tags is a collapsable group with a disclosure arrow.</p>
+<p><code>&lt;section&gt;</code> tags should have at least 1 of the child parameter tags listed above but it may not contain any other <code>&lt;section&gt;</code> tags.</p>
+<h3 id="hrequired-attributes8">Required Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Label to display in the OOUI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hoptional-attributes8">Optional Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expanded</td>
+<td>Boolean</td>
+<td>Specifies if the section is initially expanded when the OOUI is displayed for the widget. Defaults to false.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Unique String</td>
+<td>The name of the section.  This name can be used to reference the section from a &quot;disableOptions&quot; attribute of another parameter</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;bool name=&quot;toggleOption&quot; label=&quot;Use Background Image&quot; defaultValue=&quot;noImage&quot;&gt;
+    &lt;trueVal value=&quot;yesImage&quot;/&gt;
+    &lt;falseVal value=&quot;noImage&quot; disableOptions=&quot;imageSection&quot; /&gt;
+&lt;/bool&gt;
+&lt;section label=&quot;image&quot; expanded=&quot;true&quot; name=&quot;imageSection&quot; &gt;
+    &lt;file fileTypes=&quot;*.png;*.jpg;*.jpeg;*.gif&quot; filterLabel=&quot;Image Files&quot; label=&quot;Image&quot; name=&quot;Image&quot; fileRequiedForOutput=&quot;true&quot; tooltip=&quot;Image&quot;/&gt;
+&lt;/section&gt;
+</code></pre><p><img src="images/example_expandable_section.png" alt="Example &lt;section&gt;"></p>
 
 		</article>		<article id="page-04-content-tags">
 			<h1 id="hcontent-tags">Content Tags</h1>
 <p>Content tags are the meat and potatoes of your MuCow. They are what
-actually place things into Muse output. Each of these areas</p>
+actually place things into Muse output. Each of these areas can be 
+used to add content to the resulting output HTML.</p>
+<p>Content tags can be global, as the only content generated, or as optional
+content written as a condition of a Boolean or List option value. </p>
 <h2 id="hhtml-content">HTML Content</h2>
 <p>Because MuCows are written in XML, you will need to use <code>&lt;![CDATA[]]&gt;</code>
 to wrap any HTML content you are inserting into the page. For example,
@@ -846,10 +971,14 @@ need to do the following:</p>
 </code></pre><p><em>Note that for any HTML elements, you can use the HTML class <code>actAsDiv</code>
 to indicate that you want that element to be a block level element.</em>
 This is especially useful with things like <code>&lt;img&gt;</code> or <code>&lt;iframe&gt;</code>
-content which is not block by default</p>
+content which is not block by default.</p>
 <h2 id="hparameters">Parameters</h2>
 <p>Parameters are indicated by using <code>{param_PARAMNAME}</code>. They will be
 replaced at runtime with the current value of that parameter option.</p>
+<h2 id="h-documentreadyjs-"><code>&lt;documentReadyJS&gt;</code></h2>
+<p>Javascript in this field will be added to the page&#39;s document ready 
+handler. Any content added to this field is wrapped in its own function
+to avoid co-mingling with other script content.</p>
 <h2 id="h-headhtml-"><code>&lt;headHTML&gt;</code></h2>
 <p>HTML in this field will be added to the page <code>&lt;head&gt;</code> at output time.
 Only one copy of the code will be output, even if there are multiple
@@ -872,6 +1001,85 @@ widget. This is especially useful for items that will not load due to
 restrictions on URLs that can load the content, or on items which have a
 bandwidth limit. <strong>This will only be available in MuCows that use format
 version 2 or above.</strong></p>
+<h2 id="hglobal-vs-conditional-content">Global vs. Conditional content</h2>
+<p>The <code>&lt;trueVal&gt;</code>, <code>&lt;falseVal&gt;</code>, and <code>&lt;value&gt;</code> tags (children of <code>&lt;bool&gt;</code> and
+<code>&lt;list&gt;</code> tags) can have child content tags.  Content tags on this level are 
+generated based on the condition of the value selected at runtime and are
+in contrast to global content tags which are always generated regardless of
+what a list item was selected or if a checkbox was checked. </p>
+<p>Widget authors need to be careful of using conditionals because MuCows can 
+have either a conditional content or global content and each condition will
+write code that essentially trumps other conditions.  Mixing conditional value
+requires some sort of javascript or web-service to  build the html when there
+is more than one conditional value in a widget.</p>
+<p>Starting with format version 4, however, conditional content can be &quot;built-up&quot;.
+This means that conditions can generate the code specific for that option 
+without the need to worry about the code for one condition stepping on the
+code generated from another condition. </p>
+<p>Also starting with version 4: conditional content is no longer exclusive to
+the output -- meaning that you can have have global content that includes 
+conditional content.  </p>
+<p>To enable this feature, you&#39;ll need to add the following to your 
+HTMLWidget tag:</p>
+<pre><code>supportsGlobalAndOptionContentTags=&quot;true&quot;
+</code></pre><p>which will enable you to write code that resembles the following:</p>
+<pre><code class="lang-xml">&lt;parameters&gt;
+    &lt;bool name=&quot;incEMail&quot; defaultValue=&quot;true&quot;&gt;
+        &lt;trueVal value=&quot;true&quot;&gt;
+            &lt;pageItemHTML&gt;
+                &lt;![CDATA[&lt;p&gt;&lt;a href=&quot;mailto:info@adobe.com&quot;&gt;info@adobe.com&lt;/a&gt;&lt;/p&gt;]]&gt;
+            &lt;/pageItemHTML&gt;
+        &lt;/trueVal&gt;
+        &lt;falseVal value=&quot;false&quot;/&gt;
+    &lt;/bool&gt;
+    &lt;bool name=&quot;incCoAddr&quot; defaultValue=&quot;true&quot;&gt;
+        &lt;trueVal value=&quot;true&quot;&gt;
+            &lt;pageItemHTML&gt;
+                &lt;![CDATA[&lt;p&gt;345 Park Ave&lt;br/&gt;San Jose, CA 95110&lt;/p&gt;]]&gt;
+            &lt;/pageItemHTML&gt;
+        &lt;/trueVal&gt;
+        &lt;falseVal value=&quot;false&quot;/&gt;
+    &lt;/bool&gt;
+&lt;/parameters&gt;
+&lt;pageItemHTML&gt;
+    &lt;![CDATA[&lt;p&gt;Contact Us:&lt;br/&gt;1-800-866-8006&lt;/p&gt;]]&gt;
+&lt;/pageItemHTML&gt;
+</code></pre>
+<p>This allows for each conditional item to generate a snippet of HTML for output 
+without the need to write complex javascript tests to modify the document at runtime.</p>
+<p>Also new with version 4 is the conditional tags now support all 4 content tags. 
+Version 3 and below only supported &quot;pageItemHTML&quot; content to be generated from
+conditional elements.  Version 4 will support &quot;pageItemHTML&quot;, &quot;bodyBeginHTML&quot;, 
+&quot;bodyEndHTML&quot; and &quot;headHTML&quot; content tags.</p>
+<pre><code class="lang-xml">&lt;parameters&gt;
+    &lt;bool name=&quot;addAutoComplete&quot; defaultValue=&quot;true&quot;&gt;
+        &lt;trueVal value=&quot;true&quot;&gt;
+            &lt;headHTML&gt;
+            &lt;![CDATA[&lt;script src=&quot;http://code.jquery.com/ui/1.11.4/jquery-ui.js&quot;&gt;&lt;/script&gt;
+                &lt;script&gt;
+                    $(function() {
+                        var tags = [
+                            &quot;Adobe&quot;,
+                            &quot;Microsoft&quot;,
+                            &quot;Apple&quot;,
+                            &quot;Oracle&quot;
+                        ];
+                        // add autocomplete to every text input field
+                        $(&quot;input[type=&#39;text&#39;]&quot;).autocomplete({
+                            source: tags
+                        });
+                    });
+                &lt;/script&gt;
+            ]]&gt;
+            &lt;/headHTML&gt;
+        &lt;/trueVal&gt;
+        &lt;falseVal value=&quot;false&quot;/&gt;
+    &lt;/bool&gt;
+&lt;/parameters&gt;
+</code></pre>
+<p>Also starting with V4, only one of the <code>&lt;bool&gt;</code> tags are required to have content tags.<br>Previous versions would require both <code>&lt;trueVal&gt;</code> and <code>&lt;falseVal&gt;</code> to have a <code>&lt;pageItem&gt;</code>
+tag if one of them had it but this is no longer the case.  An empty content tag is 
+automatically created for you if you omit one of them.</p>
 
 		</article>		<article id="page-05-localization">
 			<h1 id="hlocalization">Localization</h1>
@@ -901,7 +1109,7 @@ contain as many as needed.</p>
 should match one of the language codes available in Muse.</p>
 <p>A <code>&lt;locale&gt;</code> tag should contain a <code>&lt;string&gt;</code> tag as a child for each
 translated string value to be used in the widget.</p>
-<h3 id="hrequired-attributes8">Required Attributes</h3>
+<h3 id="hrequired-attributes9">Required Attributes</h3>
 <table>
 <thead>
 <tr>
@@ -931,7 +1139,7 @@ the end user. It will contain a <code>keyString</code> and a <code>translation</
 attribute. The <code>keyString</code> attribute will be the same across the
 locales, and is what you will put in the place of the real string.
 See the examples section for more information.</p>
-<h3 id="hrequired-attributes9">Required Attributes</h3>
+<h3 id="hrequired-attributes10">Required Attributes</h3>
 <table>
 <thead>
 <tr>
