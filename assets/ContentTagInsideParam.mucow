@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Content Tag Inside Parameter Example
+	
+	This is an example showing how to place content tags inside
+	parameter values. This example has a simple true/false toggle
+	that changes the `<pageItemHTML>` contents based on its
+	toggled state. This can also be done for `<list>` in the same
+	manner.
+	
+	**NOTE:** Only the `<pageItemHTML>` tag can be changed in this
+	way at the moment.
+-->
+<HTMLWidget name="Content Tag Inside Parameter Example" formatNumber="1" 
+		localization="none" creator="Widgets.Mu"
+		isResizable="true" defaultWidth="180" defaultHeight="35">
+	<parameters>
+		<bool name="toggleOption" label="Toggle Option" defaultValue="foo">
+			<trueVal value="foo">
+				<pageItemHTML>
+					<!-- This content will be inserted when this value is true -->
+					<![CDATA[
+							You set the option to true.
+					]]>
+					<!-- ! -->
+				</pageItemHTML>
+			</trueVal>
+			<falseVal value="bar">
+				<pageItemHTML>
+					<!-- This content will be inserted when this value is false -->
+					<![CDATA[
+							Your option was false.
+					]]>
+					<!-- ! -->
+				</pageItemHTML>
+			</falseVal>
+		</bool>
+	</parameters>
+</HTMLWidget>
