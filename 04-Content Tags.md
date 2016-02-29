@@ -64,10 +64,10 @@ The `<trueVal>`, `<falseVal>`, and `<value>` tags (children of `<bool>` and
 `<list>` tags) can have child content tags.  Content tags on this level are 
 generated based on the condition of the value selected at runtime and are
 in contrast to global content tags which are always generated regardless of
-what a list item was selected or if a checkbox was checked. 
+what list item was selected or if a checkbox was checked. 
 
-Widget authors need to be careful of using conditionals because MuCows can 
-have either a conditional content or global content and each condition will
+Widget authors needed to be careful of using conditionals because MuCows can 
+have either conditional content or global content and each condition will
 write code that essentially trumps other conditions.  Mixing conditional value
 requires some sort of javascript or web-service to  build the html when there
 is more than one conditional value in a widget.

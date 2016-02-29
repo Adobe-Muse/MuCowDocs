@@ -33,6 +33,7 @@ support which MuCow formats
 | 1 | 7.0 (Released Nov. 2013) |
 | 2 | 2014.0 (Released June 2014) |
 | 3 | 2014.3 (Released February 2015) |
+| 4 | 2015.1 (Released February 2016) |
 
 ## Where can I share it?
 The recommended way to share your MuCow with others is by adding it to a
