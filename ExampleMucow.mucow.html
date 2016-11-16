@@ -4,75 +4,61 @@
 		<meta charset="utf-8">
 		<title>ExampleMucow.mucow</title>
 		<link href="css/basic.css" rel="stylesheet" >
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/github.min.css" rel="stylesheet" >
+		<link href="css/vs.css" rel="stylesheet" >
 	</head>
 	<body>
-		<div class="header">
+		<header>
 			<a href="./" id="back">Back to Docs</a>
 			<h1><a href="assets/ExampleMucow.mucow">ExampleMucow.mucow</a></h1>
-		</div>
+		</header>
 		<div id="content">
-			<div class="FuncBlock NoHighlight">
-				<div class="CodeComment">
-									</div>
-				<pre class="Code"><code><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock Highlight">
-				<div class="CodeComment">
-					<p><code>&lt;HTMLWidget&gt;</code> is the top level element which all other elements
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>&lt;HTMLWidget&gt;</code> is the top level element which all other elements
 will be a child of. It contains the attributes for the widget as
 a whole.</p>
-				</div>
-				<pre class="Code"><code><span class="hljs-tag">&lt;<span class="hljs-title">HTMLWidget</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"Example"</span> <span class="hljs-attribute">formatNumber</span>=<span class="hljs-value">"1"</span> 
-		<span class="hljs-attribute">localization</span>=<span class="hljs-value">"none"</span> <span class="hljs-attribute">creator</span>=<span class="hljs-value">"Adobe Muse Team"</span>
-		<span class="hljs-attribute">isResizable</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">defaultWidth</span>=<span class="hljs-value">"100"</span> <span class="hljs-attribute">defaultHeight</span>=<span class="hljs-value">"35"</span>&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock NoHighlight">
-				<div class="CodeComment">
-									</div>
-				<pre class="Code"><code>	<span class="hljs-tag">&lt;<span class="hljs-title">parameters</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-title">bool</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"toggleOption"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Toggle Option"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"foo"</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-title">trueVal</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"foo"</span>/&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock Highlight">
-				<div class="CodeComment">
-					<p><code>disableOptions</code> disables both <code>myTextBox</code> and <code>myURL</code> options when
+</div><pre class="Code"><code class="xml"><span class="tag">&lt;<span class="title">HTMLWidget</span> <span class="attribute">name</span>=<span class="value">"Example"</span> <span class="attribute">formatNumber</span>=<span class="value">"1"</span> 
+		<span class="attribute">localization</span>=<span class="value">"none"</span> <span class="attribute">creator</span>=<span class="value">"Adobe Muse Team"</span>
+		<span class="attribute">isResizable</span>=<span class="value">"false"</span> <span class="attribute">defaultWidth</span>=<span class="value">"100"</span> <span class="attribute">defaultHeight</span>=<span class="value">"35"</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;<span class="title">parameters</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">bool</span> <span class="attribute">name</span>=<span class="value">"toggleOption"</span> <span class="attribute">label</span>=<span class="value">"Toggle Option"</span> <span class="attribute">defaultValue</span>=<span class="value">"foo"</span>&gt;</span>
+			<span class="tag">&lt;<span class="title">trueVal</span> <span class="attribute">value</span>=<span class="value">"foo"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>disableOptions</code> disables both <code>myTextBox</code> and <code>myURL</code> options when
 this option is unchecked.</p>
-				</div>
-				<pre class="Code"><code>			<span class="hljs-tag">&lt;<span class="hljs-title">falseVal</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"bar"</span> <span class="hljs-attribute">disableOptions</span>=<span class="hljs-value">"myTextBox,myURL"</span>/&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock NoHighlight">
-				<div class="CodeComment">
-									</div>
-				<pre class="Code"><code>		<span class="hljs-tag">&lt;/<span class="hljs-title">bool</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-title">text</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"myTextBox"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"Default Text Here"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"Text Box: "</span> /&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-title">text</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"myURL"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"http://muse.adobe.com/"</span> <span class="hljs-attribute">label</span>=<span class="hljs-value">"URL: "</span> /&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock Highlight">
-				<div class="CodeComment">
-					<p><code>itemUID</code> is the id for the page item the will contain the
+</div><pre class="Code"><code class="xml">			<span class="tag">&lt;<span class="title">falseVal</span> <span class="attribute">value</span>=<span class="value">"bar"</span> <span class="attribute">disableOptions</span>=<span class="value">"myTextBox,myURL"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">		<span class="tag">&lt;/<span class="title">bool</span>&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"myTextBox"</span> <span class="attribute">defaultValue</span>=<span class="value">"Default Text Here"</span> <span class="attribute">label</span>=<span class="value">"Text Box: "</span> /&gt;</span>
+		<span class="tag">&lt;<span class="title">text</span> <span class="attribute">name</span>=<span class="value">"myURL"</span> <span class="attribute">defaultValue</span>=<span class="value">"http://muse.adobe.com/"</span> <span class="attribute">label</span>=<span class="value">"URL: "</span> /&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p><code>itemUID</code> is the id for the page item the will contain the
 <code>&lt;pageItemHTML&gt;</code> content</p>
-				</div>
-				<pre class="Code"><code>		<span class="hljs-tag">&lt;<span class="hljs-title">builtIn</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"itemUID"</span>/&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock NoHighlight">
-				<div class="CodeComment">
-									</div>
-				<pre class="Code"><code>	<span class="hljs-tag">&lt;/<span class="hljs-title">parameters</span>&gt;</span>
+</div><pre class="Code"><code class="xml">		<span class="tag">&lt;<span class="title">builtIn</span> <span class="attribute">name</span>=<span class="value">"itemUID"</span>/&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">	<span class="tag">&lt;/<span class="title">parameters</span>&gt;</span>
 	
-	<span class="hljs-tag">&lt;<span class="hljs-title">pageItemHTML</span>&gt;</span>
-</code></pre>			</div>
-			<div class="FuncBlock Highlight">
-				<div class="CodeComment">
-					<p>Don’t forget to wrap your content in a <code>&lt;![CDATA[ ]]&gt;</code> tag</p>
-				</div>
-				<pre class="Code"><code><span class="hljs-cdata">&lt;![CDATA[
-&lt;!-- ! --&gt;
-		Hello, {param_itemUID}!
-]]&gt;</span>
-	<span class="hljs-tag">&lt;/<span class="hljs-title">pageItemHTML</span>&gt;</span>
+	<span class="tag">&lt;<span class="title">pageItemHTML</span>&gt;</span>
+</code></pre></section>
+			
+				<section class="FuncBlock Highlight"><div class="CodeComment"><p>Don&#39;t forget to wrap your content in a <code>&lt;![CDATA[ ]]&gt;</code> tag</p>
+</div><pre class="Code"><code class="xml"><span class="cdata">&lt;![CDATA[
+</code></pre></section>
+			
+				<section class="FuncBlock NoHighlight"><div class="CodeComment"></div><pre class="Code"><code class="xml">		Hello, {param_itemUID}!
+]]&gt;
+	<span class="tag">&lt;/<span class="title">pageItemHTML</span>&gt;</span>
 	
-<span class="hljs-tag">&lt;/<span class="hljs-title">HTMLWidget</span>&gt;</span></code></pre>			</div>
+<span class="tag">&lt;/<span class="title">HTMLWidget</span>&gt;</span></code></pre></section>
+			
 		</div>
 		<script type="text/javascript" src="js/simple.js"></script>
 	</body>

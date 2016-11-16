@@ -117,8 +117,8 @@ ways to share it with the community.</p>
 </tr>
 <tr>
 <td>formatNumber</td>
-<td>4&nbsp;(Muse&nbsp;2015.1+) <br> 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+)</td>
-<td><strong>Required.</strong> The format number of this file. Current Muse versions support format 3 and below.</td>
+<td>6&nbsp;(Muse&nbsp;2017.0+) <br>5&nbsp;(Muse&nbsp;2015.2+) <br>4&nbsp;(Muse&nbsp;2015.1+) <br> 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+)</td>
+<td><strong>Required.</strong> The format number of this file. Current Muse versions support format 6 and below.</td>
 </tr>
 <tr>
 <td>localization</td>
@@ -184,6 +184,16 @@ ways to share it with the community.</p>
 <td>isResponsive</td>
 <td>Boolean</td>
 <td>Indicates if the page item should can be responsive to support fluid sizing. (format 4+)</td>
+</tr>
+<tr>
+<td>outputAsFixedHeight</td>
+<td>Boolean</td>
+<td>Indicates if the page item should export with fixed height when responsive width(other option is min-height). <em>Default value is true</em> (format 6+)</td>
+</tr>
+<tr>
+<td>supportedSizePolicies</td>
+<td>String</td>
+<td>Comma seperated list indicating which resize policies are supported. Possible options fixed,fluidWidth,fluidWidthHeight. (format 5+)</td>
 </tr>
 </tbody>
 </table>
@@ -1249,7 +1259,7 @@ support which MuCow formats</p>
 <tbody>
 <tr>
 <td>1</td>
-<td>7.0 (Released Nov. 2013)</td>
+<td>7.0 (Released November 2013)</td>
 </tr>
 <tr>
 <td>2</td>
@@ -1262,6 +1272,14 @@ support which MuCow formats</p>
 <tr>
 <td>4</td>
 <td>2015.1 (Released February 2016)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2015.2 (Released June 2016)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2017.0 (Released November 2016)</td>
 </tr>
 </tbody>
 </table>
