@@ -18,7 +18,7 @@ The `<HTMLWidget>` tag is the top level tag of all MuCow files.
 | Name | Values | Description |
 |---|---|---|
 | name | String | **Required.** The name of the widget. Will be displayed in the options dialog, and also in the control strip |
-| formatNumber | 4&nbsp;(Muse&nbsp;2015.1+) <br> 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Required.** The format number of this file. Current Muse versions support format 4 and below. |
+| formatNumber | 6&nbsp;(Muse&nbsp;2017.0+) <br>5&nbsp;(Muse&nbsp;2015.2+) <br>4&nbsp;(Muse&nbsp;2015.1+) <br> 3&nbsp;(Muse&nbsp;2014.3+) <br> 2&nbsp;(Muse&nbsp;2014.0+) <br> 1&nbsp;(Muse&nbsp;7.0+) | **Required.** The format number of this file. Current Muse versions support format 6 and below. |
 | localization | `none` <br> `stringTable` | **Required.** The type of [localization][1] for this widget |
 | termsURL | URL | The URL to a 'Terms of Use' page. A link to this URL will appear in options dialog if non-empty. If you specify termsURL, do not specify termsText |
 | termsText | String | HTML text to appear in a 'Terms of Use' dialog. Text may include links to URLs. If you specify termsText, do not specify termsURL |
@@ -32,6 +32,8 @@ The `<HTMLWidget>` tag is the top level tag of all MuCow files.
 | maxHeight | Number | Indicates the maximum allowable height for the page item. |
 | supportsGlobalAndOptionContentTags | Boolean | Indicates if the widget supports both global and conditional Option content tags (format 4+) |
 | isResponsive | Boolean | Indicates if the page item should can be responsive to support fluid sizing. (format 4+) |
+| outputAsFixedHeight | Boolean | Indicates if the page item should export with fixed height when responsive width(other option is min-height). *Default value is true* (format 6+) |
+| supportedSizePolicies | String | Comma seperated list indicating which resize policies are supported. Possible options fixed,fluidWidth,fluidWidthHeight. (format 5+) |
 
 ## Child Tags
 

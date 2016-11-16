@@ -7,7 +7,7 @@ Text styling can be applied to this list within Muse.
 The max size of the list is fixed at 10. 
 Empty list elements are removed via JavaScript.
 -->
-<HTMLWidget name="Simple List" formatNumber="1"  localization="none" creator="Adobe Muse Team" defaultWidth="250" defaultHeight="250">
+<HTMLWidget name="Simple List" formatNumber="1"  localization="none" creator="Adobe Muse Team" termsText="&lt;p&gt;This List was created by &lt;a href='http://www.adobe.com'&gt;Adobe&lt;/a&gt;. We hope you find it useful!&lt;/p&gt;" defaultWidth="250" defaultHeight="250">
 <!-- ! -->
 	<parameters>
 <!--

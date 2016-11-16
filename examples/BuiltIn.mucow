@@ -6,16 +6,13 @@ a whole.
 
 This widget lists the values for all the current builtIn mucow parameters.
 -->
-<HTMLWidget name="kBuiltIn" formatNumber="1" localization="stringTable" 
-	creator="Adobe Muse Team" defaultWidth="250" defaultHeight="200" 
-	minWidth="40" minHeight="25" maxWidth="900" maxHeight="500">
+<HTMLWidget name="kBuiltIn" formatNumber="4" localization="stringTable" creator="Adobe Muse Team" termsText="kTermsKey" defaultWidth="250" defaultHeight="200" minWidth="100" minHeight="50" maxWidth="900" maxHeight="500">
 <!-- ! -->
 	<parameters>
 <!--
 `someURL` is the url entered by the user, or the URL for the page this item is on. The UI provides a checkbox for the user to pick which one.
 -->
-		<url name="someURL" currentPageOrURL="true"
-			label="kURLLabel" defaultValue="www.adobe.com"/>
+		<url name="someURL" currentPageOrURL="true" label="kURLLabel" defaultValue="www.adobe.com"/>
 <!--
 `width` is the width of this page item within Muse
 -->
@@ -45,6 +42,26 @@ This widget lists the values for all the current builtIn mucow parameters.
 `locale` is the language and country code for the current Muse document (e.g. en_US, fr_FR, es_ES)
 -->
 		<builtIn name="locale" supportedLocales="cs_CZ,da_DK,de_DE,en_GB,en_US,es_ES,fi_FI,fr_FR,it_IT,ja_JP,nb_NO,ru_RU,tr_TR"/>
+<!-- 
+`pageURL` is the page's url.  This is really not known until export time so if you use this in a pageItemHTML section then it may render with a temporary domain 
+-->
+		<builtIn name="pageURL" />
+<!-- 
+`defaultPageURL` is the page's url without the rendition part.  This is really not known until export time so if you use this in a pageItemHTML section then it may render with a temporary domain 
+-->
+		<builtIn name="defaultPageURL" />
+<!-- 
+`pageTitle` is the page title. 
+-->
+		<builtIn name="pageTitle" />
+<!-- 
+`siteDomain` is the domain name the site is being published to.  Like `pageURL`, the domain a temporary domain until the site is exported.  The domain name is built from export settings
+-->
+		<builtIn name="siteDomain" />
+<!-- 
+`siteURL` is the FQDN and path to the site. Like `siteDomain` and `pageURL`, the `siteURL` will contain a temporary domain name until the site is exported. 
+-->
+		<builtIn name="siteURL" />
 <!-- ! -->
 	</parameters>
 
@@ -73,14 +90,19 @@ We also set the list-style-position to inside so that the preview in Muse includ
 <p><b>Built In Parameters</b></p>
 <br/>
 <ul>
-	<li> <b>URL:</b> {param_someURL}
-	<li> <b>Page item Width:</b> {param_width}
-	<li> <b>Page item Height:</b> {param_height}
-	<li> <b>Item UID:</b> {param_itemUID}
-	<li> <b>Site UID:</b> {param_siteUID}
-	<li> <b>Language Code:</b> {param_language}
-	<li> <b>Locale Code:</b> {param_locale}
-	<li> <b>Country Code:</b> {param_country}
+ <li> <b>URL:</b> {param_someURL} </li>
+ <li> <b>Title:</b> {param_pageTitle} </li>
+ <li> <b>Page URL:</b> {param_pageURL} </li>
+ <li> <b>Default Page URL:</b> {param_defaultPageURL} </li>
+ <li> <b>Page item Width:</b> {param_width} </li>
+ <li> <b>Page item Height:</b> {param_height} </li>
+ <li> <b>Item UID:</b> {param_itemUID} </li>
+ <li> <b>Site UID:</b> {param_siteUID} </li>
+ <li> <b>Site Domain: </b> {param_siteDomain} </li>
+ <li> <b>Site URL:</b> {param_siteURL} </li>
+ <li> <b>Language Code:</b> {param_language} </li>
+ <li> <b>Locale Code:</b> {param_locale} </li>
+ <li> <b>Country Code:</b> {param_country} </li>
 </ul>
 ]]>
 	</pageItemHTML>
@@ -93,10 +115,12 @@ We also set the list-style-position to inside so that the preview in Muse includ
 		<locale name="en_US">
 			<string keyString="kBuiltIn" translation="Built In Parameter"/>
 			<string keyString="kURLLabel" translation="Some URL:"/>
+			<string keyString="kTermsKey" translation="&lt;p&gt;This Widget was created by &lt;a href='http://www.adobe.com'&gt;Adobe&lt;/a&gt;. We hope you find it useful!&lt;/p&gt;"/>
 		</locale>
 		<locale name="fr_FR">
 			<string keyString="kBuiltIn" translation="Le Built In Paraméter"/>
 			<string keyString="kURLLabel" translation="Quelque URL: "/>
+			<string keyString="kTermsKey" translation="Nous esperon que vous amiez cette widget de &lt;a href='http://www.adobe.com'&gt;Adobe&lt;/a&gt;. C'est magnifique!"/>
 		</locale>
 	</stringTable>
 <!-- ! -->
