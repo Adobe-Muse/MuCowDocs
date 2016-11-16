@@ -31,9 +31,9 @@ The `<HTMLWidget>` tag is the top level tag of all MuCow files.
 | minHeight | Number | Indicates the minimum allowable height for the page item. |
 | maxHeight | Number | Indicates the maximum allowable height for the page item. |
 | supportsGlobalAndOptionContentTags | Boolean | Indicates if the widget supports both global and conditional Option content tags (format 4+) |
-| isResponsive | Boolean | Indicates if the page item should can be responsive to support fluid sizing. (format 4+) |
+| isResponsive | Boolean | Indicates if the page item should can be responsive to support fluid sizing. *Default value is false* (format 4+) |
+| supportedSizePolicies | String | Comma separated list indicating which resize policies are supported. Possible options (fixed,fluidWidth,fluidWidthHeight,browserWidth). (format 5+) |
 | outputAsFixedHeight | Boolean | Indicates if the page item should export with fixed height when responsive width(other option is min-height). *Default value is true* (format 6+) |
-| supportedSizePolicies | String | Comma seperated list indicating which resize policies are supported. Possible options fixed,fluidWidth,fluidWidthHeight. (format 5+) |
 
 ## Child Tags
 
