@@ -33,7 +33,7 @@ The `<HTMLWidget>` tag is the top level tag of all MuCow files.
 | supportsGlobalAndOptionContentTags | Boolean | Indicates if the widget supports both global and conditional Option content tags (format 4+) |
 | isResponsive | Boolean | Indicates if the page item should can be responsive to support fluid sizing. *Default value is false* (format 4+) |
 | supportedSizePolicies | String | Comma separated list indicating which resize policies are supported. Possible options (fixed,fluidWidth,fluidWidthHeight,browserWidth). (format 5+) |
-| outputAsFixedHeight | Boolean | Indicates if the page item should export with fixed height when responsive width(other option is min-height). *Default value is true* (format 6+) |
+| outputAsFixedHeight | Boolean | Indicates if the page item should export with fixed height or minimum height. If attribute is true, page item exports with fixed height. *Default value is true* (format 6+) |
 
 ## Child Tags
 
